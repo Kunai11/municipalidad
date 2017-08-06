@@ -1,0 +1,464 @@
+
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Executive a Corporate Business Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Executive Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" />
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<!-- font-awesome icons -->
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" /> 
+<!-- //font-awesome icons -->
+<link href="//fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+</head>
+	
+<body>
+<!-- banner -->
+	<div class="banner">
+		<div class="container">
+			<div class="agile-header">
+				<div class="agileits-contact-info text-right">
+					<ul>
+						<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:info@example.com">mail@example.com</a></li>
+						<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+080 264 995</li>
+					</ul>
+				</div>
+				<div class="w3_agileits_social_media">
+					<ul>
+						<li class="agileinfo_share">Share On</li>
+						<li><a href="#" class="wthree_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="wthree_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li><a href="#" class="wthree_dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+						
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="index.html">Executive</a></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					<nav class="menu menu--iris">
+						<ul class="nav navbar-nav menu__list">
+							<li class="menu__item menu__item--current"><a href="index.html" class="menu__link">Home</a></li>
+							<li class="menu__item"><a href="about.html" class="menu__link">About</a></li>
+							<li class="menu__item"><a href="portfolio.html" class="menu__link">Portfolio</a></li>
+							<li class="menu__item"><a href="services.html" class="menu__link">Services</a></li>
+							<li class="dropdown menu__item">
+								<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown">Short Codes <b class="caret"></b></a>
+								<ul class="dropdown-menu agile_short_dropdown">
+									<li><a href="icons.html">Icons</a></li>
+									<li><a href="typography.html">Typography</a></li>
+								</ul>
+							</li>
+							<li class="menu__item"><a href="contact.html" class="menu__link">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</nav>
+			<div class="w3l_banner_info">
+				<section class="slider">
+					<div class="flexslider">
+						<ul class="slides">
+							<li>
+								<div class="wthree_banner_info_grid">
+									<h4>Latin literature</h4>
+									<h3>It has roots in a piece of classical Latin </h3>
+									<h5>classical Latin</h5>
+								</div>
+							</li>
+							<li>
+								<div class="wthree_banner_info_grid">
+									<h4>simply random</h4>
+									<h3>Lorem Ipsum is not simply random text.</h3>
+									<h5>classical Latin</h5>
+								</div>
+							</li>
+							<li>
+								<div class="wthree_banner_info_grid">
+									<h4>Latin literature</h4>
+									<h3>It has roots in a piece of classical Latin</h3>
+									<h5>classical Latin</h5>
+								</div>
+							</li>
+							<li>
+								<div class="wthree_banner_info_grid">
+									<h4>simply random</h4>
+									<h3>Lorem Ipsum is not simply random text.</h3>
+									<h5>classical Latin</h5>
+								</div>
+							</li>
+							<li>
+								<div class="wthree_banner_info_grid">
+									<h4>Latin literature</h4>
+									<h3>It has roots in a piece of classical Latin</h3>
+									<h5>classical Latin</h5>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<!-- flexSlider -->
+					<script defer src="js/jquery.flexslider.js"></script>
+					<script type="text/javascript">
+						$(window).load(function(){
+							$('.flexslider').flexslider({
+								animation: "slide",
+								start: function(slider){
+								$('body').removeClass('loading');
+								}
+							  });
+							});
+					</script>
+				<!-- //flexSlider -->
+			</div>			
+		</div>
+	</div>
+<!-- //banner -->
+
+<!-- welcome -->
+<div class="welcome">
+	 <div class="container">
+		 <div class="welcome-top">
+			<h2 class="w3ls_head">Welcome</h2>
+			
+			 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
+				corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+		 </div>
+		  <div class="charitys">
+			  <div class="col-md-4 chrt_grid" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+				   <div class="chrty">
+						<figure class="icon">
+							 <span class="glyphicon-icon glyphicon-heart" aria-hidden="true"></span>
+						</figure>
+						<h3>Lectus Sit</h3>
+						<p>Curabitur convallis rutrum erat nec vestibulum. Sed iaculis hendrerit lectus sit amet lobortis vulputate magna finibus molestie tellus.</p>
+				  </div>
+			  </div>
+			  <div class="col-md-4 chrt_grid" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+				   <div class="chrty">
+						<figure class="icon">
+							<span class="glyphicon-icon glyphicon-asterisk" aria-hidden="true"></span>
+						</figure>						
+						<h3>Rutrum Erat </h3>
+						<p>Curabitur convallis rutrum erat nec vestibulum. Sed iaculis hendrerit lectus sit amet lobortis vulputate magna finibus molestie tellus.</p>
+				  </div>
+			  </div>
+			  <div class="col-md-4 chrt_grid" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+				   <div class="chrty">
+						 <figure class="icon">
+							<span class="glyphicon-icon glyphicon-flag" aria-hidden="true"></span>
+						</figure>						
+						<h3>Sed Iaculis</h3>
+						<p>Curabitur convallis rutrum erat nec vestibulum. Sed iaculis hendrerit lectus sit amet lobortis vulputate magna finibus molestie tellus.</p>
+				  </div>
+			  </div>
+			  <div class="clearfix"></div>
+		 </div>	
+		<div class="banner-grids">
+			<div class="col-md-8 banner-grid1">
+				
+				<h5>Lorem ipsum dolor sit amet, lorem Consec tetuer adipicing it. Praesebul lorem ipsum.S natoque penatibus et gnis dent monteiculu..</h5>
+				<p>Lorem ipsum dolor sit amet, lorem Consec tetuer adipicing it. Praesebul lorem ipsum.S natoque penatibus et gnis dent monteiculu. Praesent vesti Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculus .</p>
+			</div>
+			<div class="col-md-4 banner-grid">
+				<img src="images/1.jpg" alt=" " class="img-responsive">
+			</div>
+				<div class="clearfix"></div>
+		</div>				 
+	 </div>
+</div>
+<!-- //welcome -->
+
+<!--client-->
+	<div class="client">
+		<div class="container">
+			<h3 class="w3ls_head">Client Says</h3>
+			<p class="w3l">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
+				corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+			<!--screen-gallery-->
+						<div class="sreen-gallery-cursual">
+							 <!-- required-js-files-->
+							<link href="css/owl.carousel.css" rel="stylesheet">
+							    <script src="js/owl.carousel.js"></script>
+							        <script>
+							    $(document).ready(function() {
+							      $("#owl-demo").owlCarousel({
+							        items :1,
+							        lazyLoad : true,
+							        autoPlay : true,
+							        navigation :true,
+							        navigationText :  false,
+							        pagination : true,
+							      });
+							    });
+							    </script>
+								 <!--//required-js-files-->
+						       <div id="owl-demo" class="owl-carousel">
+							      <div class="item-owl">
+					                	<div class="customer-say">
+											  <div class="col-md-6 customer-grid">
+												<div class="de_testi">
+													<div class="quotes"><img src="images/team1.jpg" alt=""></div>
+														<div class="de_testi_by">
+															<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+															<a href="#">Michael </a>, Customer
+														</div>
+															<div class="clearfix"></div>     
+												</div>
+											   </div>
+											<div class="col-md-6 customer-grid">
+											   <div class="de_testi">
+													<div class="quotes"><img src="images/team2.jpg" alt=""></div>
+														<div class="de_testi_by">
+															<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+															<a href="#">John </a>, Customer
+														</div>
+														<div class="clearfix"></div>
+												</div>
+											</div>
+										</div>	
+					                </div>
+					                 <div class="item-owl">
+					                	<div class="customer-say">
+											  <div class="col-md-6 customer-grid">
+												<div class="de_testi">
+													<div class="quotes"><img src="images/team3.jpg" alt=""></div>
+														<div class="de_testi_by">
+															<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+															<a href="#">Michael </a>, Customer
+														</div>
+															<div class="clearfix"></div>     
+												</div>
+											   </div>
+											<div class="col-md-6 customer-grid">
+											   <div class="de_testi">
+													<div class="quotes"><img src="images/team4.jpg" alt=""></div>
+														<div class="de_testi_by">
+															<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+															<a href="#">John </a>, Customer
+														</div>
+														<div class="clearfix"></div>
+												</div>
+											</div>
+										</div>	
+					                </div>
+					                 <div class="item-owl">
+					                	<div class="customer-say">
+											  <div class="col-md-6 customer-grid">
+												<div class="de_testi">
+													<div class="quotes"><img src="images/team4.jpg" alt=""></div>
+														<div class="de_testi_by">
+															<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+															<a href="#">Michael </a>, Customer
+														</div>
+															<div class="clearfix"></div>     
+												</div>
+											   </div>
+											<div class="col-md-6 customer-grid">
+											   <div class="de_testi">
+													<div class="quotes"><img src="images/team1.jpg" alt=""></div>
+														<div class="de_testi_by">
+															<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+															<a href="#">John </a>, Customer
+														</div>
+														<div class="clearfix"></div>
+												</div>
+											</div>
+										</div>	
+					                </div>
+				              </div>
+						</div>
+						<!--//screen-gallery-->
+		</div>
+	</div>	
+	<!--//client-->
+<!-- what -->
+	<div class="what-w3ls">
+		<div class="container">
+			<h3 class="w3ls_head">Work Process</h3>
+			<p class="w3agile">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
+				corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+				<div class="what-grids">
+					<div class="col-md-6 what-grid">
+						<img src="images/2.jpg" class="img-responsive" alt=""/>
+						<div class="what-agile-info">
+							<h4>Consectetur</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut dignissimos ea est, impedit incidunt, laboriosam consectetur adipisicing elit. Ab aut dignissimos ea est</p>
+						</div>
+					</div>
+					<div class="col-md-6 what-grid1">
+						<div class="what-top">
+							<div class="what-left">
+								<i class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></i>
+							</div>
+							<div class="what-right">
+								<h4>Adipisicing</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut dignissimos ea est, impedit incidunt, laboriosam consectetur adipisicing elit. Ab aut dignissimos ea est</p>
+							</div>
+								<div class="clearfix"></div>
+						</div>
+						<div class="what-top1">
+							<div class="what-left">
+								<i class="glyphicon glyphicon-flash" aria-hidden="true"></i>
+							</div>
+							<div class="what-right">
+								<h4>Dignissimos</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut dignissimos ea est, impedit incidunt, laboriosam consectetur adipisicing elit. Ab aut dignissimos ea est</p>
+							</div>
+								<div class="clearfix"></div>
+						</div>
+						<div class="what-top1">
+							<div class="what-left">
+								<i class="glyphicon glyphicon-fire" aria-hidden="true"></i>
+							</div>
+							<div class="what-right">
+								<h4>Consectetur</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut dignissimos ea est, impedit incidunt, laboriosam consectetur adipisicing elit. Ab aut dignissimos ea est</p>
+							</div>
+								<div class="clearfix"></div>
+						</div>
+					</div>
+						<div class="clearfix"></div>
+				</div>
+		</div>
+	</div>
+<!-- //what -->
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-w3layouts">
+				<div class="col-md-3 footer-agileits">
+					<h3>Specialized</h3>
+					<ul>
+						<li>the printing</li>
+						<li>typesetting industry.</li>
+						<li>Lorem Ipsum</li>
+						<li>unknown printer</li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-wthree">
+					<h3>Partners</h3>
+					<ul>
+						<li>unknown printer</li>
+						<li>Lorem Ipsum</li>
+						<li>the printing</li>
+						<li>typesetting industry.</li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-w3-agileits">
+					<h3>Consultation</h3>
+					<ul>
+						<li>typesetting industry.</li>
+						<li>the printing</li>
+						<li>unknown printer</li>
+						<li>Lorem Ipsum</li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-agileits-w3layouts">
+					<h3>Our Links</h3>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="portfolio.html">Portfolio</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="footer-w3-agile">
+				<div class="col-md-6 w3l-footer-top">
+					<h3>Newsletter</h3>
+					<form action="#" method="post" class="newsletter">
+						<input class="email" type="email" placeholder="Your email..." required="">
+						<input type="submit" class="submit"  value="">
+					</form>
+					<div class="footer-agile">
+						<div class="col-md-6 footer-w3-1">
+							<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+							<p> 7th Street 2nd Line,  </p>
+							<p> Melbourne City, Australia.</p>
+						</div>
+						<div class="col-md-6 footer-w3l-1">
+							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+							<p> +080 264345 995.</p>
+							<p> +080 264345 996.</p>
+						</div>
+							<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="col-md-6 w3ls-social-icons">
+					<h3>Follow Us</h3>
+					<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+					<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+					<a class="pinterest" href="#"><i class="fa fa-pinterest"></i></a>
+					<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="copy-right-agile">
+				<p>© 2017 Executive. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+</body>
+</html>
