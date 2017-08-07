@@ -15215,6 +15215,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .login-content .login-box {
+  border: 1px solid #418CC1;
   position: relative;
   min-width: 350px;
   min-height: 390px;
