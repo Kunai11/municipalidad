@@ -24,7 +24,7 @@
         <h1>Admin Panel</h1>
       </div>
       <div class="login-box">
-        <form class="login-form" action="index.html">
+        <form class="login-form" action="index.php">
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>INICIAR SESI&Oacute;N</h3>
           <div class="form-group">
             <label class="control-label">USUARIO</label>
@@ -51,7 +51,7 @@
           </div>
         </form>
         <!--
-        <form class="forget-form" action="index.html">
+        <form class="forget-form" action="index.php">
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-lock"></i>Olvid&eacute; la contrase&ntilde;a</h3>
           <div class="form-group">
             <label class="control-label">CORREO</label>

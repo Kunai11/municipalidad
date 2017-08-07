@@ -2,14 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS-->
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- Font-icon css-->
     <!--<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
     <title>Admin Panel</title>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
     <!--if lt IE 9
@@ -44,7 +43,7 @@
                 <ul class="dropdown-menu settings-menu">
                   <li><a href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
                   <li><a href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-                  <li><a href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+                  <li><a href="page-login.php"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
                 </ul>
               </li>
             </ul>
@@ -90,7 +89,7 @@
             <li class="treeview"><a href="#"><i class="fa fa-file-text"></i><span>Pages</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="blank-page.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-                <li><a href="page-login.html"><i class="fa fa-circle-o"></i> Login Page</a></li>
+                <li><a href="page-login.php"><i class="fa fa-circle-o"></i> Login Page</a></li>
                 <li><a href="page-lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen Page</a></li>
                 <li><a href="page-user.html"><i class="fa fa-circle-o"></i> User Page</a></li>
                 <li><a href="page-invoice.html"><i class="fa fa-circle-o"></i> Invoice Page</a></li>
