@@ -3,8 +3,50 @@
  * Vali Admin
  * Author: Pratik Borsadiya
  * ================================*/
-@import url(https://fonts.googleapis.com/css?family=Lato:300,400,400i,700);
-@import url(https://fonts.googleapis.com/css?family=Niconne);
+/*@import url(https://fonts.googleapis.com/css?family=Lato:300,400,400i,700);*/
+  /* latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Lato Light'), local('Lato-Light'), url(./fonts/lato/Lato-Light.ttf) format('truetype');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(./fonts/lato/Lato-Regular.ttf) format('truetype');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Lato Bold'), local('Lato-Bold'), url(./fonts/lato/Lato-Bold.ttf) format('truetype');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Lato Italic'), local('Lato-Italic'), url(./fonts/lato/Lato-Italic.ttf) format('truetype');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  }
+
+/*@import url(https://fonts.googleapis.com/css?family=Niconne);*/
+  /* latin */
+  @font-face {
+    font-family: 'Niconne';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Niconne'), local('Niconne-Regular'), url(./fonts/niconne/Niconne-Regular.ttf) format('truetype');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  }
+
 /*
  * Bootstrap v3.3.6
  */
@@ -335,7 +377,7 @@ textarea {
 }
 
 a {
-  color: #009688;
+  color: #418CC1;
   text-decoration: none;
   cursor: pointer;
 }
@@ -574,12 +616,12 @@ mark,
 }
 
 .text-primary {
-  color: #009688;
+  color: #418CC1;
 }
 
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #00635a;
+  color: #407497;
 }
 
 .text-success {
@@ -623,12 +665,12 @@ a.text-danger:focus {
 }
 
 .bg-primary {
-  background-color: #009688;
+  background-color: #418CC1;
 }
 
 a.bg-primary:hover,
 a.bg-primary:focus {
-  background-color: #00635a;
+  background-color: #407497;
 }
 
 .bg-success {
@@ -1990,7 +2032,7 @@ output {
 }
 
 .form-control:focus {
-  border: 2px solid #009688;
+  border: 2px solid #418CC1;
   outline: 0;
 }
 
@@ -2672,7 +2714,7 @@ fieldset[disabled] .btn-default.focus {
 
 .btn-primary {
   color: #fff;
-  background-color: #009688;
+  background-color: #418CC1;
   border-color: transparent;
 }
 
@@ -2707,11 +2749,11 @@ fieldset[disabled] .btn-default.focus {
 fieldset[disabled] .btn-primary:hover,
 fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary.focus {
-  background-color: #009688;
+  background-color: #418CC1;
 }
 
 .btn-primary .badge {
-  color: #009688;
+  color: #418CC1;
   background-color: #fff;
 }
 
@@ -2896,7 +2938,7 @@ fieldset[disabled] .btn-danger.focus {
 }
 
 .btn-link {
-  color: #009688;
+  color: #418CC1;
   font-weight: normal;
   border-radius: 0;
 }
@@ -3078,7 +3120,7 @@ tbody.collapse.in {
   color: #fff;
   text-decoration: none;
   outline: 0;
-  background-color: #009688;
+  background-color: #418CC1;
 }
 
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
@@ -3563,7 +3605,7 @@ tbody.collapse.in {
 
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #009688;
+  border-color: #418CC1;
 }
 
 .nav .nav-divider {
@@ -3605,13 +3647,13 @@ tbody.collapse.in {
 }
 
 .nav-tabs > li > a:hover {
-  color: #009688;
-  border-bottom-color: #009688;
+  color: #418CC1;
+  border-bottom-color: #418CC1;
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-  color: #009688;
-  border-bottom: 2px solid #009688;
+  color: #418CC1;
+  border-bottom: 2px solid #418CC1;
   cursor: default;
 }
 
@@ -3629,7 +3671,7 @@ tbody.collapse.in {
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
   color: #fff;
-  background-color: #009688;
+  background-color: #418CC1;
 }
 
 .nav-stacked > li {
@@ -4112,8 +4154,8 @@ tbody.collapse.in {
 }
 
 .navbar-default {
-  background-color: #009688;
-  border-color: #009688;
+  background-color: #418CC1;
+  border-color: #418CC1;
 }
 
 .navbar-default .navbar-brand {
@@ -4356,7 +4398,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   padding: 8px 15px;
   line-height: 1.428571429;
   text-decoration: none;
-  color: #009688;
+  color: #418CC1;
   background-color: #fff;
   border: 1px solid #ddd;
   margin-left: -1px;
@@ -4390,8 +4432,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .active > span:focus {
   z-index: 3;
   color: #fff;
-  background-color: #009688;
-  border-color: #009688;
+  background-color: #418CC1;
+  border-color: #418CC1;
   cursor: default;
 }
 
@@ -4536,11 +4578,11 @@ a.label:hover, a.label:focus {
 }
 
 .label-primary {
-  background-color: #009688;
+  background-color: #418CC1;
 }
 
 .label-primary[href]:hover, .label-primary[href]:focus {
-  background-color: #00635a;
+  background-color: #407497;
 }
 
 .label-success {
@@ -4607,7 +4649,7 @@ a.label:hover, a.label:focus {
 
 .list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #009688;
+  color: #418CC1;
   background-color: #fff;
 }
 
@@ -4759,7 +4801,7 @@ a.badge:hover, a.badge:focus {
   line-height: 20px;
   color: #fff;
   text-align: center;
-  background-color: #009688;
+  background-color: #418CC1;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
@@ -4942,8 +4984,8 @@ button.list-group-item {
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
   z-index: 2;
   color: #fff;
-  background-color: #009688;
-  border-color: #009688;
+  background-color: #418CC1;
+  border-color: #418CC1;
 }
 
 .list-group-item.active .list-group-item-heading,
@@ -5401,26 +5443,26 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel-primary {
-  border-color: #009688;
+  border-color: #418CC1;
 }
 
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #009688;
-  border-color: #009688;
+  background-color: #418CC1;
+  border-color: #418CC1;
 }
 
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #009688;
+  border-top-color: #418CC1;
 }
 
 .panel-primary > .panel-heading .badge {
-  color: #009688;
+  color: #418CC1;
   background-color: #fff;
 }
 
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #009688;
+  border-bottom-color: #418CC1;
 }
 
 .panel-success {
@@ -10882,7 +10924,7 @@ body.stop-scrolling {
 }
 
 .sweet-alert input:focus {
-  border-color: #009688;
+  border-color: #418CC1;
   outline: none;
 }
 
@@ -10906,7 +10948,7 @@ body.stop-scrolling {
 }
 
 .sweet-alert button {
-  background-color: #009688 !important;
+  background-color: #418CC1 !important;
   color: white;
   border: none;
   -webkit-box-shadow: none;
@@ -10930,7 +10972,7 @@ body.stop-scrolling {
 }
 
 .sweet-alert button:active {
-  background-color: #00635a;
+  background-color: #407497;
 }
 
 .sweet-alert button.cancel {
@@ -11780,7 +11822,7 @@ body.stop-scrolling {
 
 .select2-dropdown {
   background-color: white;
-  border: 2px solid #009688;
+  border: 2px solid #418CC1;
   border-radius: 4px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -11976,7 +12018,7 @@ body.stop-scrolling {
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
-  background-color: #009688;
+  background-color: #418CC1;
   color: #FFF;
   border-radius: 3px;
   cursor: default;
@@ -12015,7 +12057,7 @@ body.stop-scrolling {
 }
 
 .select2-container--default.select2-container--focus .select2-selection--multiple {
-  border-color: #009688;
+  border-color: #418CC1;
   outline: 0;
 }
 
@@ -12032,18 +12074,18 @@ body.stop-scrolling {
 .select2-container--default.select2-container--open.select2-container--above .select2-selection--multiple {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  border-color: #009688;
+  border-color: #418CC1;
 }
 
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--single,
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  border-color: #009688;
+  border-color: #418CC1;
 }
 
 .select2-container--default .select2-search--dropdown .select2-search__field {
-  border: 1px solid #009688;
+  border: 1px solid #418CC1;
   border-radius: 3px;
 }
 
@@ -12107,7 +12149,7 @@ body.stop-scrolling {
 }
 
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
-  background-color: #009688;
+  background-color: #418CC1;
   color: white;
 }
 
@@ -12119,7 +12161,7 @@ body.stop-scrolling {
 
 .select2-container--classic .select2-selection--single {
   background-color: #f7f7f7;
-  border: 2px solid #009688;
+  border: 2px solid #418CC1;
   border-radius: 3px;
   outline: 0;
   background-image: -o-linear-gradient(top, white 50%, #eeeeee 100%);
@@ -12129,7 +12171,7 @@ body.stop-scrolling {
 }
 
 .select2-container--classic .select2-selection--single:focus {
-  border: 1px solid #009688;
+  border: 1px solid #418CC1;
 }
 
 .select2-container--classic .select2-selection--single .select2-selection__rendered {
@@ -12193,7 +12235,7 @@ body.stop-scrolling {
 }
 
 .select2-container--classic.select2-container--open .select2-selection--single {
-  border: 1px solid #009688;
+  border: 1px solid #418CC1;
 }
 
 .select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow {
@@ -12235,7 +12277,7 @@ body.stop-scrolling {
 }
 
 .select2-container--classic .select2-selection--multiple:focus {
-  border: 1px solid #009688;
+  border: 1px solid #418CC1;
 }
 
 .select2-container--classic .select2-selection--multiple .select2-selection__rendered {
@@ -12286,7 +12328,7 @@ body.stop-scrolling {
 }
 
 .select2-container--classic.select2-container--open .select2-selection--multiple {
-  border: 1px solid #009688;
+  border: 1px solid #418CC1;
 }
 
 .select2-container--classic.select2-container--open.select2-container--above .select2-selection--multiple {
@@ -12350,7 +12392,7 @@ body.stop-scrolling {
 }
 
 .select2-container--classic.select2-container--open .select2-dropdown {
-  border-color: #009688;
+  border-color: #418CC1;
 }
 
 .pace {
@@ -12727,7 +12769,7 @@ NOTE: use percentage font sizes or else old IE chokes
 
 .fc-state-down,
 .fc-state-active {
-  background-color: #009688;
+  background-color: #418CC1;
   color: #FFF;
   background-image: none;
   -webkit-box-shadow: none;
@@ -13000,8 +13042,8 @@ temporary rendered events).
   padding: 5px;
   line-height: 1.3;
   border-radius: 3px;
-  border: 1px solid #009688;
-  background-color: #009688;
+  border: 1px solid #418CC1;
+  background-color: #418CC1;
   font-weight: normal;
   /* undo jqui's ui-widget-header bold */
   margin-bottom: 5px;
@@ -13573,16 +13615,16 @@ be a descendant of the grid when it is being dragged.
 
 ::-moz-selection {
   color: #FFF;
-  background-color: #00635a;
+  background-color: #407497;
 }
 
 ::selection {
   color: #FFF;
-  background-color: #00635a;
+  background-color: #407497;
 }
 
 .main-header .navbar {
-  background-color: #009688;
+  background-color: #418CC1;
 }
 
 .main-header .navbar .top-nav > li > a {
@@ -13615,11 +13657,11 @@ be a descendant of the grid when it is being dragged.
 
 .main-header .navbar .sidebar-toggle:hover {
   color: #f6f6f6;
-  background-color: #007d71;
+  background-color: #40759A;
 }
 
 .main-header .logo {
-  background-color: #007d71;
+  background-color: #40759A;
   color: #FFF;
   border-bottom: 0 solid transparent;
 }
@@ -13648,7 +13690,7 @@ be a descendant of the grid when it is being dragged.
 .sidebar-menu > li.active > a {
   color: #fff;
   background: #0d1214;
-  border-color: #009688 !important;
+  border-color: #418CC1 !important;
 }
 
 .sidebar-menu .treeview-menu {
@@ -13669,12 +13711,12 @@ be a descendant of the grid when it is being dragged.
 }
 
 .only-sidebar.sidebar-collapse .sidebar .logo .sidebar-toggle {
-  color: #009688;
+  color: #418CC1;
 }
 
 .only-sidebar .sidebar .logo {
   color: #FFF;
-  background-color: #009688;
+  background-color: #418CC1;
 }
 
 .only-sidebar .sidebar .logo .sidebar-toggle {
@@ -14568,7 +14610,7 @@ be a descendant of the grid when it is being dragged.
 
 .animated-checkbox input[type="checkbox"]:checked + .label-text:before {
   content: "\f14a";
-  color: #009688;
+  color: #418CC1;
   -webkit-animation: tick 180ms ease-in;
           animation: tick 180ms ease-in;
 }
@@ -14613,7 +14655,7 @@ be a descendant of the grid when it is being dragged.
 
 .animated-radio-button input[type="radio"]:checked + .label-text:before {
   content: "\f192";
-  color: #009688;
+  color: #418CC1;
   -webkit-animation: tick 180ms ease-in;
           animation: tick 180ms ease-in;
 }
@@ -14692,7 +14734,7 @@ be a descendant of the grid when it is being dragged.
 
 .toggle input[type="checkbox"]:checked + .button-indecator:before {
   content: "\f205";
-  color: #009688;
+  color: #418CC1;
   -webkit-animation: toggleBtn 0.3s ease-in-out;
           animation: toggleBtn 0.3s ease-in-out;
 }
@@ -14746,7 +14788,7 @@ be a descendant of the grid when it is being dragged.
 
 .toggle-flip input[type="checkbox"] + .flip-indecator:after {
   content: attr(data-toggle-on);
-  background-color: #009688;
+  background-color: #418CC1;
   color: #fff;
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
@@ -14805,7 +14847,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .material-half-bg .cover {
-  background-color: #009688;
+  background-color: #418CC1;
   height: 50vh;
 }
 
@@ -14839,7 +14881,7 @@ be a descendant of the grid when it is being dragged.
 .path {
   stroke-dasharray: 1,200;
   stroke-dashoffset: 0;
-  stroke: #009688;
+  stroke: #418CC1;
   -webkit-animation: dash 1.5s ease-in-out infinite;
           animation: dash 1.5s ease-in-out infinite;
   stroke-linecap: round;
@@ -14976,7 +15018,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .widget-small.primary {
-  background-color: #009688;
+  background-color: #418CC1;
 }
 
 .widget-small.primary.coloured-icon {
@@ -14985,7 +15027,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .widget-small.primary.coloured-icon .icon {
-  background-color: #009688;
+  background-color: #418CC1;
   color: #fff;
 }
 
@@ -15075,7 +15117,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .messanger .messages .message.me .info {
-  background-color: #009688;
+  background-color: #418CC1;
   color: #FFF;
 }
 
@@ -15092,7 +15134,7 @@ be a descendant of the grid when it is being dragged.
   height: 0;
   border-style: solid;
   border-width: 0 16px 16px 0;
-  border-color: transparent #009688 transparent transparent;
+  border-color: transparent #418CC1 transparent transparent;
   -webkit-transform: rotate(270deg);
       -ms-transform: rotate(270deg);
           transform: rotate(270deg);
@@ -15135,7 +15177,7 @@ be a descendant of the grid when it is being dragged.
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  border: 1px solid #009688;
+  border: 1px solid #418CC1;
   outline: none;
   padding: 5px 10px;
 }
@@ -15421,7 +15463,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .user .user-tabs > li.active > a {
-  border-left: 3px solid #009688;
+  border-left: 3px solid #418CC1;
   border-bottom: 0;
   background-color: #eee !important;
 }
