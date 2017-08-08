@@ -19,7 +19,7 @@
   <body class="sidebar-mini fixed">
     <div class="wrapper">
       <!-- Navbar-->
-      <header class="main-header hidden-print"><a class="logo" href="index.php">Admin Panel</a>
+      <header class="main-header hidden-print"><a class="logo" href="index.html">Admin Panel</a>
         <nav class="navbar navbar-static-top">
           <!-- Sidebar toggle button--><a class="sidebar-toggle" href="#" data-toggle="offcanvas"></a>
           <!-- Navbar Right Menu-->
@@ -41,9 +41,9 @@
               <!-- User Menu-->
               <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i></a>
                 <ul class="dropdown-menu settings-menu">
-                  <li><a href="page-user.html"><i class="fa fa-cog fa-lg"></i> Configuraci&oacute;n</a></li>
-                  <li><a href="page-user.html"><i class="fa fa-user fa-lg"></i> Perfil</a></li>
-                  <li><a href="page-login.php"><i class="fa fa-sign-out fa-lg"></i> Cerrar Sesi&oacute;n</a></li>
+                  <li><a href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
+                  <li><a href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+                  <li><a href="page-login.php"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
                 </ul>
               </li>
             </ul>
@@ -62,15 +62,35 @@
           </div>
           <!-- Sidebar Menu-->
           <ul class="sidebar-menu">
-            <li class="active"><a href="index.php"><i class="fa fa-dashboard"></i><span>Inicio</span></a></li>
-            <li class="treeview"><a href="#"><i class="fa fa-laptop"></i><span>UI Elements</span><i class="fa fa-angle-right"></i></a>
+            <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i><span>Inicio</span></a></li>
+            <li class="treeview"><a href="#"><i class="fa fa-laptop"></i><span>Gestion de empleados</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="bootstrap-components.html"><i class="fa fa-circle-o"></i> Bootstrap Elements</a></li>
-                <li><a href="http://fontawesome.io/icons/" target="_blank"><i class="fa fa-circle-o"></i> Font Icons</a></li>
-                <li><a href="ui-cards.html"><i class="fa fa-circle-o"></i> Cards</a></li>
-                <li><a href="widgets.html"><i class="fa fa-circle-o"></i> Widgets</a></li>
+                <li><a href="Agregar nuevo empleado"><i class="fa fa-circle-o"></i> Agregar nuevo empleado</a></li>
+                <li><a href="http://fontawesome.io/icons/" target="_blank"><i class="fa fa-circle-o"></i> Modificar datos de empleado</a></li>
+                <li><a href="ui-cards.html"><i class="fa fa-circle-o"></i> Eliminar datos de empleado</a></li>
+                <li><a href="widgets.html"><i class="fa fa-circle-o"></i> Mostrar lista de empleados</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Consultar hoja de vida</a></li>
               </ul>
             </li>
+               
+            <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Departamentos</span><i class="fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href=""><i class="fa fa-circle-o"></i> Agregar departamento</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Modificar departamento</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Eliminar deparatamento</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Mostrar departamentos</a></li>
+              </ul>
+            </li>
+
+              <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Cargos</span><i class="fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href=""><i class="fa fa-circle-o"></i> Crear y asignar cargo</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Modificar departamento</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Eliminar deparatamento</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Mostrar departamentos</a></li>
+              </ul>
+            </li>
+
             <li><a href="charts.html"><i class="fa fa-pie-chart"></i><span>Charts</span></a></li>
             <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Forms</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
@@ -115,8 +135,8 @@
       <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-dashboard"></i> Inicio</h1>
-            <p>Control Administrativo </p>
+            <h1><i class="fa fa-dashboard"></i> Dashboard</h1>
+            <p>A free and modular admin template</p>
           </div>
           <div>
             <ul class="breadcrumb">
