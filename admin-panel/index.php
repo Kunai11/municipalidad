@@ -90,6 +90,16 @@
               </ul>
             </li>
 
+               <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Usuario</span><i class="fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href=""><i class="fa fa-circle-o"></i> Crear usuario</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Modificar usuario</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Eliminar usuario</a></li>
+              </ul>
+            </li>
+
+
+
             <li><a href="charts.html"><i class="fa fa-pie-chart"></i><span>Charts</span></a></li>
             <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Forms</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
