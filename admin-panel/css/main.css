@@ -2016,7 +2016,7 @@ output {
 
 .form-control {
   display: block;
-  width: 100%;
+  width: 50%;
   padding: 8px 12px;
   font-size: 14px;
   font-weight: 400;
@@ -14508,6 +14508,8 @@ be a descendant of the grid when it is being dragged.
   transition: all 0.3s ease-in-out;
 }
 
+
+
 .card.small {
   padding: 0;
 }
@@ -15553,3 +15555,38 @@ be a descendant of the grid when it is being dragged.
 .user .user-settings label {
   color: #666;
 }
+
+.registro {
+  position: relative;
+  width: 200%;
+  background: #ffffff;
+  border-radius: 3px;
+  padding: 20px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.input_empleado {
+  display: block;
+  width: 45%;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.44;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  -webkit-transition: border-color ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s;
+}
+
+
+
