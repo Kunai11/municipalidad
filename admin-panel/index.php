@@ -60,10 +60,14 @@
               <p class="designation">Frontend Developer</p>
             </div>
           </div>
+
           <!-- Sidebar Menu-->
           <ul class="sidebar-menu">
             <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i><span>Inicio</span></a></li>
-            <li class="treeview"><a href="#"><i class="fa fa-share"></i><span>Gestion de empleados</span><i class="fa fa-angle-right"></i></a>
+            <li class="treeview"><a href="#"><i class="fa fa-laptop"></i><span>Gestiones administrativas</span><i class="fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+
+            <li class="treeview"><a href="#"><i class="fa fa-laptop"></i><span>Gestion de empleados</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="agregar_empleado.php"><i class="fa fa-circle-o"></i> Agregar nuevo empleado</a></li>
                 <li><a href="http://fontawesome.io/icons/" target="_blank"><i class="fa fa-circle-o"></i> Modificar datos de empleado</a></li>
@@ -89,8 +93,8 @@
                 <li><a href=""><i class="fa fa-circle-o"></i> Eliminar cargo</a></li>
               </ul>
             </li>
-
-            <li class="treeview"><a href="#"><i class="fa fa-share"></i><span>Usuario</span><i class="fa fa-angle-right"></i></a>
+</ul>
+               <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Usuario</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href=""><i class="fa fa-circle-o"></i> Crear Usuario</a></li>
                 <li><a href=""><i class="fa fa-circle-o"></i> Modificar Usuario</a></li>
