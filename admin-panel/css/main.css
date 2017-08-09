@@ -15557,8 +15557,9 @@ be a descendant of the grid when it is being dragged.
 }
 
 .registro {
+  
   position: relative;
-  width: 200%;
+  width: 150%;
   background: #ffffff;
   border-radius: 3px;
   padding: 20px;

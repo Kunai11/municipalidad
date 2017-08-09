@@ -26,7 +26,7 @@
           <div class="navbar-custom-menu">
             <ul class="top-nav">
               <!--Notification Menu-->
-              <li class="dropdown notification-menu"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell-o fa-lg"></i></a>
+              <li class="dropdown notification-menu">
                 <ul class="dropdown-menu">
                   <li class="not-head">You have 4 new notifications.</li>
                   <li><a class="media" href="javascript:;"><span class="media-left media-icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
@@ -61,139 +61,219 @@
             </div>
           </div>
           <!-- Sidebar Menu-->
-          <ul class="sidebar-menu">
-            <li class="active"><a href="index.php"><i class="fa fa-dashboard"></i><span>Inicio</span></a></li>
-            <li class="treeview"><a href="#"><i class="fa fa-laptop"></i><span>UI Elements</span><i class="fa fa-angle-right"></i></a>
+           <ul class="sidebar-menu">
+            <li class="active"><a href="index.php"><i class="fa fa-home"></i><span>Inicio</span></a></li>
+
+            <li class="treeview"><a href="#"><i class="fa fa-institution"></i><span>Opciones Administrativas</span><i class="fa fa-angle-right"></i></a>
+            <ul class="treeview-menu">
+              <li class="treeview"><a href="#"><i class="fa fa-group"></i><span>Empleados</span><i class="fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                  <li><a href="agregar_empleado.php"><i class="fa fa-plus-square"></i> Agregar nuevo</a></li>
+                  <li><a href="#" target="_blank"><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
+                  <li><a href="#"><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
+                </ul>
+              </li>
+                
+              <li class="treeview"><a href="#"><i class="fa fa-suitcase"></i><span>Departamentos</span><i class="fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                  <li><a href=""><i class="fa fa-plus-square"></i> Agregar nuevo</a></li>
+                  <li><a href=""><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
+                  <li><a href=""><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
+                </ul>
+              </li>
+
+              <li class="treeview"><a href="#"><i class="fa fa-id-card-o"></i><span>Cargos</span><i class="fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                  <li><a href=""><i class="fa fa-plus-square"></i> Crear y asignar cargo</a></li>
+                  <li><a href=""><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
+                  <li><a href=""><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <li class="treeview"><a href="#"><i class="fa fa-money"></i><span>Opciones Financieras</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="bootstrap-components.html"><i class="fa fa-circle-o"></i> Bootstrap Elements</a></li>
-                <li><a href="http://fontawesome.io/icons/" target="_blank"><i class="fa fa-circle-o"></i> Font Icons</a></li>
-                <li><a href="ui-cards.html"><i class="fa fa-circle-o"></i> Cards</a></li>
-                <li><a href="widgets.html"><i class="fa fa-circle-o"></i> Widgets</a></li>
-              </ul>
-            </li>
-            <li><a href="charts.html"><i class="fa fa-pie-chart"></i><span>Charts</span></a></li>
-            <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Forms</span><i class="fa fa-angle-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="form-components.html"><i class="fa fa-circle-o"></i> Form Components</a></li>
-                <li><a href="form-custom.html"><i class="fa fa-circle-o"></i> Custom Components</a></li>
-                <li><a href="form-samples.html"><i class="fa fa-circle-o"></i> Form Samples</a></li>
-                <li><a href="form-notifications.html"><i class="fa fa-circle-o"></i> Form Notifications</a></li>
-              </ul>
-            </li>
-            <li class="treeview"><a href="#"><i class="fa fa-th-list"></i><span>Tables</span><i class="fa fa-angle-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="table-basic.html"><i class="fa fa-circle-o"></i> Basic Tables</a></li>
-                <li><a href="table-data-table.html"><i class="fa fa-circle-o"></i> Data Tables</a></li>
-              </ul>
-            </li>
-            <li class="treeview"><a href="#"><i class="fa fa-file-text"></i><span>Pages</span><i class="fa fa-angle-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="blank-page.php"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-                <li><a href="page-login.html"><i class="fa fa-circle-o"></i> Login Page</a></li>
-                <li><a href="page-lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen Page</a></li>
-                <li><a href="page-user.html"><i class="fa fa-circle-o"></i> User Page</a></li>
-                <li><a href="page-invoice.html"><i class="fa fa-circle-o"></i> Invoice Page</a></li>
-                <li><a href="page-calendar.html"><i class="fa fa-circle-o"></i> Calendar Page</a></li>
-                <li><a href="page-mailbox.html"><i class="fa fa-circle-o"></i> Mailbox</a></li>
-                <li><a href="page-error.php"><i class="fa fa-circle-o"></i> Error Page</a></li>
-              </ul>
-            </li>
-            <li class="treeview"><a href="#"><i class="fa fa-share"></i><span>Multilevel Menu</span><i class="fa fa-angle-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="blank-page.php"><i class="fa fa-circle-o"></i> Level One</a></li>
-                <li class="treeview"><a href="#"><i class="fa fa-circle-o"></i><span> Level One</span><i class="fa fa-angle-right"></i></a>
+                <li class="treeview"><a href="#"><i class="fa fa-dollar"></i><span>Pagos</span><i class="fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                  <li><a href=""><i class="fa fa-credit-card"></i> Nuevo pago</a></li>
+                  <li><a href=""><i class="fa fa-pencil-square-o"></i> Modificar pago</a></li>
+                </ul>
+                <li class="treeview"><a href="#"><i class="fa fa-clipboard"></i><span>Registro</span><i class="fa fa-angle-right"></i></a>
                   <ul class="treeview-menu">
-                    <li><a href="blank-page.php"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i><span> Level Two</span></a></li>
+                    <li><a href=""><i class="fa fa-history"></i> Historial</a></li>
                   </ul>
                 </li>
               </ul>
             </li>
-          </ul>
+
+            <li class="treeview"><a href="#"><i class="fa fa-user-circle"></i><span>Gesti&oacute;n de Usuarios</span><i class="fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href=""><i class="fa fa-user-plus"></i> Crear Usuario</a></li>
+                <li><a href=""><i class="fa fa-pencil-square-o"></i> Modificar Usuario</a></li>
+                <li><a href=""><i class="fa fa-user-times"></i> Eliminar Usuario</a></li>
+              </ul>
+            </li>
+
+            <li class="treeview"><a href="#"><i class="fa fa-clipboard"></i><span>Reportes</span><i class="fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href=""><i class="fa fa-file-text-o"></i> Listado de Departamentos</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i> Listado de Cargos</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i> Listado de Empleados</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i> Listado de Usuarios</a></li>
+              </ul>
+            </li>
+
+            <li class="treeview"><a href="#"><i class="fa fa-search"></i><span>Busqueda</span><i class="fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href=""><i class="fa fa-search"></i> Buscar Departamento</a></li>
+                <li><a href=""><i class="fa fa-search"></i> Buscar Cargo</a></li>
+                <li><a href=""><i class="fa fa-search"></i> Buscar Empleado</a></li>
+                <li><a href=""><i class="fa fa-search"></i> Buscar Usuario</a></li>
+              </ul>
+            </li>
+
+             <li class="treeview"><a href="#"><i class="fa fa-gears"></i><span>Configuraci&oacute;n</span><i class="fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                 <li class="treeview"><a href="#"><i class="fa fa-wpforms"></i><span>Planillas predefinidas</span><i class="fa fa-angle-right"></i></a>
+                    <ul class="treeview-menu">
+                <li><a href=""><i class="fa fa-plus-square"></i> Crear nueva</a></li>
+                <li><a href=""><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
+                <li><a href=""><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
+              </ul>
+            </ul>
+            </li>          </ul>
         </section>
       </aside>
       <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-edit"></i> Form Samples</h1>
-            <p>Sample forms</p>
+            <h1><i class="fa fa-group"></i>Empleados</h1>
+            <p>Registro de empleados</p>
           </div>
           <div>
             <ul class="breadcrumb">
               <li><i class="fa fa-home fa-lg"></i></li>
-              <li>Forms</li>
-              <li><a href="#">Sample Forms</a></li>
+              <li>Gestiones administrativas</li>
+              <li>Empleados</li>
+              <li><a href="#">  Registro de empleado</a></li>
             </ul>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="registro" >
-              <h3 class="card-title">Registro de empleado</h3>
-              <div class="card-body">
-                <form>
-                
 
-                  <div class="form-group" id="identidad">
-                    <label class="control-label">Numero de Identidad</label>
-                    <input class="input_empleado" type="text" placeholder="Introducir numero de identidad" required>
+
+       <div class="col-md-6">
+            <div class="registro">
+              <h3 class="card-title" align="center">Registro de empleado</h3>
+              <div class="card-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Numero de identidad</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" placeholder="Ingresar numero de identidad" required>
+                    </div>
                   </div>
 
-	                <div class="form-group" id="nombre">
-                    <label class="control-label">Nombre</label>
-                    <input class="input_empleado" type="text" placeholder="Introducir nombre" required>
+                   <div class="form-group">
+                    <label class="control-label col-md-3">Nombre</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" placeholder="Ingresar nombre" required>
+                    </div>
+                  </div>
+
+                   <div class="form-group">
+                    <label class="control-label col-md-3">Primer apellido</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" placeholder="Ingresar primer apellido" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Segundo apellido</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" placeholder="Ingresar segundo apellido">
+                    </div>
+
+                  </div>
+                   <div class="form-group">
+                    <label class="control-label col-md-3">Lugar de nacimiento</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" placeholder="Ingresar lugar de nacimiento">
+                    </div>
+                  </div>
+
+                   <div class="form-group">
+                    <label class="control-label col-md-3">Fecha de nacimiento</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="date" placeholder="Ingresar fecha de nacimiento">
+                    </div>
+                  </div>
+
+                   <div class="form-group">
+                    <label class="control-label col-md-3">Profesi&oacute;n</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" placeholder="Ingresar profesión">
+                    </div>
+                  </div>
+
+                   <div class="form-group">
+                    <label class="control-label col-md-3">Domicilio</label>
+                    <div class="col-md-8">
+                      <textarea class="form-control" rows="4" placeholder="Ingresar direccion de domicilio"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Tel&eacute;fono</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" placeholder="Ingresar numero de telefono">
+                    </div>
+                  </div>
+
+                   <div class="form-group">
+                    <label class="control-label col-md-3">Fecha de ingreso</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" placeholder="Ingresar fecha de ingreso">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Correo</label>
+                    <div class="col-md-8">
+                      <input class="form-control col-md-8" type="email" placeholder="Ingresar direccion de correo electrónico">
+                    </div>
                   </div>
                  
-
-                  <div class="form-group" id="nombre">
-                    <label class="control-label">Primer Apellido</label>
-                    <input class="input_empleado" type="text" placeholder="" required>
-                  </div>
-
-                  <div class="form-group" id="nombre">
-                    <label class="control-label">Segundo Apellido</label>
-                    <input class="input_empleado" type="text" placeholder="" required>
-                  </div>
-
-                  <div class="form-group" id="nombre">
-                    <label class="control-label">Lugar de Nacimiento</label>
-                    <input class="input_empleado" type="text" placeholder="" required>
-                  </div>
-
-                  <div class="form-group" id="nombre">
-                    <label class="control-label">Fecha de Nacimiento</label>
-                    <input class="input_empleado" type="date"  required>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="control-label">Email</label>
-                    <input class="input_empleado" type="email" placeholder="Enter email address">
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label">Address</label>
-                    <textarea class="input_empleado" rows="4" placeholder="Enter your address"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label">Gender</label>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" name="gender">Male
-                      </label>
-                    </div>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" name="gender">Female
-                      </label>
+                    <div class="form-group">
+                    <label class="control-label col-md-3">Nombre emergencia</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" placeholder="Ingresar nombre de persona a llamar en caso de emergencia">
                     </div>
                   </div>
+
+                    <div class="form-group">
+                    <label class="control-label col-md-3">Numero de emergencia</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" placeholder="Numero de persona a llamar en caso de emergencia">
+                    </div>
+                  </div>
+
+                   <div class="form-group">
+                    <label class="control-label col-md-3">Estado</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="date" placeholder="Ingresar estado del empleado">
+                    </div>
+                  </div>
+
+                        
+                 
                   
                   <div class="form-group">
                     
                   </div>
                 </form>
               </div>
-              <div class="card-footer">
-                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Register</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-default icon-btn" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
+              <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-default icon-btn" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
               </div>
             </div>
           </div>
