@@ -1,15 +1,17 @@
 
-<?php include('constructor.php');?>
+<?php
+include('constructor.php');
+?>
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS-->
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- Font-icon css-->
-    <!--<link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css">-->
     <link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
     <title>Admin Panel</title>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
@@ -21,14 +23,14 @@
   <body class="sidebar-mini fixed">
     <div class="wrapper">
       <!-- Navbar-->
-      <header class="main-header hidden-print"><a class="logo" href="index.html">Admin Panel</a>
+      <header class="main-header hidden-print"><a class="logo" href="index.php">Admin Panel</a>
         <nav class="navbar navbar-static-top">
           <!-- Sidebar toggle button--><a class="sidebar-toggle" href="#" data-toggle="offcanvas"></a>
           <!-- Navbar Right Menu-->
           <div class="navbar-custom-menu">
             <ul class="top-nav">
-              <!--Notification Menu-->
-              <!--<li class="dropdown notification-menu"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell-o fa-lg"></i></a>
+              <!--Notification Menu
+              <li class="dropdown notification-menu">
                 <ul class="dropdown-menu">
                   <li class="not-head">You have 4 new notifications.</li>
                   <li><a class="media" href="javascript:;"><span class="media-left media-icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
@@ -39,13 +41,14 @@
                       <div class="media-body"><span class="block">Transaction xyz complete</span><span class="text-muted block">2min ago</span></div></a></li>
                   <li class="not-footer"><a href="#">See all notifications.</a></li>
                 </ul>
-              </li>-->
+              </li>
+              -->
               <!-- User Menu-->
-              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle fa-lg"></i></a>
+              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i></a>
                 <ul class="dropdown-menu settings-menu">
-                  <!--<li><a href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>-->
-                  <li><a href="page-user.html"><i class="fa fa-user fa-lg"></i> Editar Perfil</a></li>
-                  <li><a href="page-login.php"><i class="fa fa-sign-out fa-lg"></i> Cerrar Sesi&oacute;n</a></li>
+                  <li><a href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
+                  <li><a href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+                  <li><a href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
                 </ul>
               </li>
             </ul>
@@ -56,46 +59,79 @@
       <aside class="main-sidebar hidden-print">
         <section class="sidebar">
           <div class="user-panel">
-            <div class="pull-left image"><img class="img-circle" src="images/user.png" alt="User Image"></div>
+            <div class="pull-left image"><img class="img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image"></div>
             <div class="pull-left info">
               <p>John Doe</p>
               <p class="designation">Frontend Developer</p>
             </div>
           </div>
-
           <!-- Sidebar Menu-->
           <?php
           menu();
           ?>
-      <div class="content-wrapper">
+
+                <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-home"></i> Inicio</h1>
-            <p>Pantalla de inicio de Admin Panel</p>
+            <h1><i class="fa fa-plus-square""></i>Departamentos</h1>
+            <p>Agregar nuevo departamento</p>
           </div>
           <div>
             <ul class="breadcrumb">
               <li><i class="fa fa-home fa-lg"></i></li>
-              <li><a href="#">Inicio</a></li>
+              <li>Gestiones administrativas</li>
+              <li>Departamentos</li>
+              <li><a href="#"> Agregar nuevo departamento</a></li>
             </ul>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card">
-              <h3 class="card-title">Getting Started</h3>
-              <p>Vali is a free and responsive dashboard theme built with Bootstrap, Pug.js (templating) and SASS. It's fully customizable and modular. You don't need to add the code, you will not use.</p>
-              <p>The issue with the most admin themes out there is that if you will see their source code there are a hell lot of external CSS and javascript files in there. And if you try to remove a CSS or Javascript file some things stops working.</p>
-              <p>That's why I made Vali. Which is a light weight yet expendable and good looking theme. The theme has all the features required in a dashboard theme but this features are built like plug and play module. Take a look at the <a href="http://pratikborsadiya.in/blog/vali-admin" target="_blank">documentation</a> about customizing the theme.</p>
-              <p class="mt-40 mb-20"><a class="btn btn-primary icon-btn mr-10" href="http://pratikborsadiya.in/blog/vali-admin" target="_blank"><i class="fa fa-file"></i>Docs</a><a class="btn btn-info icon-btn mr-10" href="https://github.com/pratikborsadiya/vali-admin" target="_blank"><i class="fa fa-github"></i>GitHub</a><a class="btn btn-success icon-btn" href="https://github.com/pratikborsadiya/vali-admin/archive/master.zip" target="_blank"><i class="fa fa-download"></i>Download</a></p>
+
+
+       <div class="col-md-6" wi>
+            <div class="departamento" >
+              <h3 class="card-title" align="center">Crear nuevo departamento</h3>
+              <div class="card-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Codigo de departamento</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="cod_departamento" id="cod_departamento" placeholder="Ingesar codigo para identificar departamento" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Nombre de departamento</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="n_departamento" id="n_departamento" placeholder="Ingesar nombre de departamento" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-default icon-btn" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
+              </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="card">
-              <h3 class="card-title">Compatibility with frameworks</h3>
-              <p>This theme is not built for a specific framework or technology like Angular or React etc. But due to it's modular nature it's very easy to incorporate it into any front-end or back-end framework like Angular, React or Laravel.</p>
-              <p>Go to <a href="http://pratikborsadiya.in/blog/vali-admin" target="_blank">documentation</a> for more details about integrating this theme with various frameworks.</p>
-              <p>The source code is available on GitHub. If anything is missing or weird please report it as an issue on <a href="https://github.com/pratikborsadiya/vali-admin" target="_blank">GitHub</a>. If you want to contribute to this theme pull requests are always welcome.</p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer">
+                <div class="row">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="clearix"></div>
+          <div class="col-md-12">
+            
+                </form>
+              </div>
             </div>
           </div>
         </div>
