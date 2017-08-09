@@ -1,3 +1,7 @@
+<?php
+  include('../cn/bdconexion.php');
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -56,8 +60,12 @@
           <div class="user-panel">
             <div class="pull-left image"><img class="img-circle" src="images/user.png" alt="User Image"></div>
             <div class="pull-left info">
-              <p>John Doe</p>
-              <p class="designation">Frontend Developer</p>
+              <?php
+                echo "
+                  <p>".$_SESSION['username']."</p>
+                  <p class='designation'>".$_SESSION['rank']."</p>
+                ";
+              ?>
             </div>
           </div>
 
