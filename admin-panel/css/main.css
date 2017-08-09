@@ -2016,7 +2016,7 @@ output {
 
 .form-control {
   display: block;
-  width: 50%;
+  width: 100%;
   padding: 8px 12px;
   font-size: 14px;
   font-weight: 400;
