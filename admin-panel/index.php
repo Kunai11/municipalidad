@@ -216,21 +216,7 @@
         </div>
         <div class="row">
           <div class="col-md-3">
-            <div class="widget-small primary"><i class="icon fa fa-users fa-3x"></i>
-              <div class="info">
-                <h4>Empleados</h4>
-                <?php
-                  $queryContarEmpleados=mysqli_query($db, "SELECT COUNT(*) as Cantidad FROM empleados WHERE Estado='Activo'") or die(mysqli_error);
-                  $rowContarEmpleados = mysqli_fetch_array($queryContarEmpleados);
-                  echo '
-                    <p><b>'.$rowContarEmpleados['Cantidad'].'</b></p>
-                  ';
-                ?>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="widget-small info"><i class="icon fa fa-suitcase fa-3x"></i>
+            <div class="widget-small primary"><i class="icon fa fa-suitcase fa-3x"></i>
               <div class="info">
                 <h4>Depart.</h4>
                 <?php
@@ -244,7 +230,7 @@
             </div>
           </div>
           <div class="col-md-3">
-            <div class="widget-small warning"><i class="icon fa fa-id-card-o fa-3x"></i>
+            <div class="widget-small info"><i class="icon fa fa-id-card-o fa-3x"></i>
               <div class="info">
                 <h4>Cargos</h4>
                 <?php
@@ -258,7 +244,21 @@
             </div>
           </div>
           <div class="col-md-3">
-            <div class="widget-small danger"><i class="icon fa fa-star fa-3x"></i>
+            <div class="widget-small warning"><i class="icon fa fa-users fa-3x"></i>
+              <div class="info">
+                <h4>Empleados</h4>
+                <?php
+                  $queryContarEmpleados=mysqli_query($db, "SELECT COUNT(*) as Cantidad FROM empleados WHERE Estado='Activo'") or die(mysqli_error);
+                  $rowContarEmpleados = mysqli_fetch_array($queryContarEmpleados);
+                  echo '
+                    <p><b>'.$rowContarEmpleados['Cantidad'].'</b></p>
+                  ';
+                ?>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="widget-small success"><i class="icon fa fa-user-circle fa-3x"></i>
               <div class="info">
                 <h4>Usuarios</h4>
                 <?php
