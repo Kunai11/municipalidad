@@ -1,7 +1,7 @@
 <?php
     session_start();
     include('../cn/bdconexion.php');
-    if (isset($_SESSION['username'])) {
+    if (isset($_SESSION['username'])&&($_SESSION['title'])) {
         session_destroy();
         header('Location: page-login.php');
     }else {
