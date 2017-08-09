@@ -144,6 +144,12 @@
                 </ul>
               </ul>
             </li>
+            <li class="treeview"><a href="#"><i class="fa fa-lock"></i><span>Sesi&oacute;n</span><i class="fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="page-user.php"><i class="fa fa-user"></i> Editar Perfil</a></li>
+                <li><a href="page-login.php"><i class="fa fa-exit"></i> Cerrar Sesi&oacute;n</a></li>
+              </ul>
+            </li>
             <!-- Codigo Innecesario
             <li><a href="charts.html"><i class="fa fa-pie-chart"></i><span>Charts</span></a></li>
             <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Forms</span><i class="fa fa-angle-right"></i></a>
