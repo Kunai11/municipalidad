@@ -169,98 +169,98 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Numero de identidad</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" placeholder="Ingresar numero de identidad" required>
+                      <input class="form-control" type="text" name="identidad" id="identidad" placeholder="Ingresar numero de identidad" required>
                     </div>
                   </div>
 
                    <div class="form-group">
                     <label class="control-label col-md-3">Nombre</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" placeholder="Ingresar nombre" required>
+                      <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingresar nombre" required>
                     </div>
                   </div>
 
                    <div class="form-group">
                     <label class="control-label col-md-3">Primer apellido</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" placeholder="Ingresar primer apellido" required>
+                      <input class="form-control" type="text" name="p_apellido" id="p_apellido" placeholder="Ingresar primer apellido" required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Segundo apellido</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" placeholder="Ingresar segundo apellido">
+                      <input class="form-control" type="text" name="s_apellido" id="s_apellido" placeholder="Ingresar segundo apellido">
                     </div>
 
                   </div>
                    <div class="form-group">
                     <label class="control-label col-md-3">Lugar de nacimiento</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" placeholder="Ingresar lugar de nacimiento">
+                      <input class="form-control" type="text" name="l_nacimiento" id="l_nacimiento" placeholder="Ingresar lugar de nacimiento">
                     </div>
                   </div>
 
                    <div class="form-group">
                     <label class="control-label col-md-3">Fecha de nacimiento</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="date" placeholder="Ingresar fecha de nacimiento">
+                      <input class="form-control" type="date" name="f_nacimiento" id="f_nacimiento" placeholder="Ingresar fecha de nacimiento">
                     </div>
                   </div>
 
                    <div class="form-group">
                     <label class="control-label col-md-3">Profesi&oacute;n</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" placeholder="Ingresar profesión">
+                      <input class="form-control" type="text" name="profesion" id="profesion" placeholder="Ingresar profesión">
                     </div>
                   </div>
 
                    <div class="form-group">
                     <label class="control-label col-md-3">Domicilio</label>
                     <div class="col-md-8">
-                      <textarea class="form-control" rows="4" placeholder="Ingresar direccion de domicilio"></textarea>
+                      <textarea class="form-control" rows="4" name="domicilio" id="domicilio" placeholder="Ingresar direccion de domicilio"></textarea>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Tel&eacute;fono</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" placeholder="Ingresar numero de telefono">
+                      <input class="form-control" type="text" name="telefono" id="telefono" placeholder="Ingresar numero de telefono">
                     </div>
                   </div>
 
                    <div class="form-group">
                     <label class="control-label col-md-3">Fecha de ingreso</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" placeholder="Ingresar fecha de ingreso">
+                      <input class="form-control" type="text" name="f_ingreso" id="f_ingreso" placeholder="Ingresar fecha de ingreso">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Correo</label>
                     <div class="col-md-8">
-                      <input class="form-control col-md-8" type="email" placeholder="Ingresar direccion de correo electrónico">
+                      <input class="form-control col-md-8" type="email" name="correo" id="correo" placeholder="Ingresar direccion de correo electrónico">
                     </div>
                   </div>
                  
                     <div class="form-group">
                     <label class="control-label col-md-3">Nombre emergencia</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" placeholder="Ingresar nombre de persona a llamar en caso de emergencia">
+                      <input class="form-control" type="text" name="nombre_e" id="nombre_e" placeholder="Ingresar nombre de persona a llamar en caso de emergencia">
                     </div>
                   </div>
 
                     <div class="form-group">
                     <label class="control-label col-md-3">Numero de emergencia</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" placeholder="Numero de persona a llamar en caso de emergencia">
+                      <input class="form-control" type="text" name="numero_e" id="numero_e" placeholder="Numero de persona a llamar en caso de emergencia">
                     </div>
                   </div>
 
                    <div class="form-group">
                     <label class="control-label col-md-3">Estado</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="date" placeholder="Ingresar estado del empleado">
+                      <input class="form-control" type="date" name="estado" id="estado" placeholder="Ingresar estado del empleado">
                     </div>
                   </div>
 
