@@ -133,15 +133,16 @@
               </ul>
             </li>
 
-             <li class="treeview"><a href="#"><i class="fa fa-gears"></i><span>Configuraci&oacute;n</span><i class="fa fa-angle-right"></i></a>
+            <li class="treeview"><a href="#"><i class="fa fa-gears"></i><span>Configuraci&oacute;n</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
-                 <li class="treeview"><a href="#"><i class="fa fa-wpforms"></i><span>Planillas predefinidas</span><i class="fa fa-angle-right"></i></a>
-                    <ul class="treeview-menu">
-                <li><a href=""><i class="fa fa-plus-square"></i> Crear nueva</a></li>
-                <li><a href=""><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
-                <li><a href=""><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
+                <li class="treeview"><a href="#"><i class="fa fa-wpforms"></i><span>Planillas predefinidas</span><i class="fa fa-angle-right"></i></a>
+                <ul class="treeview-menu">
+                  <li><a href=""><i class="fa fa-plus-square"></i> Crear nueva</a></li>
+                  <li><a href=""><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
+                  <li><a href=""><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
+                </ul>
+                <li><a href="planillas_listado_completo.php"><i class="fa fa-wpforms"></i> Ver Listado Completo</a></li>
               </ul>
-            </ul>
             </li>
             <!-- Codigo Innecesario
             <li><a href="charts.html"><i class="fa fa-pie-chart"></i><span>Charts</span></a></li>
