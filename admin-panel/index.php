@@ -47,7 +47,7 @@
               <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle fa-lg"></i></a>
                 <ul class="dropdown-menu settings-menu">
                   <!--<li><a href="page-user.php"><i class="fa fa-cog fa-lg"></i> Settings</a></li>-->
-                  <li><a href="page-user.php"><i class="fa fa-user fa-lg"></i> Editar Perfil</a></li>
+                  <li><a href="page-user.php"><i class="fa fa-user fa-lg"></i> Perfil</a></li>
                   <li><a href="#" class="alert" style="margin:0px;"><i class="fa fa-sign-out fa-lg"></i> Cerrar Sesi&oacute;n</a></li>
                 </ul>
               </li>
@@ -155,7 +155,7 @@
             </li>
             <li class="treeview"><a href="#"><i class="fa fa-lock"></i><span>Sesi&oacute;n</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="page-user.php"><i class="fa fa-user"></i> Editar Perfil</a></li>
+                <li><a href="page-user.php"><i class="fa fa-user"></i> Perfil</a></li>
                 <li><a class="alert" href="#" style="margin:0px;"><i class="fa fa-sign-out"></i> Cerrar Sesi&oacute;n</a></li>
               </ul>
             </li>
