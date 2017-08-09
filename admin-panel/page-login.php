@@ -28,26 +28,24 @@
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>INICIAR SESI&Oacute;N</h3>
           <div class="form-group">
             <label class="control-label">USUARIO</label>
-            <input class="form-control" type="text" placeholder="Usuario" autofocus>
+            <input class="form-control" id="usuario" name="usuario" type="text" placeholder="Usuario" autofocus>
           </div>
           <div class="form-group">
             <label class="control-label">CONTRASE&Ntilde;A</label>
-            <input class="form-control" type="password" placeholder="Contrase&ntilde;a">
+            <input class="form-control" id="pass" name="pass" type="password" placeholder="Contrase&ntilde;a">
           </div>
           <div class="form-group">
-            <!--
-            <div class="utility">
+            <div class="utility" id="tip" style="display:none;">
+              <!--
               <div class="animated-checkbox">
                 <label class="semibold-text">
                   <input type="checkbox"><span class="label-text">Mantener conectado</span>
                 </label>
-              </div>
-              <p class="semibold-text mb-0"><a data-toggle="flip">Olvid&eacute; la contrase&ntilde;a</a></p>
+              </div>-->
             </div>
-            -->
           </div>
           <div class="form-group btn-container">
-            <button class="btn btn-primary btn-block" style="line-height:30px;margin-top:35px;"><i class="fa fa-sign-in fa-lg fa-fw"></i>INGRESAR</button>
+            <button class="btn btn-primary btn-block" id="ingresar" style="line-height:30px;margin-top:35px;"><i class="fa fa-sign-in fa-lg fa-fw"></i>INGRESAR</button>
           </div>
         </form>
         <!--
@@ -72,4 +70,5 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/plugins/pace.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/tips/login.js"></script>
 </html>

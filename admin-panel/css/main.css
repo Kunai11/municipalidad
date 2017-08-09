@@ -15239,6 +15239,12 @@ be a descendant of the grid when it is being dragged.
   text-align: center;
 }
 
+.form-group .utility p.login-tip {
+  margin-top: 0;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
 .login-content .login-box label {
   color: #666;
 }

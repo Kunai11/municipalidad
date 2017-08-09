@@ -43,7 +43,7 @@
                 <ul class="dropdown-menu settings-menu">
                   <!--<li><a href="page-user.php"><i class="fa fa-cog fa-lg"></i> Settings</a></li>-->
                   <li><a href="page-user.php"><i class="fa fa-user fa-lg"></i> Editar Perfil</a></li>
-                  <li><a href="page-login.php"><i class="fa fa-sign-out fa-lg"></i> Cerrar Sesi&oacute;n</a></li>
+                  <li><a href="logout.php"><i class="fa fa-sign-out fa-lg"></i> Cerrar Sesi&oacute;n</a></li>
                 </ul>
               </li>
             </ul>
