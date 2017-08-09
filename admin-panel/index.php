@@ -98,12 +98,15 @@
               </ul>
             </li>
 
-               <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Opciones Financieros</span><i class="fa fa-angle-right"></i></a>
+             <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Opciones financieras</span><i class="fa fa-angle-right"></i></a>
+
               <ul class="treeview-menu">
-                <li><a href=""><i class="fa fa-circle-o"></i> Pagos</a></li>
+                 <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Pagos</span><i class="fa fa-angle-right"></i></a>
+                    <ul class="treeview-menu">
                 <li><a href=""><i class="fa fa-circle-o"></i> Nuevo pago</a></li>
                 <li><a href=""><i class="fa fa-circle-o"></i> Modificar pago</a></li>
               </ul>
+            </ul>
             </li>
 
                <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Registro</span><i class="fa fa-angle-right"></i></a>
