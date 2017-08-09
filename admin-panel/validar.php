@@ -14,7 +14,7 @@
             </script>
             <?php
         } else {
-            $queryUsuario=mysqli_query($db, "SELECT * FROM usuarios WHERE Username='$usuario' AND Pass='$pass'") or die(mysqli_error);
+            $queryUsuario=mysqli_query($db, "SELECT * FROM usuarios WHERE Username='$usuario' AND Pass='$pass' AND Estado='Activo'") or die(mysqli_error);
             if ($rowQueryUsuario = mysqli_fetch_array($queryUsuario)) {
                 $Id_Empleado = $rowQueryUsuario['Id_Empleado'] ;
                 $queryDatosEmp=mysqli_query($db, "SELECT Dep.*, Car.*, Emp.* FROM departamentos Dep INNER JOIN(cargos Car INNER JOIN(empleados Emp INNER JOIN asignaciones Asig ON Emp.Id_Empleado=Asig.Id_Empleado) ON Car.Cod_Cargo=Asig.Cod_Cargo) ON Dep.Cod_Dep=Asig.Cod_Dep WHERE Emp.Id_Empleado = '$Id_Empleado'") or die(mysqli_error);
