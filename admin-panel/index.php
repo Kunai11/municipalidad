@@ -98,7 +98,26 @@
               </ul>
             </li>
 
+ <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Busqueda</span><i class="fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href=""><i class="fa fa-circle-o"></i> Buscar departamento</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Buscar Cargo</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Buscar empleado</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Buscar usuario</a></li>
+              </ul>
+            </li>
 
+             <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Configuraci&oacute;n</span><i class="fa fa-angle-right"></i></a>
+
+              <ul class="treeview-menu">
+                 <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Planilla predeterminada</span><i class="fa fa-angle-right"></i></a>
+                    <ul class="treeview-menu">
+                <li><a href=""><i class="fa fa-circle-o"></i> Crear planilla</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Modificar planilla</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Eliminar planilla</a></li>
+              </ul>
+            </ul>
+            </li>
 
             <li><a href="charts.html"><i class="fa fa-pie-chart"></i><span>Charts</span></a></li>
             <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Forms</span><i class="fa fa-angle-right"></i></a>
