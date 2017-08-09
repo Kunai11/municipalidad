@@ -43,7 +43,7 @@
                 <ul class="dropdown-menu settings-menu">
                   <!--<li><a href="page-user.php"><i class="fa fa-cog fa-lg"></i> Settings</a></li>-->
                   <li><a href="page-user.php"><i class="fa fa-user fa-lg"></i> Editar Perfil</a></li>
-                  <li><a href="logout.php"><i class="fa fa-sign-out fa-lg"></i> Cerrar Sesi&oacute;n</a></li>
+                  <li><a href="#" class="alert" style="margin:0px;"><i class="fa fa-sign-out fa-lg"></i> Cerrar Sesi&oacute;n</a></li>
                 </ul>
               </li>
             </ul>
@@ -215,5 +215,29 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      $('.alert').click(function(){
+      	swal({
+      		title: "Esta seguro?",
+      		text: "Esta opcion cerrara la sesion actual",
+      		type: "warning",
+      		showCancelButton: true,
+      		confirmButtonText: "Si, salir",
+      		cancelButtonText: "No, mantener conectado",
+      		closeOnConfirm: true,
+      		closeOnCancel: true
+      	}, function(isConfirm) {
+      		if (isConfirm) {
+            $(location).attr('href', 'logout.php');
+            //$('#alert').html.attr('href', 'logout.php');
+      			//swal("Deleted!", "Your imaginary file has been deleted.", "success");
+      		} else {
+            //return false;
+      			//swal("Cancelled", "Your imaginary file is safe :)", "error");
+      		}
+      	});
+      });
+    </script>
   </body>
 </html>

@@ -48,7 +48,7 @@
                 <ul class="dropdown-menu settings-menu">
                   <!--<li><a href="page-user.php"><i class="fa fa-cog fa-lg"></i> Settings</a></li>-->
                   <li><a href="page-user.php"><i class="fa fa-user fa-lg"></i> Editar Perfil</a></li>
-                  <li><a href="#" id="alert"><i class="fa fa-sign-out fa-lg"></i> Cerrar Sesi&oacute;n</a></li>
+                  <li><a href="#" class="alert" style="margin:0px;"><i class="fa fa-sign-out fa-lg"></i> Cerrar Sesi&oacute;n</a></li>
                 </ul>
               </li>
             </ul>
@@ -156,7 +156,7 @@
             <li class="treeview"><a href="#"><i class="fa fa-lock"></i><span>Sesi&oacute;n</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="page-user.php"><i class="fa fa-user"></i> Editar Perfil</a></li>
-                <li><a href="page-login.php"><i class="fa fa-exit"></i> Cerrar Sesi&oacute;n</a></li>
+                <li><a class="alert" href="#" style="margin:0px;"><i class="fa fa-sign-out"></i> Cerrar Sesi&oacute;n</a></li>
               </ul>
             </li>
             <!-- Codigo Innecesario
@@ -301,7 +301,7 @@
     <script src="js/main.js"></script>
     <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
     <script type="text/javascript">
-      $('#alert').click(function(){
+      $('.alert').click(function(){
       	swal({
       		title: "Esta seguro?",
       		text: "Esta opcion cerrara la sesion actual",
@@ -309,14 +309,15 @@
       		showCancelButton: true,
       		confirmButtonText: "Si, salir",
       		cancelButtonText: "No, mantener conectado",
-      		closeOnConfirm: false,
-      		closeOnCancel: false
+      		closeOnConfirm: true,
+      		closeOnCancel: true
       	}, function(isConfirm) {
       		if (isConfirm) {
+            $(location).attr('href', 'logout.php');
             //$('#alert').html.attr('href', 'logout.php');
       			//swal("Deleted!", "Your imaginary file has been deleted.", "success");
       		} else {
-            return false;
+            //return false;
       			//swal("Cancelled", "Your imaginary file is safe :)", "error");
       		}
       	});
