@@ -1,3 +1,6 @@
+<?php
+include('constructor.php');
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -26,7 +29,7 @@
           <div class="navbar-custom-menu">
             <ul class="top-nav">
               <!--Notification Menu-->
-              <li class="dropdown notification-menu"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell-o fa-lg"></i></a>
+              <li class="dropdown notification-menu">
                 <ul class="dropdown-menu">
                   <li class="not-head">You have 4 new notifications.</li>
                   <li><a class="media" href="javascript:;"><span class="media-left media-icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
@@ -61,6 +64,7 @@
             </div>
           </div>
           <!-- Sidebar Menu-->
+<<<<<<< HEAD
           <ul class="sidebar-menu">
             <li class="active"><a href="index.php"><i class="fa fa-dashboard"></i><span>Inicio</span></a></li>
             <li class="treeview"><a href="#"><i class="fa fa-laptop"></i><span>UI Elements</span><i class="fa fa-angle-right"></i></a>
@@ -112,88 +116,143 @@
           </ul>
         </section>
       </aside>
+=======
+         <?php
+            menu();
+            ?>
+
+
+>>>>>>> 3c9a699a94c71a569e2e0675070c4ee48131faec
       <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-edit"></i> Form Samples</h1>
-            <p>Sample forms</p>
+            <h1><i class="fa fa-group"></i>Empleados</h1>
+            <p>Registro de empleados</p>
           </div>
           <div>
             <ul class="breadcrumb">
               <li><i class="fa fa-home fa-lg"></i></li>
-              <li>Forms</li>
-              <li><a href="#">Sample Forms</a></li>
+              <li>Gestiones administrativas</li>
+              <li>Empleados</li>
+              <li><a href="#">  Registro de empleado</a></li>
             </ul>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="registro" >
-              <h3 class="card-title">Registro de empleado</h3>
-              <div class="card-body">
-                <form>
-                
 
-                  <div class="form-group" id="identidad">
-                    <label class="control-label">Numero de Identidad</label>
-                    <input class="input_empleado" type="text" placeholder="Introducir numero de identidad" required>
+
+       <div class="col-md-6">
+            <div class="registro">
+              <h3 class="card-title" align="center">Registro de empleado</h3>
+              <div class="card-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Numero de identidad</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="identidad" id="identidad" placeholder="Ingresar numero de identidad" required>
+                    </div>
                   </div>
 
-	                <div class="form-group" id="nombre">
-                    <label class="control-label">Nombre</label>
-                    <input class="input_empleado" type="text" placeholder="Introducir nombre" required>
+                   <div class="form-group">
+                    <label class="control-label col-md-3">Nombre</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingresar nombre" required>
+                    </div>
+                  </div>
+
+                   <div class="form-group">
+                    <label class="control-label col-md-3">Primer apellido</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="p_apellido" id="p_apellido" placeholder="Ingresar primer apellido" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Segundo apellido</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="s_apellido" id="s_apellido" placeholder="Ingresar segundo apellido">
+                    </div>
+
+                  </div>
+                   <div class="form-group">
+                    <label class="control-label col-md-3">Lugar de nacimiento</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="l_nacimiento" id="l_nacimiento" placeholder="Ingresar lugar de nacimiento">
+                    </div>
+                  </div>
+
+                   <div class="form-group">
+                    <label class="control-label col-md-3">Fecha de nacimiento</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="date" name="f_nacimiento" id="f_nacimiento" placeholder="Ingresar fecha de nacimiento">
+                    </div>
+                  </div>
+
+                   <div class="form-group">
+                    <label class="control-label col-md-3">Profesi&oacute;n</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="profesion" id="profesion" placeholder="Ingresar profesión">
+                    </div>
+                  </div>
+
+                   <div class="form-group">
+                    <label class="control-label col-md-3">Domicilio</label>
+                    <div class="col-md-8">
+                      <textarea class="form-control" rows="4" name="domicilio" id="domicilio" placeholder="Ingresar direccion de domicilio"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Tel&eacute;fono</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="telefono" id="telefono" placeholder="Ingresar numero de telefono">
+                    </div>
+                  </div>
+
+                   <div class="form-group">
+                    <label class="control-label col-md-3">Fecha de ingreso</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="f_ingreso" id="f_ingreso" placeholder="Ingresar fecha de ingreso">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Correo</label>
+                    <div class="col-md-8">
+                      <input class="form-control col-md-8" type="email" name="correo" id="correo" placeholder="Ingresar direccion de correo electrónico">
+                    </div>
                   </div>
                  
-
-                  <div class="form-group" id="nombre">
-                    <label class="control-label">Primer Apellido</label>
-                    <input class="input_empleado" type="text" placeholder="" required>
-                  </div>
-
-                  <div class="form-group" id="nombre">
-                    <label class="control-label">Segundo Apellido</label>
-                    <input class="input_empleado" type="text" placeholder="" required>
-                  </div>
-
-                  <div class="form-group" id="nombre">
-                    <label class="control-label">Lugar de Nacimiento</label>
-                    <input class="input_empleado" type="text" placeholder="" required>
-                  </div>
-
-                  <div class="form-group" id="nombre">
-                    <label class="control-label">Fecha de Nacimiento</label>
-                    <input class="input_empleado" type="date"  required>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="control-label">Email</label>
-                    <input class="input_empleado" type="email" placeholder="Enter email address">
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label">Address</label>
-                    <textarea class="input_empleado" rows="4" placeholder="Enter your address"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label">Gender</label>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" name="gender">Male
-                      </label>
-                    </div>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" name="gender">Female
-                      </label>
+                    <div class="form-group">
+                    <label class="control-label col-md-3">Nombre emergencia</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="nombre_e" id="nombre_e" placeholder="Ingresar nombre de persona a llamar en caso de emergencia">
                     </div>
                   </div>
+
+                    <div class="form-group">
+                    <label class="control-label col-md-3">Numero de emergencia</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="numero_e" id="numero_e" placeholder="Numero de persona a llamar en caso de emergencia">
+                    </div>
+                  </div>
+
+                   <div class="form-group">
+                    <label class="control-label col-md-3">Estado</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="date" name="estado" id="estado" placeholder="Ingresar estado del empleado">
+                    </div>
+                  </div>
+
+                        
+                 
                   
                   <div class="form-group">
                     
                   </div>
                 </form>
               </div>
-              <div class="card-footer">
-                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Register</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-default icon-btn" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
+              <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-default icon-btn" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
               </div>
             </div>
           </div>
