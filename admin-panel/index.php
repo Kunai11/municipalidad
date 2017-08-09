@@ -92,9 +92,32 @@
 
                <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Usuario</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href=""><i class="fa fa-circle-o"></i> Crear usuario</a></li>
-                <li><a href=""><i class="fa fa-circle-o"></i> Modificar usuario</a></li>
-                <li><a href=""><i class="fa fa-circle-o"></i> Eliminar usuario</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Crear Usuario</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Modificar Usuario</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Eliminar Usuario</a></li>
+              </ul>
+            </li>
+
+               <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Opciones Financieros</span><i class="fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href=""><i class="fa fa-circle-o"></i> Pagos</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Nuevo pago</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Modificar pago</a></li>
+              </ul>
+            </li>
+
+               <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Registro</span><i class="fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href=""><i class="fa fa-circle-o"></i> Historial</a></li>
+              </ul>
+            </li>
+
+               <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Reportes</span><i class="fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href=""><i class="fa fa-circle-o"></i> Listado Departamentos</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Listado de Cargos</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Listado de Empleados</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Listado de Usuarios</a></li>
               </ul>
             </li>
 
