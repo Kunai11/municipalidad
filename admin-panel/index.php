@@ -1,6 +1,7 @@
 <?php
   include('../cn/bdconexion.php');
   session_start();
+  if (isset($_SESSION['username'])&&($_SESSION['rank'])) {      
 ?>
 <!DOCTYPE html>
 <html>
@@ -323,3 +324,8 @@
     </script>
   </body>
 </html>
+<?php
+    }else {
+        header('location: page_denegado.php');
+    }
+?>
