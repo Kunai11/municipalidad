@@ -41,8 +41,8 @@
               <!-- User Menu-->
               <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle fa-lg"></i></a>
                 <ul class="dropdown-menu settings-menu">
-                  <!--<li><a href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>-->
-                  <li><a href="page-user.html"><i class="fa fa-user fa-lg"></i> Editar Perfil</a></li>
+                  <!--<li><a href="page-user.php"><i class="fa fa-cog fa-lg"></i> Settings</a></li>-->
+                  <li><a href="page-user.php"><i class="fa fa-user fa-lg"></i> Editar Perfil</a></li>
                   <li><a href="page-login.php"><i class="fa fa-sign-out fa-lg"></i> Cerrar Sesi&oacute;n</a></li>
                 </ul>
               </li>
@@ -165,7 +165,7 @@
                 <li><a href="blank-page.php"><i class="fa fa-circle-o"></i> Blank Page</a></li>
                 <li><a href="page-login.php"><i class="fa fa-circle-o"></i> Login Page</a></li>
                 <li><a href="page-lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen Page</a></li>
-                <li><a href="page-user.html"><i class="fa fa-circle-o"></i> User Page</a></li>
+                <li><a href="page-user.php"><i class="fa fa-circle-o"></i> User Page</a></li>
                 <li><a href="page-invoice.html"><i class="fa fa-circle-o"></i> Invoice Page</a></li>
                 <li><a href="page-calendar.html"><i class="fa fa-circle-o"></i> Calendar Page</a></li>
                 <li><a href="page-mailbox.html"><i class="fa fa-circle-o"></i> Mailbox</a></li>
