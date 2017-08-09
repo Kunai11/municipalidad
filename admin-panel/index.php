@@ -215,6 +215,64 @@
           </div>
         </div>
         <div class="row">
+          <div class="col-md-3">
+            <div class="widget-small primary"><i class="icon fa fa-users fa-3x"></i>
+              <div class="info">
+                <h4>Empleados</h4>
+                <?php
+                  $queryContarEmpleados=mysqli_query($db, "SELECT COUNT(*) as Cantidad FROM empleados WHERE Estado='Activo'") or die(mysqli_error);
+                  $rowContarEmpleados = mysqli_fetch_array($queryContarEmpleados);
+                  echo '
+                    <p><b>'.$rowContarEmpleados['Cantidad'].'</b></p>
+                  ';
+                ?>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="widget-small info"><i class="icon fa fa-suitcase fa-3x"></i>
+              <div class="info">
+                <h4>Depart.</h4>
+                <?php
+                  $queryContarDepartamentos=mysqli_query($db, "SELECT COUNT(*) as Cantidad FROM departamentos") or die(mysqli_error);
+                  $rowContarDepartamentos = mysqli_fetch_array($queryContarDepartamentos);
+                  echo '
+                    <p><b>'.$rowContarDepartamentos['Cantidad'].'</b></p>
+                  ';
+                ?>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="widget-small warning"><i class="icon fa fa-id-card-o fa-3x"></i>
+              <div class="info">
+                <h4>Cargos</h4>
+                <?php
+                  $queryContarCargos=mysqli_query($db, "SELECT COUNT(*) as Cantidad FROM cargos") or die(mysqli_error);
+                  $rowContarCargos = mysqli_fetch_array($queryContarCargos);
+                  echo '
+                    <p><b>'.$rowContarCargos['Cantidad'].'</b></p>
+                  ';
+                ?>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="widget-small danger"><i class="icon fa fa-star fa-3x"></i>
+              <div class="info">
+                <h4>Usuarios</h4>
+                <?php
+                  $queryContarUsuarios=mysqli_query($db, "SELECT COUNT(*) as Cantidad FROM usuarios WHERE Estado='Activo'") or die(mysqli_error);
+                  $rowContarUsuarios = mysqli_fetch_array($queryContarUsuarios);
+                  echo '
+                    <p><b>'.$rowContarUsuarios['Cantidad'].'</b></p>
+                  ';
+                ?>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-md-6">
             <div class="card">
               <h3 class="card-title">Getting Started</h3>
