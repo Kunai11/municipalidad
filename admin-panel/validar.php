@@ -24,7 +24,7 @@
                     $_SESSION['pass'] = $rowQueryUsuario["Pass"];
                     $_SESSION['type'] = $rowQueryUsuario["Tipo"];
                     $_SESSION['status'] = $rowQueryUsuario["Estado"];
-                    $_SESSION['username'] = $rowQueryDatosEmp["Nombres"] . " " . $rowQueryDatosEmp["Apellido1"];
+                    #$_SESSION['username'] = $rowQueryDatosEmp["Nombres"] . " " . $rowQueryDatosEmp["Apellido1"];
                     $_SESSION['rank'] = $rowQueryDatosEmp["Nom_Cargo"] . " de " . $rowQueryDatosEmp["Nom_Dep"];
                     echo '<p class="semibold-text mb-0" style="color:green;text-align:center;">Acceso concedido</p>';
                     ?>
