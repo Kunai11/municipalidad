@@ -17,8 +17,8 @@ function menu(){
               <li class="treeview"><a href="#"><i class="fa fa-suitcase"></i><span>Departamentos</span><i class="fa fa-angle-right"></i></a>
                 <ul class="treeview-menu">
                   <li><a href="agregar_departamento.php"><i class="fa fa-plus-square"></i> Agregar nuevo</a></li>
-                  <li><a href=""><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
-                  <li><a href=""><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
+                  <li><a href="modificar_departamento.php"><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
+                  <li><a href="eliminar_departamento.php"><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
                 </ul>
               </li>
 
