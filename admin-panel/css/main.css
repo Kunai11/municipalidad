@@ -15089,6 +15089,20 @@ be a descendant of the grid when it is being dragged.
   color: #fff;
 }
 
+.widget-small.fashion {
+  background-color: #a569bd;
+}
+
+.widget-small.fashion.coloured-icon {
+  background-color: #fff;
+  color: #2a2a2a;
+}
+
+.widget-small.fashion.coloured-icon .icon {
+  background-color: #a569bd;
+  color: #fff;
+}
+
 .messanger {
   display: -webkit-box;
   display: -ms-flexbox;
