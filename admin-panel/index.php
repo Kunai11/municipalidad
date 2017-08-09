@@ -72,8 +72,7 @@
                 <li><a href="agregar_empleado.php"><i class="fa fa-circle-o"></i> Agregar nuevo empleado</a></li>
                 <li><a href="http://fontawesome.io/icons/" target="_blank"><i class="fa fa-circle-o"></i> Modificar datos de empleado</a></li>
                 <li><a href="ui-cards.html"><i class="fa fa-circle-o"></i> Eliminar datos de empleado</a></li>
-                <li><a href="widgets.html"><i class="fa fa-circle-o"></i> Mostrar lista de empleados</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Consultar hoja de vida</a></li>
+                
               </ul>
             </li>
                
@@ -82,7 +81,7 @@
                 <li><a href=""><i class="fa fa-circle-o"></i> Agregar departamento</a></li>
                 <li><a href=""><i class="fa fa-circle-o"></i> Modificar departamento</a></li>
                 <li><a href=""><i class="fa fa-circle-o"></i> Eliminar deparatamento</a></li>
-                <li><a href=""><i class="fa fa-circle-o"></i> Mostrar departamentos</a></li>
+               
               </ul>
             </li>
 
