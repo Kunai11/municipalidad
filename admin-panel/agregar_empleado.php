@@ -239,7 +239,7 @@ include('constructor.php');
                    <div class="form-group">
                     <label class="control-label col-md-3">Estado</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="date" name="estado" id="estado" placeholder="Ingresar estado del empleado">
+                      <input class="form-control" type="text" name="estado" id="estado" placeholder="Ingresar estado del empleado">
                     </div>
                   </div>
 

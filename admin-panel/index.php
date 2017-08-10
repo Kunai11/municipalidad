@@ -209,9 +209,7 @@
         </section>
       </aside>
 =======
-          <?php
-          menu();
-          ?>
+          
 >>>>>>> 3c9a699a94c71a569e2e0675070c4ee48131faec
       <div class="content-wrapper">
         <div class="page-title">
