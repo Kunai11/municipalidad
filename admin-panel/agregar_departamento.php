@@ -73,7 +73,7 @@ include('constructor.php');
                 <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-plus-square""></i>Departamentos</h1>
+            <h1><i class="fa fa-plus-square"></i>Departamentos</h1>
             <p>Agregar nuevo departamento</p>
           </div>
           <div>
@@ -85,7 +85,6 @@ include('constructor.php');
             </ul>
           </div>
         </div>
-
 
        <div class="col-md-6" wi>
             <div class="departamento" >
