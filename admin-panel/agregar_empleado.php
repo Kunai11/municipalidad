@@ -65,39 +65,40 @@
       <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-group"></i>Empleados</h1>
-            <p>Registro de empleados</p>
+            <h1><i class="fa fa-plus-square"></i> Agregar Nuevo</h1>
+            <p>Agregar un nuevo empleado al registro</p>
           </div>
           <div>
             <ul class="breadcrumb">
               <li><i class="fa fa-institution fa-lg"></i></li>
-              <li>Opciones Administrativas</li>
               <li>Empleados</li>
-              <li><a href="#">  Registro de empleado</a></li>
+              <li><a href="#"> Agregar Nuevo</a></li>
             </ul>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-9">
-            <div class="registro">
-              <h3 class="card-title" align="center">Registro de empleado</h3>
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-title">
+                <h3 class="card-title" align="center">Formulario de registro</h3>
+              </div>
               <div class="card-body">
                 <form class="form-horizontal">
                   <div class="form-group">
-                    <label class="control-label col-md-3">Numero de identidad</label>
+                    <label class="control-label col-md-3">Numero de Identidad</label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="identidad" id="identidad" placeholder="Ingresar numero de identidad" required>
                     </div>
                   </div>
 
-                   <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Nombre</label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingresar nombre" required>
                     </div>
                   </div>
 
-                   <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Primer apellido</label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="p_apellido" id="p_apellido" placeholder="Ingresar primer apellido" required>
@@ -109,30 +110,30 @@
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="s_apellido" id="s_apellido" placeholder="Ingresar segundo apellido">
                     </div>
-
                   </div>
-                   <div class="form-group">
+
+                  <div class="form-group">
                     <label class="control-label col-md-3">Lugar de nacimiento</label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="l_nacimiento" id="l_nacimiento" placeholder="Ingresar lugar de nacimiento">
                     </div>
                   </div>
 
-                   <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Fecha de nacimiento</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="date" name="f_nacimiento" id="f_nacimiento" placeholder="Ingresar fecha de nacimiento">
+                      <input class="form-control demoDate" type="text" name="f_nacimiento" id="f_nacimiento" placeholder="Seleccionar fecha">
                     </div>
                   </div>
 
-                   <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Profesi&oacute;n</label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="profesion" id="profesion" placeholder="Ingresar profesión">
                     </div>
                   </div>
 
-                   <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Domicilio</label>
                     <div class="col-md-8">
                       <textarea class="form-control" rows="4" name="domicilio" id="domicilio" placeholder="Ingresar direccion de domicilio"></textarea>
@@ -146,73 +147,50 @@
                     </div>
                   </div>
 
-                   <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Fecha de ingreso</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="f_ingreso" id="f_ingreso" placeholder="Ingresar fecha de ingreso">
+                      <input class="form-control demoDate" type="text" name="f_ingreso" id="f_ingreso" placeholder="Seleccionar fecha">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Correo</label>
                     <div class="col-md-8">
-                      <input class="form-control col-md-8" type="email" name="correo" id="correo" placeholder="Ingresar direccion de correo electrónico">
+                      <input class="form-control col-md-8" type="email" name="correo" id="correo" placeholder="Ingresar direccion de correo electrónico" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
                     </div>
                   </div>
-                 
-                    <div class="form-group">
+                  
+                  <div class="form-group">
                     <label class="control-label col-md-3">Nombre emergencia</label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="nombre_e" id="nombre_e" placeholder="Ingresar nombre de persona a llamar en caso de emergencia">
                     </div>
                   </div>
 
-                    <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Numero de emergencia</label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="numero_e" id="numero_e" placeholder="Numero de persona a llamar en caso de emergencia">
                     </div>
                   </div>
 
-                   <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Estado</label>
                     <div class="col-md-8">
                       <input class="form-control" type="date" name="estado" id="estado" placeholder="Ingresar estado del empleado">
                     </div>
                   </div>
 
-                        
-                 
-                  
-                  <div class="form-group">
-                    
-                  </div>
                 </form>
               </div>
               <div class="card-footer" align="center">
-                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-default icon-btn" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
+                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default icon-btn" type="button"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
             </div>
           </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div class="card-footer">
-                <div class="row">
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="clearix"></div>
-          <div class="col-md-12">
-            
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
         </div>
       </div>
     </div>
@@ -221,6 +199,47 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript">
+      $('#sl').click(function(){
+      	$('#tl').loadingBtn();
+      	$('#tb').loadingBtn({ text : "Signing In"});
+      });
+      
+      $('#el').click(function(){
+      	$('#tl').loadingBtnComplete();
+      	$('#tb').loadingBtnComplete({ html : "Sign In"});
+      });
+      
+      $('.demoDate').datepicker({
+      	format: "dd/mm/yyyy",
+      	autoclose: true,
+      	todayHighlight: true
+      });
+      
+      $('.demoSelect').select2();
+    </script>
+    <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      $('.alert').click(function(){
+      	swal({
+      		title: "Esta seguro?",
+      		text: "Esta opcion cerrara la sesion actual",
+      		type: "warning",
+      		showCancelButton: true,
+      		confirmButtonText: "Si, salir",
+      		cancelButtonText: "No, mantener conectado",
+      		closeOnConfirm: true,
+      		closeOnCancel: true
+      	}, function(isConfirm) {
+      		if (isConfirm) {
+            $(location).attr('href', 'logout.php');
+      		} else {
+            // Exit function
+      		}
+      	});
+      });
+    </script>
   </body>
 </html>
 <?php
