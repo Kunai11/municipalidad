@@ -1,3 +1,10 @@
+<?php
+  include('../cn/bdconexion.php');
+  session_start();
+  if (isset($_SESSION['username'])&&($_SESSION['rank'])) { 
+    header('location: index.php');       
+  } else {
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -72,3 +79,6 @@
   <script src="js/main.js"></script>
   <script src="js/tips/login.js"></script>
 </html>
+<?php
+    }
+?>
