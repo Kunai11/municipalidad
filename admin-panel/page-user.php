@@ -91,14 +91,14 @@
                       <div class="form-group col-lg-11">
                         <label class="control-label col-lg-4">Numero de Identidad</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" disabled />
+                          <input class="form-control" type="text" placeholder="Numero de Identidad" disabled />
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Nombres</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Ingrese su/sus nombres">
+                          <input class="form-control" type="text" placeholder="Ingrese su/sus nombres" disabled>
                         </div>
                       </div>
                     </div>
@@ -106,13 +106,13 @@
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Apellido Paterno</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Ingrese su apellido ">
+                          <input class="form-control" type="text" placeholder="Ingrese su apellido " disabled>
                         </div>
                       </div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Apellido Materno</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Ingrese su apellido ">
+                          <input class="form-control" type="text" placeholder="Ingrese su apellido " disabled>
                         </div>
                       </div>
                     </div>
@@ -120,49 +120,49 @@
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Lugar de Nacimiento</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Ingrese su lugar de nacimiento">
+                          <input class="form-control" type="text" placeholder="Ingrese su lugar de nacimiento" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Fecha de Nacimiento</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" id="demoDate" type="text" placeholder="Seleccione la fecha">
+                          <input class="form-control" id="demoDate" type="text" placeholder="Seleccione la fecha" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Profesi&oacute;n</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Ingrese su profesi&oacute;n">
+                          <input class="form-control" type="text" placeholder="Ingrese su profesi&oacute;n" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Domicilio</label>
                         <div class=" col-lg-8">
-                          <textarea class="form-control" rows="4" placeholder="Ingrese el lugar de su domicilio"></textarea>
+                          <textarea class="form-control" rows="4" placeholder="Ingrese el lugar de su domicilio" disabled></textarea>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">N&uacute;mero de Tel&eacute;fono</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="number" min="1" placeholder="Ingrese el numero">
+                          <input class="form-control" type="number" min="1" placeholder="Ingrese el numero" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Fecha de Ingreso</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" id="demoDate2" type="text" placeholder="Seleccione la fecha">
+                          <input class="form-control" id="demoDate2" type="text" placeholder="Seleccione la fecha" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Correo Electr&oacute;nico</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" id="inputEmail" type="text" placeholder="Ingrese el correo">
+                          <input class="form-control" id="inputEmail" type="text" placeholder="Ingrese el correo" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
@@ -175,13 +175,13 @@
                               <div class="form-group col-lg-11">
                                 <label class="control-label col-md-4">Nombre Completo</label>
                                 <div class=" col-lg-8">
-                                  <input class="form-control" type="text" placeholder="Ingrese el nombre">
+                                  <input class="form-control" type="text" placeholder="Ingrese el nombre" disabled>
                                 </div>
                               </div>
                               <div class="form-group col-lg-11">
                                 <label class="control-label col-md-4">N&uacute;mero de Tel&eacute;fono</label>
                                 <div class=" col-lg-8">
-                                  <input class="form-control" type="number" min="1" placeholder="Ingrese el numero">
+                                  <input class="form-control" type="number" min="1" placeholder="Ingrese el numero" disabled>
                                 </div>
                               </div>
                             
