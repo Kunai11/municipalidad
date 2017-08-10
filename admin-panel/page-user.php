@@ -83,7 +83,7 @@
             <div class="tab-content">
               <div class="tab-pane active" id="user-timeline">
                 <div class="timeline">
-                  <div class="card user-settings">
+                  <div class="card user-settings"
                   <h4 class="line-head">Perfil de Empleado</h4>
                   <?php
                     $queryDatosEmp = mysqli_query($db, "SELECT * FROM empleados WHERE Id_Empleado='".$_SESSION['Id_Empleado']."'") or die(mysqli_error());
