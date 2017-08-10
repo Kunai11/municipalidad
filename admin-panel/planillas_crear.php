@@ -76,9 +76,12 @@
         </div>
         <div class="row">
           <div class="col-md-12">
+            <!-- Contenido de la pagina -->
             <div class="card">
+              <h3 class="card-title" align="center">Crear nuevo departamento</h3>
               <div class="card-body">Datos Aquí</div>
             </div>
+            <!-- Fin del contenido de la pagina -->
           </div>
         </div>
       </div>
