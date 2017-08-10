@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 <?php
   include('../cn/bdconexion.php');
   session_start();
   if (isset($_SESSION['username'])&&($_SESSION['rank'])) {      
 ?>
-=======
-
-<?php include('constructor.php');?>
->>>>>>> 3c9a699a94c71a569e2e0675070c4ee48131faec
 <!DOCTYPE html>
 <html>
   <head>
@@ -76,7 +71,6 @@
           </div>
 
           <!-- Sidebar Menu-->
-<<<<<<< HEAD
           <ul class="sidebar-menu">
             <li class="active"><a href="index.php"><i class="fa fa-home"></i><span>Inicio</span></a></li>
 
@@ -208,9 +202,12 @@
           </ul>
         </section>
       </aside>
+<<<<<<< HEAD
 =======
           
 >>>>>>> 3c9a699a94c71a569e2e0675070c4ee48131faec
+=======
+>>>>>>> c41d8e23ae72ecdfdf673b2ca98dfc7e8a630fe6
       <div class="content-wrapper">
         <div class="page-title">
           <div>

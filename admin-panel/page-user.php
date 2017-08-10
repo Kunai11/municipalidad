@@ -208,85 +208,108 @@
           </div>
           <div class="col-md-9">
             <div class="tab-content">
-              
               <div class="tab-pane active" id="user-timeline">
                 <div class="timeline">
-                  
                   <div class="card user-settings">
                   <h4 class="line-head">Hoja de Vida</h4>
+
                   <form class="form-horizontal" style="align-items:center;">
-                    <div class="form-group">
-                      <div class="form-group">
-                        <label class="control-label col-md-4">Numero de Identidad</label>
-                        <input class="form-control" type="text" disabled />
+                    <div class="form-group m-10">
+                      <div class="form-group col-lg-11">
+                        <label class="control-label col-lg-4">Numero de Identidad</label>
+                        <div class=" col-lg-8">
+                          <input class="form-control" type="text" disabled />
+                        </div>
                       </div>
                       <div class="clearfix"></div>
-                      <div class="form-group">
+                      <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Nombres</label>
-                        <input class="form-control" type="text" placeholder="Ingrese su/sus nombres">
+                        <div class=" col-lg-8">
+                          <input class="form-control" type="text" placeholder="Ingrese su/sus nombres">
+                        </div>
                       </div>
                     </div>
-                    <div class="form-group">
-                      <div class="form-group">
+                    <div class="form-group m-10">
+                      <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Apellido Paterno</label>
-                        <input class="form-control" type="text" placeholder="Ingrese su apellido ">
+                        <div class=" col-lg-8">
+                          <input class="form-control" type="text" placeholder="Ingrese su apellido ">
+                        </div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Apellido Materno</label>
-                        <input class="form-control" type="text" placeholder="Ingrese su apellido ">
+                        <div class=" col-lg-8">
+                          <input class="form-control" type="text" placeholder="Ingrese su apellido ">
+                        </div>
                       </div>
                     </div>
-                    <div class="form-group">
-                      <div class="form-group">
+                    <div class="form-group m-10">
+                      <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Lugar de Nacimiento</label>
-                        <input class="form-control" type="text" placeholder="Ingrese su lugar de nacimiento">
+                        <div class=" col-lg-8">
+                          <input class="form-control" type="text" placeholder="Ingrese su lugar de nacimiento">
+                        </div>
                       </div>
                       <div class="clearfix"></div>
-                      <div class="form-group">
+                      <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Fecha de Nacimiento</label>
-                        <input class="form-control" id="demoDate" type="text" placeholder="Seleccione la fecha">
+                        <div class=" col-lg-8">
+                          <input class="form-control" id="demoDate" type="text" placeholder="Seleccione la fecha">
+                        </div>
                       </div>
                       <div class="clearfix"></div>
-                      <div class="form-group">
+                      <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Profesi&oacute;n</label>
-                        <input class="form-control" type="text" placeholder="Ingrese su profesi&oacute;n">
+                        <div class=" col-lg-8">
+                          <input class="form-control" type="text" placeholder="Ingrese su profesi&oacute;n">
+                        </div>
                       </div>
                       <div class="clearfix"></div>
-                      <div class="form-group">
+                      <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Domicilio</label>
-                        <textarea class="form-control" rows="4" placeholder="Ingrese el lugar de su domicilio"></textarea>
+                        <div class=" col-lg-8">
+                          <textarea class="form-control" rows="4" placeholder="Ingrese el lugar de su domicilio"></textarea>
+                        </div>
                       </div>
                       <div class="clearfix"></div>
-                      <div class="form-group">
+                      <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">N&uacute;mero de Tel&eacute;fono</label>
-                        <input class="form-control" type="number" min="1" placeholder="Ingrese el numero">
+                        <div class=" col-lg-8">
+                          <input class="form-control" type="number" min="1" placeholder="Ingrese el numero">
+                        </div>
                       </div>
                       <div class="clearfix"></div>
-                      <div class="form-group">
+                      <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Fecha de Ingreso</label>
-                        <input class="form-control" id="demoDate2" type="text" placeholder="Seleccione la fecha">
+                        <div class=" col-lg-8">
+                          <input class="form-control" id="demoDate2" type="text" placeholder="Seleccione la fecha">
+                        </div>
                       </div>
                       <div class="clearfix"></div>
-                      <div class="form-group">
+                      <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Correo Electr&oacute;nico</label>
-                        <input class="form-control" id="inputEmail" type="text" placeholder="Ingrese el correo">
+                        <div class=" col-lg-8">
+                          <input class="form-control" id="inputEmail" type="text" placeholder="Ingrese el correo">
+                        </div>
                       </div>
                       <div class="clearfix"></div>
-                      <div class="form-group col-lg-12">
+                      <div class="form-group m-10">
                         <div class="panel panel-info">
                           <div class="panel-heading">
                             <h3 class="panel-title">En caso de emergencia, contactar a</h3>
                           </div>
-                          <div class="panel-body">
-                            
-                              <div class="form-group">
+                          <div class="panel-body">                            
+                              <div class="form-group col-lg-11">
                                 <label class="control-label col-md-4">Nombre Completo</label>
-                                <input class="form-control" type="text" placeholder="Ingrese el nombre">
+                                <div class=" col-lg-8">
+                                  <input class="form-control" type="text" placeholder="Ingrese el nombre">
+                                </div>
                               </div>
-
-                              <div class="form-group">
+                              <div class="form-group col-lg-11">
                                 <label class="control-label col-md-4">N&uacute;mero de Tel&eacute;fono</label>
-                                <input class="form-control" type="number" min="1" placeholder="Ingrese el numero">
+                                <div class=" col-lg-8">
+                                  <input class="form-control" type="number" min="1" placeholder="Ingrese el numero">
+                                </div>
                               </div>
                             
                           </div>
@@ -309,42 +332,41 @@
                   <h4 class="line-head">Editar Perfil</h4>
                   <form>
 
-                    <div class="row">
-                      <div class="col-md-10 mb-20">
+                    <div class="row m-10">
+                      <div class="col-md-6">
                         <label>Codigo de Usuario</label>
                         <input class="form-control" type="text" disabled />
                       </div>
                     </div>
-                    <div class="row">
+                    <div class="row m-10">
                       <div class="panel panel-warning">
                         <div class="panel-heading">
                           <h3 class="panel-title">Cambio de Nombre de Usuario</h3>
                         </div>
                         <div class="panel-body">
-                          <div class="row mb-20">
-                            <div class="col-md-12">
+                          <div class="row m-10">
+                            <div class="col-md-6">
                               <label>Nombre de Usuario</label>
-                              <input class="form-control" type="text" placeholder="Ingrese su/sus nombres">
+                              <input class="form-control col-lg-6" type="text" placeholder="Ingrese su/sus nombres">
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-
                     <div class="row">
                       <div class="panel panel-danger">
                         <div class="panel-heading">
                           <h3 class="panel-title">Cambio de Contrase&ntilde;a</h3>
                         </div>
                         <div class="panel-body">
-                          <div class="row mb-20">
+                          <div class="row m-10">
                             <div class="col-md-6">
                               <label>Contrase&ntilde;a antigua</label>
-                              <input class="form-control" type="text" placeholder="Ingrese su contrase&ntilde;a">
+                              <input class="form-control col-lg-6" type="text" placeholder="Ingrese su contrase&ntilde;a">
                             </div>
                             <div class="col-md-6">
                               <label>Contrase&ntilde;a nueva</label>
-                              <input class="form-control" type="text" placeholder="Ingrese su contrase&ntilde;a">
+                              <input class="form-control col-lg-6" type="text" placeholder="Ingrese su contrase&ntilde;a">
                             </div>
                           </div>
                         </div>

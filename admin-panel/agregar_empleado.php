@@ -1,5 +1,8 @@
 <?php
-include('constructor.php');
+  include('constructor.php');
+  include('../cn/bdconexion.php');
+  session_start();
+  if (isset($_SESSION['username'])&&($_SESSION['rank'])) {  
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,6 +32,7 @@ include('constructor.php');
           <div class="navbar-custom-menu">
             <ul class="top-nav">
               <!--Notification Menu-->
+              <!--
               <li class="dropdown notification-menu">
                 <ul class="dropdown-menu">
                   <li class="not-head">You have 4 new notifications.</li>
@@ -41,12 +45,13 @@ include('constructor.php');
                   <li class="not-footer"><a href="#">See all notifications.</a></li>
                 </ul>
               </li>
+              -->
               <!-- User Menu-->
-              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i></a>
+              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle fa-lg"></i></a>
                 <ul class="dropdown-menu settings-menu">
-                  <li><a href="page-user.php"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
-                  <li><a href="page-user.php"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-                  <li><a href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+                  <!--<li><a href="page-user.php"><i class="fa fa-cog fa-lg"></i> Settings</a></li>-->
+                  <li><a href="page-user.php"><i class="fa fa-user fa-lg"></i> Perfil</a></li>
+                  <li><a href="#" class="alert" style="margin:0px;"><i class="fa fa-sign-out fa-lg"></i> Cerrar Sesi&oacute;n</a></li>
                 </ul>
               </li>
             </ul>
@@ -54,112 +59,46 @@ include('constructor.php');
         </nav>
       </header>
       <!-- Side-Nav-->
-      <aside class="main-sidebar hidden-print">
-        <section class="sidebar">
-          <div class="user-panel">
-            <div class="pull-left image"><img class="img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image"></div>
-            <div class="pull-left info">
-              <p>John Doe</p>
-              <p class="designation">Frontend Developer</p>
-            </div>
-          </div>
-          <!-- Sidebar Menu-->
-<<<<<<< HEAD
-          <ul class="sidebar-menu">
-            <li class="active"><a href="index.php"><i class="fa fa-dashboard"></i><span>Inicio</span></a></li>
-            <li class="treeview"><a href="#"><i class="fa fa-laptop"></i><span>UI Elements</span><i class="fa fa-angle-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="bootstrap-components.html"><i class="fa fa-circle-o"></i> Bootstrap Elements</a></li>
-                <li><a href="http://fontawesome.io/icons/" target="_blank"><i class="fa fa-circle-o"></i> Font Icons</a></li>
-                <li><a href="ui-cards.html"><i class="fa fa-circle-o"></i> Cards</a></li>
-                <li><a href="widgets.html"><i class="fa fa-circle-o"></i> Widgets</a></li>
-              </ul>
-            </li>
-            <li><a href="charts.html"><i class="fa fa-pie-chart"></i><span>Charts</span></a></li>
-            <li class="treeview"><a href="#"><i class="fa fa-edit"></i><span>Forms</span><i class="fa fa-angle-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="form-components.html"><i class="fa fa-circle-o"></i> Form Components</a></li>
-                <li><a href="form-custom.html"><i class="fa fa-circle-o"></i> Custom Components</a></li>
-                <li><a href="form-samples.html"><i class="fa fa-circle-o"></i> Form Samples</a></li>
-                <li><a href="form-notifications.html"><i class="fa fa-circle-o"></i> Form Notifications</a></li>
-              </ul>
-            </li>
-            <li class="treeview"><a href="#"><i class="fa fa-th-list"></i><span>Tables</span><i class="fa fa-angle-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="table-basic.html"><i class="fa fa-circle-o"></i> Basic Tables</a></li>
-                <li><a href="table-data-table.html"><i class="fa fa-circle-o"></i> Data Tables</a></li>
-              </ul>
-            </li>
-            <li class="treeview"><a href="#"><i class="fa fa-file-text"></i><span>Pages</span><i class="fa fa-angle-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="blank-page.php"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-                <li><a href="page-login.html"><i class="fa fa-circle-o"></i> Login Page</a></li>
-                <li><a href="page-lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen Page</a></li>
-                <li><a href="page-user.php"><i class="fa fa-circle-o"></i> User Page</a></li>
-                <li><a href="page-invoice.html"><i class="fa fa-circle-o"></i> Invoice Page</a></li>
-                <li><a href="page-calendar.html"><i class="fa fa-circle-o"></i> Calendar Page</a></li>
-                <li><a href="page-mailbox.html"><i class="fa fa-circle-o"></i> Mailbox</a></li>
-                <li><a href="page-error.php"><i class="fa fa-circle-o"></i> Error Page</a></li>
-              </ul>
-            </li>
-            <li class="treeview"><a href="#"><i class="fa fa-share"></i><span>Multilevel Menu</span><i class="fa fa-angle-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="blank-page.php"><i class="fa fa-circle-o"></i> Level One</a></li>
-                <li class="treeview"><a href="#"><i class="fa fa-circle-o"></i><span> Level One</span><i class="fa fa-angle-right"></i></a>
-                  <ul class="treeview-menu">
-                    <li><a href="blank-page.php"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i><span> Level Two</span></a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-      </aside>
-=======
-         <?php
-            menu();
-            ?>
-
-
->>>>>>> 3c9a699a94c71a569e2e0675070c4ee48131faec
+      <?php
+        menu();
+      ?>
       <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-group"></i>Empleados</h1>
-            <p>Registro de empleados</p>
+            <h1><i class="fa fa-plus-square"></i> Agregar Nuevo</h1>
+            <p>Agregar un nuevo empleado al registro</p>
           </div>
           <div>
             <ul class="breadcrumb">
-              <li><i class="fa fa-home fa-lg"></i></li>
-              <li>Gestiones administrativas</li>
+              <li><i class="fa fa-institution fa-lg"></i></li>
               <li>Empleados</li>
-              <li><a href="#">  Registro de empleado</a></li>
+              <li><a href="#"> Agregar Nuevo</a></li>
             </ul>
           </div>
         </div>
-
-
-       <div class="col-md-6">
-            <div class="registro">
-              <h3 class="card-title" align="center">Registro de empleado</h3>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-title">
+                <h3 class="card-title" align="center">Formulario de registro</h3>
+              </div>
               <div class="card-body">
                 <form class="form-horizontal">
                   <div class="form-group">
-                    <label class="control-label col-md-3">Numero de identidad</label>
+                    <label class="control-label col-md-3">Numero de Identidad</label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="identidad" id="identidad" placeholder="Ingresar numero de identidad" required>
                     </div>
                   </div>
 
-                   <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Nombre</label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingresar nombre" required>
                     </div>
                   </div>
 
-                   <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Primer apellido</label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="p_apellido" id="p_apellido" placeholder="Ingresar primer apellido" required>
@@ -171,30 +110,30 @@ include('constructor.php');
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="s_apellido" id="s_apellido" placeholder="Ingresar segundo apellido">
                     </div>
-
                   </div>
-                   <div class="form-group">
+
+                  <div class="form-group">
                     <label class="control-label col-md-3">Lugar de nacimiento</label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="l_nacimiento" id="l_nacimiento" placeholder="Ingresar lugar de nacimiento">
                     </div>
                   </div>
 
-                   <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Fecha de nacimiento</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="date" name="f_nacimiento" id="f_nacimiento" placeholder="Ingresar fecha de nacimiento">
+                      <input class="form-control demoDate" type="text" name="f_nacimiento" id="f_nacimiento" placeholder="Seleccionar fecha">
                     </div>
                   </div>
 
-                   <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Profesi&oacute;n</label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="profesion" id="profesion" placeholder="Ingresar profesión">
                     </div>
                   </div>
 
-                   <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Domicilio</label>
                     <div class="col-md-8">
                       <textarea class="form-control" rows="4" name="domicilio" id="domicilio" placeholder="Ingresar direccion de domicilio"></textarea>
@@ -208,69 +147,47 @@ include('constructor.php');
                     </div>
                   </div>
 
-                   <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Fecha de ingreso</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="f_ingreso" id="f_ingreso" placeholder="Ingresar fecha de ingreso">
+                      <input class="form-control demoDate" type="text" name="f_ingreso" id="f_ingreso" placeholder="Seleccionar fecha">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Correo</label>
                     <div class="col-md-8">
-                      <input class="form-control col-md-8" type="email" name="correo" id="correo" placeholder="Ingresar direccion de correo electrónico">
+                      <input class="form-control col-md-8" type="email" name="correo" id="correo" placeholder="Ingresar direccion de correo electrónico" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
                     </div>
                   </div>
-                 
-                    <div class="form-group">
+                  
+                  <div class="form-group">
                     <label class="control-label col-md-3">Nombre emergencia</label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="nombre_e" id="nombre_e" placeholder="Ingresar nombre de persona a llamar en caso de emergencia">
                     </div>
                   </div>
 
-                    <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Numero de emergencia</label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="numero_e" id="numero_e" placeholder="Numero de persona a llamar en caso de emergencia">
                     </div>
                   </div>
 
-                   <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Estado</label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" name="estado" id="estado" placeholder="Ingresar estado del empleado">
                     </div>
                   </div>
 
-                        
-                 
-                  
-                  <div class="form-group">
-                    
-                  </div>
                 </form>
               </div>
               <div class="card-footer" align="center">
-                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-default icon-btn" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
-              </div>
-            </div>
-          </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div class="card-footer">
-                <div class="row">
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="clearix"></div>
-          <div class="col-md-12">
-            
-                </form>
+                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default icon-btn" type="button"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
             </div>
           </div>
@@ -282,5 +199,51 @@ include('constructor.php');
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript">
+      $('#sl').click(function(){
+      	$('#tl').loadingBtn();
+      	$('#tb').loadingBtn({ text : "Signing In"});
+      });
+      
+      $('#el').click(function(){
+      	$('#tl').loadingBtnComplete();
+      	$('#tb').loadingBtnComplete({ html : "Sign In"});
+      });
+      
+      $('.demoDate').datepicker({
+      	format: "dd/mm/yyyy",
+      	autoclose: true,
+      	todayHighlight: true
+      });
+      
+      $('.demoSelect').select2();
+    </script>
+    <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      $('.alert').click(function(){
+      	swal({
+      		title: "Esta seguro?",
+      		text: "Esta opcion cerrara la sesion actual",
+      		type: "warning",
+      		showCancelButton: true,
+      		confirmButtonText: "Si, salir",
+      		cancelButtonText: "No, mantener conectado",
+      		closeOnConfirm: true,
+      		closeOnCancel: true
+      	}, function(isConfirm) {
+      		if (isConfirm) {
+            $(location).attr('href', 'logout.php');
+      		} else {
+            // Exit function
+      		}
+      	});
+      });
+    </script>
   </body>
 </html>
+<?php
+    }else {
+        header('location: page_denegado.php');
+    }
+?>
