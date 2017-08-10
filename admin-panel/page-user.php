@@ -65,8 +65,8 @@
           <div class="col-md-12">
             <div class="profile">
               <div class="info"><img class="user-img" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg">
-                <h4>John Doe</h4>
-                <p>FrontEnd Developer</p>
+                <h4><?php echo $_SESSION['username']; ?></h4>
+                <p><?php echo $_SESSION['rank']; ?></p>
               </div>
               <div class="cover-image"></div>
             </div>
@@ -74,8 +74,8 @@
           <div class="col-md-3">
             <div class="card p-0">
               <ul class="nav nav-tabs nav-stacked user-tabs">
-                <li class="active"><a href="#user-timeline" data-toggle="tab">Hoja de Vida</a></li>
-                <li><a href="#user-settings" data-toggle="tab">Editar Perfil</a></li>
+                <li class="active"><a href="#user-timeline" data-toggle="tab">Perfil de Empleado</a></li>
+                <li><a href="#user-settings" data-toggle="tab">Editar Perfil de Usuario</a></li>
               </ul>
             </div>
           </div>
@@ -84,21 +84,24 @@
               <div class="tab-pane active" id="user-timeline">
                 <div class="timeline">
                   <div class="card user-settings">
-                  <h4 class="line-head">Hoja de Vida</h4>
-
+                  <h4 class="line-head">Perfil de Empleado</h4>
+                  <?php
+                    $queryDatosEmp = mysqli_query($db, "SELECT * FROM empleados WHERE Id_Empleado='".$_SESSION['Id_Empleado']."'") or die(mysqli_error());
+                    $rowQueryDatosEmp=mysqli_fetch_array($queryDatosEmp);
+                  ?>
                   <form class="form-horizontal" style="align-items:center;">
                     <div class="form-group m-10">
                       <div class="form-group col-lg-11">
                         <label class="control-label col-lg-4">Numero de Identidad</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Numero de Identidad" disabled />
+                          <input class="form-control" type="text" placeholder="Numero de Identidad" value="<?php echo $_SESSION['Id_Empleado']?>" disabled />
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Nombres</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Ingrese su/sus nombres" disabled>
+                          <input class="form-control" type="text" placeholder="Ingrese su/sus nombres" value="<?php echo $rowQueryDatosEmp['Nombres']?>" disabled>
                         </div>
                       </div>
                     </div>
@@ -106,13 +109,13 @@
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Apellido Paterno</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Ingrese su apellido " disabled>
+                          <input class="form-control" type="text" placeholder="Ingrese su apellido" value="<?php echo $rowQueryDatosEmp['Apellido1']?>" disabled>
                         </div>
                       </div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Apellido Materno</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Ingrese su apellido " disabled>
+                          <input class="form-control" type="text" placeholder="Ingrese su apellido" value="<?php echo $rowQueryDatosEmp['Apellido2']?>" disabled>
                         </div>
                       </div>
                     </div>
@@ -120,49 +123,49 @@
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Lugar de Nacimiento</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Ingrese su lugar de nacimiento" disabled>
+                          <input class="form-control" type="text" placeholder="Ingrese su lugar de nacimiento" value="<?php echo $rowQueryDatosEmp['Lugar_Nac']?>" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Fecha de Nacimiento</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" id="demoDate" type="text" placeholder="Seleccione la fecha" disabled>
+                          <input class="form-control" id="demoDate" type="text" placeholder="Seleccione la fecha" value="<?php echo $rowQueryDatosEmp['Fecha_Nac']?>" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Profesi&oacute;n</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Ingrese su profesi&oacute;n" disabled>
+                          <input class="form-control" type="text" placeholder="Ingrese su profesi&oacute;n" value="<?php echo $rowQueryDatosEmp['Profesion']?>" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Domicilio</label>
                         <div class=" col-lg-8">
-                          <textarea class="form-control" rows="4" placeholder="Ingrese el lugar de su domicilio" disabled></textarea>
+                          <textarea class="form-control" rows="4" placeholder="Ingrese el lugar de su domicilio" disabled><?php echo $rowQueryDatosEmp['Domicilio']?></textarea>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">N&uacute;mero de Tel&eacute;fono</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="number" min="1" placeholder="Ingrese el numero" disabled>
+                          <input class="form-control" type="number" min="1" placeholder="Ingrese el numero" value="<?php echo $rowQueryDatosEmp['Telefono']?>" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Fecha de Ingreso</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" id="demoDate2" type="text" placeholder="Seleccione la fecha" disabled>
+                          <input class="form-control" id="demoDate2" type="text" placeholder="Seleccione la fecha" value="<?php echo $rowQueryDatosEmp['Fecha_Ingreso']?>" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Correo Electr&oacute;nico</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" id="inputEmail" type="text" placeholder="Ingrese el correo" disabled>
+                          <input class="form-control" id="inputEmail" type="text" placeholder="Ingrese el correo" value="<?php echo $rowQueryDatosEmp['Correo']?>" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
@@ -175,42 +178,40 @@
                               <div class="form-group col-lg-11">
                                 <label class="control-label col-md-4">Nombre Completo</label>
                                 <div class=" col-lg-8">
-                                  <input class="form-control" type="text" placeholder="Ingrese el nombre" disabled>
+                                  <input class="form-control" type="text" placeholder="Ingrese el nombre" value="<?php echo $rowQueryDatosEmp['Nombre_Emergencia']?>" disabled>
                                 </div>
                               </div>
                               <div class="form-group col-lg-11">
                                 <label class="control-label col-md-4">N&uacute;mero de Tel&eacute;fono</label>
                                 <div class=" col-lg-8">
-                                  <input class="form-control" type="number" min="1" placeholder="Ingrese el numero" disabled>
+                                  <input class="form-control" type="number" min="1" placeholder="Ingrese el numero" value="<?php echo $rowQueryDatosEmp['Numero_Emergencia']?>" disabled>
                                 </div>
                               </div>
-                            
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="form-group" align="center">
+                    <!--<div class="form-group" align="center">
                       <div class="col-md-12">
-                        <button class="btn btn-primary" type="button" align="center"><i class="fa fa-fw fa-lg fa-print"></i> Imprimir</button>
+                        <button class="btn btn-primary" type="button" onclick="javascript:window.print();" align="center"><i class="fa fa-fw fa-lg fa-print"></i> Imprimir</button>
                       </div>
-                    </div>
+                    </div>-->
                   </form>
                 </div>
-
                 </div>
               </div>
-              
+
               <div class="tab-pane inactive" id="user-settings">
                 <div class="card user-settings">
-                  <h4 class="line-head">Editar Perfil</h4>
-                  <form>
-
+                  <h4 class="line-head">Editar Perfil de Usuario</h4>
+                  <form method="POST" action="usuario_modificar_self.php" id="userform">
                     <div class="row m-10">
                       <div class="col-md-6">
                         <label>Codigo de Usuario</label>
-                        <input class="form-control" type="text" disabled />
+                        <input class="form-control" type="text" id="codigoUser" name="codigoUser" value="<?php echo $_SESSION['codigoUsuario']; ?>" disabled />
                       </div>
                     </div>
+                    <br />
                     <div class="row m-10">
                       <div class="panel panel-warning">
                         <div class="panel-heading">
@@ -220,13 +221,13 @@
                           <div class="row m-10">
                             <div class="col-md-6">
                               <label>Nombre de Usuario</label>
-                              <input class="form-control col-lg-6" type="text" placeholder="Ingrese su/sus nombres">
+                              <input class="form-control col-lg-6" type="text" id="userName" name="userName" placeholder="Ingrese su/sus nombres" value="<?php echo $_SESSION['username']; ?>" required>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="row">
+                    <div class="row m-10">
                       <div class="panel panel-danger">
                         <div class="panel-heading">
                           <h3 class="panel-title">Cambio de Contrase&ntilde;a</h3>
@@ -235,11 +236,12 @@
                           <div class="row m-10">
                             <div class="col-md-6">
                               <label>Contrase&ntilde;a antigua</label>
-                              <input class="form-control col-lg-6" type="text" placeholder="Ingrese su contrase&ntilde;a">
+                              <input class="form-control col-lg-6" type="text" id="oldPass" name="oldPass" placeholder="Ingrese su contrase&ntilde;a" required>
+                              <input type="hidden" name="sessionPass" value="<?php echo $_SESSION['pass']; ?>">
                             </div>
                             <div class="col-md-6">
                               <label>Contrase&ntilde;a nueva</label>
-                              <input class="form-control col-lg-6" type="text" placeholder="Ingrese su contrase&ntilde;a">
+                              <input class="form-control col-lg-6" type="text" id="newPass" name="newPass" placeholder="Ingrese su nueva contrase&ntilde;a" required>
                             </div>
                           </div>
                         </div>
@@ -248,7 +250,8 @@
 
                     <div class="row mb-10">
                       <div class="col-md-12">
-                        <button class="btn btn-primary" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i> Guardar</button>
+                        <!--type="submit"-->
+                        <button class="btn btn-primary" id="guardar" type="submit" onclik=""><i class="fa fa-fw fa-lg fa-check-circle"></i> Guardar</button>
                       </div>
                     </div>
                   </form>
@@ -264,6 +267,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <!--<script src="js/tips/edit_user_self.js"></script>-->
     <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
     <script type="text/javascript" src="js/plugins/select2.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
@@ -318,6 +322,7 @@
       	});
       });
     </script>
+    <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
   </body>
 </html>
 <?php
