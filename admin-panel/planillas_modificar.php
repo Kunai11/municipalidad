@@ -93,7 +93,7 @@
               <div class="card-footer" align="center">
                 <button class="btn btn-primary icon-btn" type="button" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Buscar</button>
                 &nbsp;&nbsp;&nbsp;
-                <button class="btn btn-default icon-btn" type="button"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+                <button class="btn btn-default icon-btn" type="button" onclick="limpiarBusqueda()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@
                 <h3 class="card-title" align="center">Modificar Planilla</h3>
               </div>
               <div class="card-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" id="modificar_planilla">
                   <div class="form-group">
                     <label class="control-label col-md-3">Descripci&oacute;n</label>
                     <div class="col-md-8">
@@ -117,7 +117,15 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Tipo</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="tipo_planilla" id="tipo_planilla" placeholder="Ingresar el tipo de planilla" required>
+                      <!--<input class="form-control" type="text" name="tipo_planilla" id="tipo_planilla" placeholder="Ingresar el tipo de planilla" required>-->
+                      <select class="form-control" id="tipo_planilla">
+                        <?php 
+                          $queryListaCargos=mysqli_query($db, "SELECT * FROM cargos") or die(mysqli_error());
+                          while ($rowCargo=mysqli_fetch_array($queryListaCargos)) {
+                            echo '<option id="'.$rowCargo['Cod_Cargo'].'">'.$rowCargo['Nom_Cargo'].'</option>';  
+                          }
+                        ?>
+                      </select>
                     </div>
                   </div>
 
@@ -126,7 +134,7 @@
                     <div class="col-md-8">
                       <div class="input-group">
                         <span class="input-group-addon" >L</span>
-                        <input class="form-control" type="number" name="sueldo_base" id="sueldo_base" placeholder="Ingresar el sueldo base" required>
+                        <input class="form-control" type="number" name="sueldo_base" id="sueldo_base" onchange="calculo()" onkeyup="calculo()" placeholder="Ingresar el sueldo base" required>
                       </div>
                     </div>
                   </div>
@@ -136,7 +144,8 @@
                     <div class="col-md-8">
                       <div class="input-group">
                         <span class="input-group-addon" >%</span>
-                        <input class="form-control" type="number" min="0" name="deduc_IHSS" id="deduc_IHSS" placeholder="Ingresar el porcentaje de la deduccion" required>
+                        <input class="form-control" type="number" min="0" name="deduc_IHSS" id="deduc_IHSS" onchange="calculo()" onkeyup="calculo()" placeholder="Ingresar el porcentaje de la deduccion" required>
+                        <span class="input-group-addon" id="valor_deduc_IHSS">Valor deducido (L)</span>
                       </div>
                     </div>
                   </div>
@@ -146,7 +155,8 @@
                     <div class="col-md-8">
                       <div class="input-group">
                         <span class="input-group-addon" >%</span>
-                        <input class="form-control" type="number" name="deduc_Esp" id="deduc_Esp" placeholder="Ingresar el porcentaje de la deduccion" required>
+                        <input class="form-control" type="number" min="0" name="deduc_Esp" id="deduc_Esp" onchange="calculo()" onkeyup="calculo()" placeholder="Ingresar el porcentaje de la deduccion" required>
+                        <span class="input-group-addon" id="valor_deduc_esp">Valor deducido (L)</span>
                       </div>
                     </div>
                   </div>
@@ -165,9 +175,9 @@
               </div>
 
               <div class="card-footer" align="center">
-                <button class="btn btn-primary icon-btn" type="button" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
+                <button class="btn btn-primary icon-btn" type="submit" form="modificar_planilla" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
                 &nbsp;&nbsp;&nbsp;
-                <button class="btn btn-default icon-btn" type="button"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+                <button class="btn btn-default icon-btn" type="button" onclick="limpiarForm()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
             </div>
             <!-- Fin del contenido de la pagina -->
@@ -180,6 +190,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/tips/calculos_planilla.js"></script>
     <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
     <script type="text/javascript">
       $('.alert').click(function(){

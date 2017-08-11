@@ -110,14 +110,14 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Descripci&oacute;n</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="descripcion_planilla" id="descripcion_planilla" placeholder="Ingresar una breve descripcion" disabled="disabled" required>
+                      <input class="form-control" type="text" name="descripcion_planilla" id="descripcion_planilla" placeholder="Descripcion" disabled="disabled" required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Tipo</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="tipo_planilla" id="tipo_planilla" placeholder="Ingresar el tipo de planilla" disabled="disabled" required>
+                      <input class="form-control" type="text" name="tipo_planilla" id="tipo_planilla" placeholder="Tipo" disabled="disabled" required>
                     </div>
                   </div>
 
@@ -126,7 +126,7 @@
                     <div class="col-md-8">
                       <div class="input-group">
                         <span class="input-group-addon" >L</span>
-                        <input class="form-control" type="number" min="0" name="sueldo_base" id="sueldo_base" placeholder="Ingresar el sueldo base" disabled="disabled" required>
+                        <input class="form-control" type="number" min="0" name="sueldo_base" id="sueldo_base" placeholder="Sueldo Base" disabled="disabled" required>
                       </div>
                     </div>
                   </div>
@@ -136,7 +136,8 @@
                     <div class="col-md-8">
                       <div class="input-group">
                         <span class="input-group-addon" >%</span>
-                        <input class="form-control" type="number" min="0" name="deduc_IHSS" id="deduc_IHSS" placeholder="Ingresar el porcentaje de la deduccion" disabled="disabled" required>
+                        <input class="form-control" type="number" min="0" name="deduc_IHSS" id="deduc_IHSS" placeholder="Porcentaje de la Deduccion" disabled="disabled" required>
+                        <span class="input-group-addon" id="valor_deduc_IHSS">Valor deducido (L)</span>
                       </div>
                     </div>
                   </div>
@@ -146,7 +147,8 @@
                     <div class="col-md-8">
                       <div class="input-group">
                         <span class="input-group-addon" >%</span>
-                        <input class="form-control" type="number" min="0" name="deduc_Esp" id="deduc_Esp" placeholder="Ingresar el porcentaje de la deduccion" disabled="disabled" required>
+                        <input class="form-control" type="number" min="0" name="deduc_Esp" id="deduc_Esp" placeholder="Porcentaje de la Deduccion" disabled="disabled" required>
+                        <span class="input-group-addon" id="valor_deduc_esp">Valor deducido (L)</span>
                       </div>
                     </div>
                   </div>
