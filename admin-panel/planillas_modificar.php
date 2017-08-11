@@ -77,8 +77,100 @@
         <div class="row">
           <div class="col-md-12">
             <div class="card">
-              <div class="card-body">Datos Aquí</div>
+              <div class="card-title">
+                <h3 class="card-title" align="center">Buscar Planilla</h3>
+              </div>
+              <div class="card-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Codigo de planilla</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="codigo_planilla" id="codigo_planilla" placeholder="Ingresar codigo de planilla" required>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" type="button" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Buscar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default icon-btn" type="button"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+              </div>
             </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <!-- Contenido de la pagina -->
+            <div class="card">
+              <div class="card-title">
+                <h3 class="card-title" align="center">Modificar Planilla</h3>
+              </div>
+              <div class="card-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Descripci&oacute;n</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="descripcion_planilla" id="descripcion_planilla" placeholder="Ingresar una breve descripcion" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Tipo</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="tipo_planilla" id="tipo_planilla" placeholder="Ingresar el tipo de planilla" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Sueldo Base</label>
+                    <div class="col-md-8">
+                      <div class="input-group">
+                        <span class="input-group-addon" >L</span>
+                        <input class="form-control" type="number" name="sueldo_base" id="sueldo_base" placeholder="Ingresar el sueldo base" required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">IHSS</label>
+                    <div class="col-md-8">
+                      <div class="input-group">
+                        <span class="input-group-addon" >%</span>
+                        <input class="form-control" type="number" name="deduc_IHSS" id="deduc_IHSS" placeholder="Ingresar el porcentaje deducido" required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Deducciones Especiales</label>
+                    <div class="col-md-8">
+                      <div class="input-group">
+                        <span class="input-group-addon" >%</span>
+                        <input class="form-control" type="number" name="deduc_Esp" id="deduc_Esp" placeholder="Ingresar el porcentaje deducido" required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Sueldo Neto</label>
+                    <div class="col-md-8">
+                      <div class="input-group">
+                        <span class="input-group-addon" >L</span>
+                        <input class="form-control" type="number" name="sueldo_neto" id="sueldo_neto" placeholder="Sueldo Neto" disabled="disabled" required>
+                      </div>
+                    </div>
+                  </div>
+
+                 </form>
+              </div>
+
+              <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" type="button" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default icon-btn" type="button"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+              </div>
+            </div>
+            <!-- Fin del contenido de la pagina -->
           </div>
         </div>
       </div>
