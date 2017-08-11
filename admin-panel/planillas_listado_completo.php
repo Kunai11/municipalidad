@@ -69,7 +69,7 @@
           <div>
             <div>
               <!--<a class="btn btn-primary btn-flat" href="#"><i class="fa fa-lg fa-plus"></i></a>-->
-              <a class="btn btn-info btn-flat" href="#"><i class="fa fa-lg fa-refresh"></i></a>
+              <a class="btn btn-info btn-flat" href="planillas_listado_completo.php"><i class="fa fa-lg fa-refresh"></i></a>
               <!--<a class="btn btn-warning btn-flat" href="#"><i class="fa fa-lg fa-trash"></i></a></div>-->
             </div>
           </div>
@@ -118,6 +118,11 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script language="javascript"> 
+      function refresh() {
+        window.setTimeout('location.href="planillas_listado_completo.php"', 1);
+      }
+    </script>
     <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
     <script type="text/javascript">$('#sampleTable').DataTable();</script>

@@ -132,11 +132,11 @@
                   </div>
 
                   <div class="form-group">
-                    <label class="control-label col-md-3">IHSS</label>
+                    <label class="control-label col-md-3">Deduci&oacute;n por IHSS</label>
                     <div class="col-md-8">
                       <div class="input-group">
                         <span class="input-group-addon" >%</span>
-                        <input class="form-control" type="number" name="deduc_IHSS" id="deduc_IHSS" placeholder="Ingresar el porcentaje deducido" required>
+                        <input class="form-control" type="number" min="0" name="deduc_IHSS" id="deduc_IHSS" placeholder="Ingresar el porcentaje de la deduccion" required>
                       </div>
                     </div>
                   </div>
@@ -146,7 +146,7 @@
                     <div class="col-md-8">
                       <div class="input-group">
                         <span class="input-group-addon" >%</span>
-                        <input class="form-control" type="number" name="deduc_Esp" id="deduc_Esp" placeholder="Ingresar el porcentaje deducido" required>
+                        <input class="form-control" type="number" name="deduc_Esp" id="deduc_Esp" placeholder="Ingresar el porcentaje de la deduccion" required>
                       </div>
                     </div>
                   </div>
