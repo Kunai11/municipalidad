@@ -97,11 +97,13 @@
                     <?php
                       $queryFullPlanillas=mysqli_query($db, "SELECT * FROM planillas") or die(mysqli_error());
                       while ($rowPlanilla=mysqli_fetch_array($queryFullPlanillas)) {
+                        $queryTipo=mysqli_query($db, "SELECT Nom_Cargo FROM cargos WHERE Cod_Cargo='".$rowPlanilla['Tipo']."'") or die(mysqli_error());
+                        $rowTipo=mysqli_fetch_array($queryTipo);
                         echo '
                           <tr>
                             <td>'.$rowPlanilla['Cod_Planilla'].'</td>
                             <td>'.$rowPlanilla['Descripcion'].'</td>
-                            <td>'.$rowPlanilla['Tipo'].'</td>
+                            <td>'.$rowTipo['Nom_Cargo'].'</td>
                             <td>'.$rowPlanilla['Sueldo_Base'].'</td>
                             <td>'.$rowPlanilla['Ded_IHSS'].'</td>
                             <td>'.$rowPlanilla['Ded_Especiales'].'</td>
