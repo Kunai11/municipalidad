@@ -84,6 +84,7 @@
                 <table class="table table-hover table-bordered" id="sampleTable">
                   <thead>
                     <tr>
+                      <th>C&oacute;digo</th>
                       <th>Descripci&oacute;n</th>
                       <th>Tipo</th>
                       <th>Sueldo Base</th>
@@ -98,6 +99,7 @@
                       while ($rowPlanilla=mysqli_fetch_array($queryFullPlanillas)) {
                         echo '
                           <tr>
+                            <td>'.$rowPlanilla['Cod_Planilla'].'</td>
                             <td>'.$rowPlanilla['Descripcion'].'</td>
                             <td>'.$rowPlanilla['Tipo'].'</td>
                             <td>'.$rowPlanilla['Sueldo_Base'].'</td>
