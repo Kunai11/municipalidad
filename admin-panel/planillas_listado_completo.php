@@ -21,6 +21,11 @@
     script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
     script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
     -->
+    <style>
+      @media print {
+      .no-impr {display:none}
+      }
+    </style>
   </head>
   <body class="sidebar-mini fixed">
     <div class="wrapper">
@@ -63,16 +68,14 @@
       <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-wpforms"></i> Listado Completo de Planillas</h1>
-            <p>Ver el listado completo de las planillas de pago predefinidas</p>
+            <h1><i class="fa fa-wpforms"></i> Listado de Planillas</h1>
+            <ul class="breadcrumb side">
+              <li><i class="fa fa-gears fa-lg"></i></li>
+              <li>Planillas Predefinidas</li>
+              <li class="active"><a href="#"> Ver Listado Completo</a></li>
+            </ul>
           </div>
-          <div>
-            <div>
-              <!--<a class="btn btn-primary btn-flat" href="#"><i class="fa fa-lg fa-plus"></i></a>-->
-              <a class="btn btn-info btn-flat" href="planillas_listado_completo.php"><i class="fa fa-lg fa-refresh"></i></a>
-              <!--<a class="btn btn-warning btn-flat" href="#"><i class="fa fa-lg fa-trash"></i></a></div>-->
-            </div>
-          </div>
+          <div><!--<a class="btn btn-primary btn-flat" href="#"><i class="fa fa-lg fa-plus"></i></a>--><a class="btn btn-info btn-flat no-impr" href="planillas_listado_completo.php"><i class="fa fa-lg fa-refresh"></i></a><a class="btn btn-warning btn-flat" href="javascript:window.print();"><i class="fa fa-lg fa-print"></i></a></div>
         </div>
         <div class="row">
           <div class="col-md-12">
@@ -84,8 +87,8 @@
                       <th>Descripci&oacute;n</th>
                       <th>Tipo</th>
                       <th>Sueldo Base</th>
-                      <th>IHSS</th>
-                      <th>Especiales</th>
+                      <th>Deducci&oacute;n IHSS (%)</th>
+                      <th>Deducciones Especiales (%)</th>
                       <th>Sueldo Neto</th>
                     </tr>
                   </thead>
