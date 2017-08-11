@@ -131,6 +131,7 @@
               <section class="invoice">
                 <div class="row">
                   <div class="col-xs-12">
+                    <?php ?>
                     <h2 class="page-header"><i class="fa fa-globe"></i> Vali<small class="pull-right">Date: 01/01/2016</small></h2>
                   </div>
                 </div>
