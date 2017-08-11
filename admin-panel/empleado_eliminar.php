@@ -72,7 +72,7 @@
             <ul class="breadcrumb">
               <li><i class="fa fa-institution fa-lg"></i></li>
               <li>Empleados</li>
-              <li><a href="#">Eliminar empleado</a></li>
+              <li><a href="#">Eliminar Existente</a></li>
             </ul>
           </div>
         </div>

@@ -71,7 +71,7 @@
             <ul class="breadcrumb">
               <li><i class="fa fa-institution fa-lg"></i></li>
               <li>Departamentos</li>
-              <li><a href="#">Eliminar Departamento</a></li>
+              <li><a href="#">Eliminar Existente</a></li>
             </ul>
           </div>
         </div>
