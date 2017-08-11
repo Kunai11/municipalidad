@@ -131,8 +131,19 @@
               <section class="invoice">
                 <div class="row">
                   <div class="col-xs-12">
-                    <?php ?>
-                    <h2 class="page-header"><i class="fa fa-globe"></i> Vali<small class="pull-right">Date: 01/01/2016</small></h2>
+                    <?php
+                      function obtenerFecha(){
+                        $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
+                        $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                        
+                        //echo $dias[date('w')]." ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
+                        //Salida: Viernes 24 de Febrero del 2012
+
+                        echo $meses[date('n')-1]." ".date('d').", ".date('Y') ;
+                        //Salida: Febrero 24, 2012
+                      }
+                    ?>
+                    <h2 class="page-header"><i class="fa fa-globe"></i> Vali<small class="pull-right">Date: <?php echo obtenerFecha();?></small></h2>
                   </div>
                 </div>
                 <div class="row invoice-info">
