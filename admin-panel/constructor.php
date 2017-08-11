@@ -84,7 +84,7 @@
                 <li><a href="listado_usuarios.php"><i class="fa fa-file-text-o"></i> Listado de Usuarios</a></li>
               </ul>
             </li>
-
+            <!--
             <li class="treeview"><a href="#"><i class="fa fa-search"></i><span>Busqueda</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="buscar_dep.php"><i class="fa fa-search"></i> Buscar Departamento</a></li>
@@ -93,7 +93,7 @@
                 <li><a href="buscar_usuario.php"><i class="fa fa-search"></i> Buscar Usuario</a></li>
               </ul>
             </li>
-
+            -->
             <li class="treeview"><a href="#"><i class="fa fa-gears"></i><span>Configuraci&oacute;n</span><i class="fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
                 <li class="treeview"><a href="#"><i class="fa fa-wpforms"></i><span>Planillas predefinidas</span><i class="fa fa-angle-right"></i></a>
