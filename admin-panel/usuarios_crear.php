@@ -76,12 +76,67 @@
         <div class="row">
           <div class="col-md-12">
             <div class="card">
-              <div class="card-body">Datos Aquí</div>
+              <div class="card-title">
+                <h3 class="card-title" align="center">Nuevo Usuario</h3>
+              </div>
+              <div class="card-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Codigo de usuario</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="codigo_usuario" id="codigo_usuario" placeholder="Ingresar codigo de usuario" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Nombre de usuario</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="nombre_usuario" id="codigo_usuario" placeholder="Ingresar nombre de usuario" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Contrase&ntilde;a</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="password" name="pass_usuario" id="codigo_usuario" placeholder="Crear contraseña" required>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Tipo</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="tipo_usuario" id="codigo_usuario" placeholder="Ingresar tipo de ususario" required>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Estado</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="estado_usuario" id="codigo_usuario" placeholder="Estado en el que se encuetra el usuarioo" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Numero de iedntidad</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="estado_usuario" id="codigo_usuario" placeholder="Ingresar numero de identidad" required>
+                    </div>
+                  </div>
+
+                 </form>
+              </div>
+
+
+              <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" type="button" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default icon-btn" type="button"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
     <!-- Javascripts-->
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
