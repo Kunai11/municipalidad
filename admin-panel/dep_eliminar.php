@@ -2,7 +2,7 @@
   include('constructor.php');
   include('../cn/bdconexion.php');
   session_start();
-  if (isset($_SESSION['username'])&&($_SESSION['rank'])) {      
+  if (isset($_SESSION['username'])&&($_SESSION['rank'])) {  
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,8 +31,8 @@
           <!-- Navbar Right Menu-->
           <div class="navbar-custom-menu">
             <ul class="top-nav">
-              <!--Notification Menu-->
-              <!--<li class="dropdown notification-menu"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell-o fa-lg"></i></a>
+              <!--Notification Menu
+              <li class="dropdown notification-menu">
                 <ul class="dropdown-menu">
                   <li class="not-head">You have 4 new notifications.</li>
                   <li><a class="media" href="javascript:;"><span class="media-left media-icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
@@ -43,7 +43,8 @@
                       <div class="media-body"><span class="block">Transaction xyz complete</span><span class="text-muted block">2min ago</span></div></a></li>
                   <li class="not-footer"><a href="#">See all notifications.</a></li>
                 </ul>
-              </li>-->
+              </li>
+              -->
               <!-- User Menu-->
               <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle fa-lg"></i></a>
                 <ul class="dropdown-menu settings-menu">
@@ -63,14 +64,14 @@
       <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-plus-square"></i> Crear Nueva Planilla</h1>
-            <p>Crear una nueva planilla de pago</p>
+            <h1><i class="fa fa-minus-square"></i> Eliminar Existente</h1>
+            <p>Eliminar datos de departamento existente </p>
           </div>
           <div>
             <ul class="breadcrumb">
-              <li><i class="fa fa-gears fa-lg"></i></li>
-              <li>Planillas Predefinidas</li>
-              <li><a href="#">Crear Nueva</a></li>
+              <li><i class="fa fa-institution fa-lg"></i></li>
+              <li>Departamentos</li>
+              <li><a href="#">Eliminar Existente</a></li>
             </ul>
           </div>
         </div>
@@ -78,7 +79,7 @@
           <div class="col-md-12">
             <!-- Contenido de la pagina -->
             <div class="card">
-              <h3 class="card-title" align="center">Crear nuevo departamento</h3>
+              <h3 class="card-title" align="center"></h3>
               <div class="card-body">Datos Aquí</div>
             </div>
             <!-- Fin del contenido de la pagina -->
@@ -91,30 +92,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
-    <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
-    <script type="text/javascript">
-      $('.alert').click(function(){
-      	swal({
-      		title: "Esta seguro?",
-      		text: "Esta opcion cerrara la sesion actual",
-      		type: "warning",
-      		showCancelButton: true,
-      		confirmButtonText: "Si, salir",
-      		cancelButtonText: "No, mantener conectado",
-      		closeOnConfirm: true,
-      		closeOnCancel: true
-      	}, function(isConfirm) {
-      		if (isConfirm) {
-            $(location).attr('href', 'logout.php');
-            //$('#alert').html.attr('href', 'logout.php');
-      			//swal("Deleted!", "Your imaginary file has been deleted.", "success");
-      		} else {
-            //return false;
-      			//swal("Cancelled", "Your imaginary file is safe :)", "error");
-      		}
-      	});
-      });
-    </script>
   </body>
 </html>
 <?php

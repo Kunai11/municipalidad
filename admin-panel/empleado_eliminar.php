@@ -65,14 +65,14 @@
       <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-pencil-square"></i> Modificar Existente</h1>
-            <p>Modificar datos de empleado existente </p>
+            <h1><i class="fa fa-minus-square"></i>Eliminar Existente</h1>
+            <p>Eliminar datos de empleado existente </p>
           </div>
           <div>
             <ul class="breadcrumb">
               <li><i class="fa fa-institution fa-lg"></i></li>
               <li>Empleados</li>
-              <li><a href="#">Modificar empleado</a></li>
+              <li><a href="#">Eliminar Existente</a></li>
             </ul>
           </div>
         </div>
@@ -87,7 +87,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Numero de Identidad</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="identidad" id="identidad" placeholder="Ingresar numero de identidad" required>
+                      <input class="form-control" type="text"  name="identidad" id="identidad" placeholder="Ingresar numero de identidad" required>
                     </div>
                   </div>
                  </form>
@@ -107,105 +107,105 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-title">
-                <h3 class="card-title" align="center">Modificar datos de empleado</h3>
+                <h3 class="card-title" align="center">Eliminar datos de empleado</h3>
               </div>
               <div class="card-body">
                 <form class="form-horizontal">
                   <div class="form-group">
                     <label class="control-label col-md-3">Nombre</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingresar nombre" required>
+                      <input class="form-control"  type="text" disabled="true" name="nombre" id="nombre">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Primer apellido</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="p_apellido" id="p_apellido" placeholder="Ingresar primer apellido" required>
+                      <input class="form-control" type="text" disabled="true" name="p_apellido" id="p_apellido">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Segundo apellido</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="s_apellido" id="s_apellido" placeholder="Ingresar segundo apellido">
+                      <input class="form-control" type="text" disabled="true" name="s_apellido" id="s_apellido" >
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Lugar de nacimiento</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="l_nacimiento" id="l_nacimiento" placeholder="Ingresar lugar de nacimiento">
+                      <input class="form-control" type="text" disabled="true" name="l_nacimiento" id="l_nacimiento">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Fecha de nacimiento</label>
                     <div class="col-md-8">
-                      <input class="form-control demoDate" type="text" name="f_nacimiento" id="f_nacimiento" placeholder="Seleccionar fecha">
+                      <input class="form-control demoDate" type="text" disabled="true" name="f_nacimiento" id="f_nacimiento">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Profesi&oacute;n</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="profesion" id="profesion" placeholder="Ingresar profesión">
+                      <input class="form-control" type="text" disabled="true" name="profesion" id="profesion">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Domicilio</label>
                     <div class="col-md-8">
-                      <textarea class="form-control" rows="4" name="domicilio" id="domicilio" placeholder="Ingresar direccion de domicilio"></textarea>
+                      <textarea class="form-control" rows="4" disabled="true" name="domicilio" id="domicilio"></textarea>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Tel&eacute;fono</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="telefono" id="telefono" placeholder="Ingresar numero de telefono">
+                      <input class="form-control" type="text" name="telefono" id="telefono" disabled="true">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Fecha de ingreso</label>
                     <div class="col-md-8">
-                      <input class="form-control demoDate" type="text" name="f_ingreso" id="f_ingreso" placeholder="Seleccionar fecha">
+                      <input class="form-control demoDate" type="text"  disabled="true">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Correo</label>
                     <div class="col-md-8">
-                      <input class="form-control col-md-8" type="email" name="correo" id="correo" placeholder="Ingresar direccion de correo electrónico" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+                      <input class="form-control col-md-8" disabled="true" type="email" name="correo" id="correo"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
                     </div>
                   </div>
                   
                   <div class="form-group">
                     <label class="control-label col-md-3">Nombre emergencia</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="nombre_e" id="nombre_e" placeholder="Ingresar nombre de persona a llamar en caso de emergencia">
+                      <input class="form-control" type="text" disabled="true" name="nombre_e" id="nombre_e">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Numero de emergencia</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="numero_e" id="numero_e" placeholder="Numero de persona a llamar en caso de emergencia">
+                      <input class="form-control" type="text" disabled="true" name="numero_e" id="numero_e">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Estado</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="estado" id="estado" placeholder="Ingresar estado del empleado">
+                      <input class="form-control" type="text" disabled="true" name="estado" id="estado">
                     </div>
                   </div>
 
                 </form>
               </div>
               <div class="card-footer" align="center">
-                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
+                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Eliminar</button>
                 &nbsp;&nbsp;&nbsp;
                 <button class="btn btn-default icon-btn" type="button"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>

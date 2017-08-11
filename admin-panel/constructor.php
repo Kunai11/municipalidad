@@ -23,25 +23,25 @@
             <ul class="treeview-menu">
               <li class="treeview"><a href="#"><i class="fa fa-group"></i><span>Empleados</span><i class="fa fa-angle-right"></i></a>
                 <ul class="treeview-menu">
-                  <li><a href="agregar_empleado.php"><i class="fa fa-plus-square"></i> Agregar nuevo</a></li>
-                  <li><a href="modificar_empleado.php" ><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
-                  <li><a href="eliminar_empleado.php"><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
+                  <li><a href="empleado_agregar.php"><i class="fa fa-plus-square"></i> Agregar nuevo</a></li>
+                  <li><a href="empleado_modificar.php" ><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
+                  <li><a href="empleado_eliminar.php"><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
                 </ul>
               </li>
                 
               <li class="treeview"><a href="#"><i class="fa fa-suitcase"></i><span>Departamentos</span><i class="fa fa-angle-right"></i></a>
                 <ul class="treeview-menu">
-                  <li><a href=""><i class="fa fa-plus-square"></i> Agregar nuevo</a></li>
-                  <li><a href=""><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
-                  <li><a href=""><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
+                  <li><a href="dep_agregar.php"><i class="fa fa-plus-square"></i> Agregar nuevo</a></li>
+                  <li><a href="dep_modificar.php"><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
+                  <li><a href="dep_eliminar.php"><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
                 </ul>
               </li>
 
               <li class="treeview"><a href="#"><i class="fa fa-id-card-o"></i><span>Cargos</span><i class="fa fa-angle-right"></i></a>
                 <ul class="treeview-menu">
-                  <li><a href=""><i class="fa fa-plus-square"></i> Crear Nuevo</a></li>
-                  <li><a href=""><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
-                  <li><a href=""><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
+                  <li><a href="cargo_agregar.php"><i class="fa fa-plus-square"></i> Crear Nuevo</a></li>
+                  <li><a href="cargo_modificar.php"><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
+                  <li><a href="cargo_eliminar.php"><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
                 </ul>
               </li>
               <li class="treeview"><a href="#"><i class="fa fa-share"></i><span>Asignaciones</span><i class="fa fa-angle-right"></i></a>

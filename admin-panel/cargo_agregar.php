@@ -1,6 +1,8 @@
-
 <?php
-include('constructor.php');
+  include('constructor.php');
+  include('../cn/bdconexion.php');
+  session_start();
+  if (isset($_SESSION['username'])&&($_SESSION['rank'])) {      
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,11 +46,11 @@ include('constructor.php');
               </li>
               -->
               <!-- User Menu-->
-              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i></a>
+              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle fa-lg"></i></a>
                 <ul class="dropdown-menu settings-menu">
-                  <li><a href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
-                  <li><a href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-                  <li><a href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+                  <!--<li><a href="page-user.php"><i class="fa fa-cog fa-lg"></i> Settings</a></li>-->
+                  <li><a href="page-user.php"><i class="fa fa-user fa-lg"></i> Perfil</a></li>
+                  <li><a href="#" class="alert" style="margin:0px;"><i class="fa fa-sign-out fa-lg"></i> Cerrar Sesi&oacute;n</a></li>
                 </ul>
               </li>
             </ul>
@@ -56,83 +58,31 @@ include('constructor.php');
         </nav>
       </header>
       <!-- Side-Nav-->
-      <aside class="main-sidebar hidden-print">
-        <section class="sidebar">
-          <div class="user-panel">
-            <div class="pull-left image"><img class="img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image"></div>
-            <div class="pull-left info">
-              <p>John Doe</p>
-              <p class="designation">Frontend Developer</p>
-            </div>
-          </div>
-          <!-- Sidebar Menu-->
-          <?php
-          menu();
-          ?>
-
-                <div class="content-wrapper">
+      <?php
+        menu();
+      ?>
+      <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-plus-square""></i>Departamentos</h1>
-            <p>Agregar nuevo departamento</p>
+            <h1><i class="fa fa-plus-square"></i> Crear Nuevo</h1>
+            <p>Crear un nuevo cargo</p>
           </div>
           <div>
             <ul class="breadcrumb">
-              <li><i class="fa fa-home fa-lg"></i></li>
-              <li>Gestiones administrativas</li>
-              <li>Departamentos</li>
-              <li><a href="#"> Agregar nuevo departamento</a></li>
+              <li><i class="fa fa-institution fa-lg"></i></li>
+              <li>Cargos</li>
+              <li><a href="#"> Crear Nuevo</a></li>
             </ul>
           </div>
         </div>
-
-
-       <div class="col-md-6" wi>
-            <div class="departamento" >
-              <h3 class="card-title" align="center">Crear nuevo departamento</h3>
-              <div class="card-body">
-                <form class="form-horizontal">
-                  <div class="form-group">
-                    <label class="control-label col-md-3">Codigo de departamento</label>
-                    <div class="col-md-8">
-                      <input class="form-control" type="text" name="cod_departamento" id="cod_departamento" placeholder="Ingesar codigo para identificar departamento" required>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3">Nombre de departamento</label>
-                    <div class="col-md-8">
-                      <input class="form-control" type="text" name="n_departamento" id="n_departamento" placeholder="Ingesar nombre de departamento" required>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    
-                  </div>
-                </form>
-              </div>
-              <div class="card-footer" align="center">
-                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-default icon-btn" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</a>
-              </div>
-            </div>
-          </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div class="card-footer">
-                <div class="row">
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="clearix"></div>
+        <div class="row">
           <div class="col-md-12">
-            
-                </form>
-              </div>
+            <!-- Contenido de la pagina -->
+            <div class="card">
+              <h3 class="card-title" align="center">Formulario de registro</h3>
+              <div class="card-body">Datos Aquí</div>
             </div>
+            <!-- Fin del contenido de la pagina -->
           </div>
         </div>
       </div>
@@ -144,3 +94,8 @@ include('constructor.php');
     <script src="js/main.js"></script>
   </body>
 </html>
+<?php
+    }else {
+        header('location: page_denegado.php');
+    }
+?>
