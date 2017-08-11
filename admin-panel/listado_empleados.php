@@ -21,6 +21,11 @@
     script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
     script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
     -->
+    <style>
+      @media print {
+      .no-impr {display:none}
+      }
+    </style>
   </head>
   <body class="sidebar-mini fixed">
     <div class="wrapper">
@@ -63,20 +68,55 @@
       <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-file-text-o"></i> Listado de Empleados</h1>
-            <p>Ver el listado completo de los empleados existentes</p>
-          </div>
-          <div>
-            <ul class="breadcrumb">
+            <h1><i class="fa fa-wpforms"></i> Listado de Empleados</h1>
+            <ul class="breadcrumb side">
               <li><i class="fa fa-clipboard fa-lg"></i></li>
-              <li><a href="#">Listado de Empleados</a></li>
+              <li class="active"><a href="#">Listado de Empleados</a></li>
             </ul>
           </div>
+          <div><!--<a class="btn btn-primary btn-flat" href="#"><i class="fa fa-lg fa-plus"></i></a>--><a class="btn btn-info btn-flat no-impr" href="listado_empleados.php"><i class="fa fa-lg fa-refresh"></i></a><a class="btn btn-warning btn-flat" href="javascript:window.print();"><i class="fa fa-lg fa-print"></i></a></div>
         </div>
-        <div class="row">
+        <div class="row" id="data-table">
           <div class="col-md-12">
             <div class="card">
-              <div class="card-body">Datos Aquí</div>
+              <div class="card-body">
+                <table class="table table-hover table-bordered" id="sampleTable">
+                  <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Nombres</th>
+                      <th>Apellido Paterno</th>
+                      <th>Apellido Materno</th>
+                      <th>Profesi&oacute;n</th>
+                      <th>Tel&eacute;fono</th>
+                      <th>Correo</th>
+                      <th class="no-impr">Ver Detalles</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php
+                      $queryFullEmpleados=mysqli_query($db, "SELECT * FROM empleados") or die(mysqli_error());
+                      while ($rowEmpleado=mysqli_fetch_array($queryFullEmpleados)) {
+                        echo '
+                          <tr>
+                            <form method="POST" action="detalles_empleado.php">
+                              <td>'.$rowEmpleado['Id_Empleado'].'</td>
+                              <td>'.$rowEmpleado['Nombres'].'</td>
+                              <td>'.$rowEmpleado['Apellido1'].'</td>
+                              <td>'.$rowEmpleado['Apellido2'].'</td>
+                              <td>'.$rowEmpleado['Profesion'].'</td>
+                              <td>'.$rowEmpleado['Telefono'].'</td>
+                              <td>'.$rowEmpleado['Correo'].'</td>
+                              <input class="no-impr" type="hidden" name="Id_Empleado" Id="Id_Empleado" value="'.$rowEmpleado['Id_Empleado'].'">
+                              <td align="center"><button class="btn btn-info icon-btn icon-btn-flat no-impr" type="submit" id="enviar" name="enviar"> <i class="fa fa-search"></i></button></td>
+                            </form>
+                          </tr>
+                        ';
+                      }
+                    ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -87,6 +127,9 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$('#sampleTable').DataTable();</script>
     <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
     <script type="text/javascript">
       $('.alert').click(function(){

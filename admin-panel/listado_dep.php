@@ -21,6 +21,11 @@
     script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
     script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
     -->
+    <style>
+      @media print {
+      .no-impr {display:none}
+      }
+    </style>
   </head>
   <body class="sidebar-mini fixed">
     <div class="wrapper">
@@ -63,30 +68,58 @@
       <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-file-text-o"></i> Listado de Departamentos</h1>
-            <p>Ver el listado completo de los departamentos existentes</p>
-          </div>
-          <div>
-            <ul class="breadcrumb">
+            <h1><i class="fa fa-wpforms"></i> Listado de Departamentos</h1>
+            <ul class="breadcrumb side">
               <li><i class="fa fa-clipboard fa-lg"></i></li>
-              <li><a href="#">Listado de Departamentos</a></li>
+              <li class="active"><a href="#">Listado de Departamentos</a></li>
             </ul>
           </div>
+          <div><!--<a class="btn btn-primary btn-flat" href="#"><i class="fa fa-lg fa-plus"></i></a>--><a class="btn btn-info btn-flat no-impr" href="listado_dep.php"><i class="fa fa-lg fa-refresh"></i></a><a class="btn btn-warning btn-flat" href="javascript:window.print('data-table');"><i class="fa fa-lg fa-print"></i></a></div>
         </div>
-        <div class="row">
+        <div class="row" id="data-table">
           <div class="col-md-12">
             <div class="card">
-              <div class="card-body">Datos Aquí</div>
+              <div class="card-body">
+                <table class="table table-hover table-bordered" id="sampleTable">
+                  <thead>
+                    <tr>
+                      <th>C&oacute;digo</th>
+                      <th>Nombre</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php
+                      $queryFullDep=mysqli_query($db, "SELECT * FROM departamentos") or die(mysqli_error());
+                      while ($rowDep=mysqli_fetch_array($queryFullDep)) {
+                        echo '
+                          <tr>
+                            <td>'.$rowDep['Cod_Dep'].'</td>
+                            <td>'.$rowDep['Nom_Dep'].'</td>
+                          </tr>
+                        ';
+                      }
+                    ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </dciv>
     <!-- Javascripts-->
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script language="javascript"> 
+      function refresh() {
+        window.setTimeout('location.href="listado_dep.php"', 1);
+      }
+    </script>
+    <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$('#sampleTable').DataTable();</script>
     <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
     <script type="text/javascript">
       $('.alert').click(function(){

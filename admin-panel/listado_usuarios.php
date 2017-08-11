@@ -21,6 +21,11 @@
     script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
     script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
     -->
+    <style>
+      @media print {
+      .no-impr {display:none}
+      }
+    </style>
   </head>
   <body class="sidebar-mini fixed">
     <div class="wrapper">
@@ -63,20 +68,46 @@
       <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-file-text-o"></i> Listado de Usuarios</h1>
-            <p>Ver el listado completo de los usuarios existentes</p>
-          </div>
-          <div>
-            <ul class="breadcrumb">
+            <h1><i class="fa fa-wpforms"></i> Listado de Usuarios</h1>
+            <ul class="breadcrumb side">
               <li><i class="fa fa-clipboard fa-lg"></i></li>
-              <li><a href="#">Listado de Usuarios</a></li>
+              <li class="active"><a href="#">Listado de Usuarios</a></li>
             </ul>
           </div>
+          <div><!--<a class="btn btn-primary btn-flat" href="#"><i class="fa fa-lg fa-plus"></i></a>--><a class="btn btn-info btn-flat no-impr" href="listado_usuarios.php"><i class="fa fa-lg fa-refresh"></i></a><a class="btn btn-warning btn-flat" href="javascript:window.print();"><i class="fa fa-lg fa-print"></i></a></div>
         </div>
-        <div class="row">
+        <div class="row" id="data-table">
           <div class="col-md-12">
             <div class="card">
-              <div class="card-body">Datos Aquí</div>
+              <div class="card-body">
+                <table class="table table-hover table-bordered" id="sampleTable">
+                  <thead>
+                    <tr>
+                      <th>C&oacute;digo</th>
+                      <th>Nombre de Usuario</th>
+                      <th>Tipo</th>
+                      <th>Estado</th>
+                      <th>Empleado Asociado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php
+                      $queryFullUsuarios=mysqli_query($db, "SELECT * FROM usuarios") or die(mysqli_error());
+                      while ($rowUsuario=mysqli_fetch_array($queryFullUsuarios)) {
+                        echo '
+                          <tr>
+                            <td>'.$rowUsuario['Cod_Usuario'].'</td>
+                            <td>'.$rowUsuario['Username'].'</td>
+                            <td>'.$rowUsuario['Tipo'].'</td>
+                            <td>'.$rowUsuario['Estado'].'</td>
+                            <td>'.$rowUsuario['Id_Empleado'].'</td>
+                          </tr>
+                        ';
+                      }
+                    ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -87,6 +118,9 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$('#sampleTable').DataTable();</script>
     <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
     <script type="text/javascript">
       $('.alert').click(function(){
