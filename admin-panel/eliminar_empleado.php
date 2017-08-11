@@ -1,4 +1,4 @@
-  <?php
+<?php
   include('constructor.php');
   include('../cn/bdconexion.php');
   session_start();
