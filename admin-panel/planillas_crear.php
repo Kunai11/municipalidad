@@ -1,7 +1,7 @@
 <?php
   include('constructor.php');
   include('../cn/bdconexion.php');
-  session_start();
+  #session_start();
   if (isset($_SESSION['username'])&&($_SESSION['rank'])) {      
 ?>
 <!DOCTYPE html>
@@ -168,6 +168,7 @@
             <!-- Fin del contenido de la pagina -->
           </div>
         </div>
+        <!-- Inicio de contenido de la pagina -->
       </div>
     </div>
     <!-- Javascripts-->
