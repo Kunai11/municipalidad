@@ -74,6 +74,40 @@
             </ul>
           </div>
         </div>
+        <?php 
+          $codigo_planilla=$_GET['codigo_planilla'];
+          if ($codigo_planilla==null) {
+            $codigo = '';
+            $desc = '';
+            $tipo = '';
+            $sueldoBase = '';
+            $deducIHSS = '';
+            $deducEsp = '';
+            $sueldoNeto = '';
+          } 
+          if ($codigo_planilla!=null) {
+            $queryObjeto = mysqli_query($db, "SELECT * FROM planillas WHERE Cod_Planilla = '".$codigo_planilla."'") or die(mysqli_error());
+            if ($rowObjeto=mysqli_fetch_array($queryObjeto)) {
+              $codigo = $rowObjeto['Cod_Planilla'];
+              $desc = $rowObjeto['Descripcion'];
+                $queryListaCargos=mysqli_query($db, "SELECT * FROM cargos WHERE Cod_Cargo = '".$rowObjeto['Tipo']."'") or die(mysqli_error());
+                $rowCargo=mysqli_fetch_array($queryListaCargos);
+                $tipo = $rowCargo['Nom_Cargo'];
+              $sueldoBase = $rowObjeto['Sueldo_Base'];
+              $deducIHSS = $rowObjeto['Ded_IHSS'];
+              $deducEsp = $rowObjeto['Ded_Especiales'];
+              $sueldoNeto = $rowObjeto['Salario_Neto'];
+            } else {
+              $codigo = '';
+              $desc = '';
+              $tipo = '';
+              $sueldoBase = '';
+              $deducIHSS = '';
+              $deducEsp = '';
+              $sueldoNeto = '';
+            }
+          }            
+        ?>
         <div class="row">
           <div class="col-md-12">
             <div class="card">
@@ -81,17 +115,17 @@
                 <h3 class="card-title" align="center">Buscar Planilla</h3>
               </div>
               <div class="card-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="GET" action="planillas_modificar.php" id="formBuscar">
                   <div class="form-group">
                     <label class="control-label col-md-3">Codigo de planilla</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="codigo_planilla" id="codigo_planilla" placeholder="Ingresar codigo de planilla" required>
+                      <input class="form-control" type="text" name="codigo_planilla" id="codigo_planilla" placeholder="Ingresar codigo de planilla" value="<?php echo $codigo; ?>" required>
                     </div>
                   </div>
                 </form>
               </div>
               <div class="card-footer" align="center">
-                <button class="btn btn-primary icon-btn" type="button" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Buscar</button>
+                <button class="btn btn-primary icon-btn" type="submit" form="formBuscar" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Buscar</button>
                 &nbsp;&nbsp;&nbsp;
                 <button class="btn btn-default icon-btn" type="button" onclick="limpiarBusqueda()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
@@ -110,7 +144,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Descripci&oacute;n</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="descripcion_planilla" id="descripcion_planilla" placeholder="Ingresar una breve descripcion" required>
+                      <input class="form-control" type="text" name="descripcion_planilla" id="descripcion_planilla"  placeholder="Ingresar una breve descripcion" value="<?php echo $desc;?>" required>
                     </div>
                   </div>
 
@@ -122,7 +156,12 @@
                         <?php 
                           $queryListaCargos=mysqli_query($db, "SELECT * FROM cargos") or die(mysqli_error());
                           while ($rowCargo=mysqli_fetch_array($queryListaCargos)) {
-                            echo '<option id="'.$rowCargo['Cod_Cargo'].'">'.$rowCargo['Nom_Cargo'].'</option>';  
+                            if ($rowCargo['Cod_Cargo']==$rowObjeto['Tipo']) {
+                              echo '<option id="'.$rowCargo['Cod_Cargo'].'" selected>'.$rowCargo['Nom_Cargo'].'</option>';  
+                            } 
+                            if ($rowCargo['Cod_Cargo']!=$rowObjeto['Tipo']) {
+                              echo '<option id="'.$rowCargo['Cod_Cargo'].'">'.$rowCargo['Nom_Cargo'].'</option>';  
+                            }
                           }
                         ?>
                       </select>
@@ -134,7 +173,7 @@
                     <div class="col-md-8">
                       <div class="input-group">
                         <span class="input-group-addon" >L</span>
-                        <input class="form-control" type="number" name="sueldo_base" id="sueldo_base" onchange="calculo()" onkeyup="calculo()" placeholder="Ingresar el sueldo base" required>
+                        <input class="form-control" type="number" name="sueldo_base" id="sueldo_base" onchange="calculo()" onkeyup="calculo()" placeholder="Ingresar el sueldo base" value="<?php echo $sueldoBase;?>" required>
                       </div>
                     </div>
                   </div>
@@ -144,7 +183,7 @@
                     <div class="col-md-8">
                       <div class="input-group">
                         <span class="input-group-addon" >%</span>
-                        <input class="form-control" type="number" min="0" name="deduc_IHSS" id="deduc_IHSS" onchange="calculo()" onkeyup="calculo()" placeholder="Ingresar el porcentaje de la deduccion" required>
+                        <input class="form-control" type="number" min="0" name="deduc_IHSS" id="deduc_IHSS" onchange="calculo()" onkeyup="calculo()" placeholder="Ingresar el porcentaje de la deduccion" value="<?php echo $deducIHSS;?>" required>
                         <span class="input-group-addon" id="valor_deduc_IHSS">Valor deducido (L)</span>
                       </div>
                     </div>
@@ -155,7 +194,7 @@
                     <div class="col-md-8">
                       <div class="input-group">
                         <span class="input-group-addon" >%</span>
-                        <input class="form-control" type="number" min="0" name="deduc_Esp" id="deduc_Esp" onchange="calculo()" onkeyup="calculo()" placeholder="Ingresar el porcentaje de la deduccion" required>
+                        <input class="form-control" type="number" min="0" name="deduc_Esp" id="deduc_Esp" onchange="calculo()" onkeyup="calculo()" placeholder="Ingresar el porcentaje de la deduccion" value="<?php echo $deducEsp;?>" required>
                         <span class="input-group-addon" id="valor_deduc_esp">Valor deducido (L)</span>
                       </div>
                     </div>
@@ -166,7 +205,7 @@
                     <div class="col-md-8">
                       <div class="input-group">
                         <span class="input-group-addon" >L</span>
-                        <input class="form-control" type="number" name="sueldo_neto" id="sueldo_neto" placeholder="Sueldo Neto" disabled="disabled" required>
+                        <input class="form-control" type="number" name="sueldo_neto" id="sueldo_neto" onchange="calculo()" placeholder="Sueldo Neto" disabled="disabled" value="<?php echo $sueldoNeto;?>" required>
                       </div>
                     </div>
                   </div>
