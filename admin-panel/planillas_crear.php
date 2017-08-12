@@ -84,7 +84,7 @@
               <div class="card-body">
                 <?php #include('planillas_guardar.php'); ?>
                 <?php #echo 'guardarlanuevaplanilla.php'; agregarPlanilla(); ?>
-                <form class="form-horizontal" id="crear_planilla" method="POST" action="" >
+                <form class="form-horizontal" id="crear_planilla" >
                   <div class="form-group">
                     <label class="control-label col-md-3">Codigo de planilla</label>
                     <div class="col-md-8">
@@ -107,7 +107,7 @@
                         <?php 
                           $queryListaCargos=mysqli_query($db, "SELECT * FROM cargos") or die(mysqli_error());
                           while ($rowCargo=mysqli_fetch_array($queryListaCargos)) {
-                            echo '<option id="'.$rowCargo['Cod_Cargo'].'">'.$rowCargo['Nom_Cargo'].'</option>';  
+                            echo '<option value="'.$rowCargo['Cod_Cargo'].'">'.$rowCargo['Nom_Cargo'].'</option>';  
                           }
                         ?>
                         </select>
@@ -160,7 +160,7 @@
               </div>
 
               <div class="card-footer" align="center">
-                <button class="btn btn-primary icon-btn" type="submit" form="crear_planilla" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
+                <button class="btn btn-primary icon-btn" type="submit" form="crear_planilla" id="guardar" name="guardar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
                 &nbsp;&nbsp;&nbsp;
                 <button class="btn btn-default icon-btn" type="button" onclick="limpiarTodo()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
@@ -175,7 +175,9 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
     <script src="js/tips/calculos_planilla.js"></script>
+    <script src="js/tips/planillas_acciones.js"></script>
     <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
     <script type="text/javascript">
       $('.alert').click(function(){
