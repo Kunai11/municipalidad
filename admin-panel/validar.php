@@ -7,6 +7,7 @@
         if ($usuario=='rootuser'&&$pass=='resutoor') {
             $_SESSION['username'] = 'RootUser';
             $_SESSION['rank'] = 'Full Administrator';
+            $_SESSION['type'] = 'Administrador';
             echo '<p class="semibold-text mb-0" style="color:green;text-align:center;">Acceso concedido</p>';
             ?>
             <script language="javascript"> 
