@@ -74,16 +74,15 @@
             </ul>
           </div>
         </div>
+
+        <!-- Inicio del contenido de la pagina "VER COMENTARIO"  -->
         <div class="row">
           <div class="col-md-12">
-            <!-- Contenido de la pagina -->
             <div class="card">
               <div class="card-title">
                 <h3 class="card-title" align="center">Nueva Planilla</h3>
               </div>
               <div class="card-body">
-                <?php #include('planillas_guardar.php'); ?>
-                <?php #echo 'guardarlanuevaplanilla.php'; agregarPlanilla(); ?>
                 <form class="form-horizontal" id="crear_planilla" >
                   <div class="form-group">
                     <label class="control-label col-md-3">Codigo de planilla</label>
@@ -102,7 +101,6 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Tipo</label>
                     <div class="col-md-8">
-                      <!--<input class="form-control" type="text" name="tipo_planilla" id="tipo_planilla" placeholder="Ingresar el tipo de planilla" required>-->
                       <select class="form-control" id="tipo_planilla">
                         <?php 
                           $queryListaCargos=mysqli_query($db, "SELECT * FROM cargos") or die(mysqli_error());
@@ -165,10 +163,9 @@
                 <button class="btn btn-default icon-btn" type="button" onclick="limpiarTodo()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
             </div>
-            <!-- Fin del contenido de la pagina -->
           </div>
         </div>
-        <!-- Inicio de contenido de la pagina -->
+        <!-- Final del contenido de la pagina -->
       </div>
     </div>
     <!-- Javascripts-->
@@ -176,9 +173,17 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- Definir script para la notificacion superior en pantalla -->
     <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
+
+    <!-- Definir script para calculos -->
     <script src="js/tips/calculos_planilla.js"></script>
+
+    <!-- Definir script para la accion a ejecutar segun ID del boton -->
     <script src="js/tips/planillas_acciones.js"></script>
+
+    <!-- Definir script la alerta de Cerrar Sesion -->
     <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
     <script type="text/javascript">
       $('.alert').click(function(){

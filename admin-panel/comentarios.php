@@ -1,6 +1,6 @@
 MODULO AGREGAR
 
-    <!-- Iniio del contenido de la pagina  -->
+    <!-- Inicio del contenido de la pagina  -->
         <!-- NOTA las clases llama al archivo css del estilo para que su diseño tome forma -->
         <!-- div contendor de una "tarjeta de contenido" -->
         <div class="row">
