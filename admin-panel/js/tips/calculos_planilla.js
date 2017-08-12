@@ -35,7 +35,7 @@ function calculo() {
 }
 
 function limpiarBusqueda() {
-	$("#codigo_planilla").val("").value;
+	$("#codigo_planilla_buscar").val("").value;
 }
 
 function limpiarForm(){
