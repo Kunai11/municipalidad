@@ -43,7 +43,9 @@ function limpiarForm(){
     $("#tipo_planilla").val("").value;
     $("#sueldo_base").val("").value;
 	$("#deduc_IHSS").val("").value;
+	$("#valor_deduc_IHSS").html("Valor deducido (L)").value;
     $("#deduc_Esp").val("").value;
+	$("#valor_deduc_esp").html("Valor deducido (L)").value;
     $("#sueldo_neto").val("").value;
 }
 
@@ -51,8 +53,12 @@ function limpiarTodo() {
 	$("#codigo_planilla").val("").value;
     $("#descripcion_planilla").val("").value;
     $("#tipo_planilla").val("").value;
+	//document.getElementById('tipo_planilla').selectedIndex(0);
     $("#sueldo_base").val("").value;
 	$("#deduc_IHSS").val("").value;
+	$("#valor_deduc_IHSS").html("Valor deducido (L)").value;
     $("#deduc_Esp").val("").value;
+	$("#valor_deduc_esp").html("Valor deducido (L)").value;
     $("#sueldo_neto").val("").value;
 }
+
