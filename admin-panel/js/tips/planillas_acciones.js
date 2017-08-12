@@ -260,4 +260,81 @@ $(document).ready(function () {
 		return false;
 
 	});	
+
+	$('#eliminar').click(function () {
+		var codigo_planilla=$('#codigo_planilla').val();
+		
+		// Validaciones
+		
+		// Fin de las Validaciones
+		
+		var data = 'codigo_planilla=' + codigo_planilla;
+		//alert(data);
+
+      	swal({
+      		title: "Esta seguro de eliminar?",
+      		text: "Esta opcion no puede deshacerse.",
+      		type: "warning",
+      		showCancelButton: true,
+      		confirmButtonText: "Si, eliminar",
+      		cancelButtonText: "No, cancelar",
+      		closeOnConfirm: false,
+      		closeOnCancel: false
+      	}, function(isConfirm) {
+      		if (isConfirm) {
+				$.ajax({
+				
+					url: "planillas_borrar.php",
+
+					data: data,
+
+					type: "POST",			
+
+					dataType: "html",
+					
+					//cache: false,
+					
+					//success
+					success: function (data) {
+						//alert(data);
+						
+						if (data) {
+							swal("Eliminado!", "El registro se ha eliminado correctamente", "success");
+							limpiarTodo();
+						}
+						if (!data) {
+							$.notify({
+								title: "Error : ",
+								message: "No existe el CODIGO ingresado!",
+								icon: 'fa fa-times' 
+							},{
+								type: "danger"
+							});
+						}
+						
+					},
+
+					error : function(xhr, status) {
+						// alert('Disculpe, existió un problema');
+					},
+
+					complete : function(xhr, status) {
+						// alert('Petición realizada');
+						// $.notify({
+						// 		title: "Informacion : ",
+						// 		message: "Petición realizada!",
+						// 		icon: 'fa fa-check' 
+						// 	},{
+						// 		type: "info"
+						// });
+					}		
+				});
+      		} else {
+      			swal("Cancelado", "El registro esta a salvo", "error");
+      		}
+      	});
+				
+		return false;
+
+	});
 });
