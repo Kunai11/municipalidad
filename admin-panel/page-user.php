@@ -1,7 +1,7 @@
 <?php
   include('constructor.php');
   include('../cn/bdconexion.php');
-  session_start();
+  #session_start();
   if (isset($_SESSION['username'])&&($_SESSION['rank'])) {      
 ?>
 <!DOCTYPE html>
@@ -86,22 +86,52 @@
                   <div class="card user-settings">
                   <h4 class="line-head">Perfil de Empleado</h4>
                   <?php
-                    $queryDatosEmp = mysqli_query($db, "SELECT * FROM empleados WHERE Id_Empleado='".$_SESSION['Id_Empleado']."'") or die(mysqli_error());
-                    $rowQueryDatosEmp=mysqli_fetch_array($queryDatosEmp);
+                    if (($_SESSION['username']=="RootUser")) {
+                      $Id_Empleado = 'N/A';
+                      $Nombres = 'N/A';
+                      $Apellido1 = 'N/A';
+                      $Apellido2 = 'N/A';
+                      $Lugar_Nac = 'N/A';
+                      $Fecha_Nac = 'N/A';
+                      $Profesion = 'N/A';
+                      $Domicilio = 'N/A';
+                      $Telefono = 'N/A';
+                      $Fecha_Ingreso = 'N/A';
+                      $Correo = 'N/A';
+                      $Nombre_Emergencia = 'N/A';
+                      $Numero_Emergencia = 'N/A';
+                    }
+                    if (($_SESSION['username']!="RootUser")) {
+                      $queryDatosEmp = mysqli_query($db, "SELECT * FROM empleados WHERE Id_Empleado='".$_SESSION['Id_Empleado']."'") or die(mysqli_error());
+                      $rowQueryDatosEmp=mysqli_fetch_array($queryDatosEmp); 
+                      $Id_Empleado = $rowQueryDatosEmp['Id_Empleado'];
+                      $Nombres = $rowQueryDatosEmp['Nombres'];
+                      $Apellido1 = $rowQueryDatosEmp['Apellido1'];
+                      $Apellido2 = $rowQueryDatosEmp['Apellido2'];
+                      $Lugar_Nac = $rowQueryDatosEmp['Lugar_Nac'];
+                      $Fecha_Nac = $rowQueryDatosEmp['Fecha_Nac'];
+                      $Profesion = $rowQueryDatosEmp['Profesion'];
+                      $Domicilio = $rowQueryDatosEmp['Domicilio'];
+                      $Telefono = $rowQueryDatosEmp['Telefono'];
+                      $Fecha_Ingreso = $rowQueryDatosEmp['Fecha_Ingreso'];
+                      $Correo = $rowQueryDatosEmp['Correo'];
+                      $Nombre_Emergencia = $rowQueryDatosEmp['Nombre_Emergencia'];
+                      $Numero_Emergencia = $rowQueryDatosEmp['Numero_Emergencia'];
+                    }
                   ?>
                   <form class="form-horizontal" style="align-items:center;">
                     <div class="form-group m-10">
                       <div class="form-group col-lg-11">
                         <label class="control-label col-lg-4">Numero de Identidad</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Numero de Identidad" value="<?php echo $_SESSION['Id_Empleado']?>" disabled />
+                          <input class="form-control" type="text" placeholder="Numero de Identidad" value="<?php echo $Id_Empleado;?>" disabled />
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Nombres</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Ingrese su/sus nombres" value="<?php echo $rowQueryDatosEmp['Nombres']?>" disabled>
+                          <input class="form-control" type="text" placeholder="Ingrese su/sus nombres" value="<?php echo $Nombres;?>" disabled>
                         </div>
                       </div>
                     </div>
@@ -109,13 +139,13 @@
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Apellido Paterno</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Ingrese su apellido" value="<?php echo $rowQueryDatosEmp['Apellido1']?>" disabled>
+                          <input class="form-control" type="text" placeholder="Ingrese su apellido" value="<?php echo $Apellido1;?>" disabled>
                         </div>
                       </div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Apellido Materno</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Ingrese su apellido" value="<?php echo $rowQueryDatosEmp['Apellido2']?>" disabled>
+                          <input class="form-control" type="text" placeholder="Ingrese su apellido" value="<?php echo $Apellido2;?>" disabled>
                         </div>
                       </div>
                     </div>
@@ -123,49 +153,49 @@
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Lugar de Nacimiento</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Ingrese su lugar de nacimiento" value="<?php echo $rowQueryDatosEmp['Lugar_Nac']?>" disabled>
+                          <input class="form-control" type="text" placeholder="Ingrese su lugar de nacimiento" value="<?php echo $Lugar_Nac;?>" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Fecha de Nacimiento</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" id="demoDate" type="text" placeholder="Seleccione la fecha" value="<?php echo $rowQueryDatosEmp['Fecha_Nac']?>" disabled>
+                          <input class="form-control" id="demoDate" type="text" placeholder="Seleccione la fecha" value="<?php echo $Fecha_Nac;?>" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Profesi&oacute;n</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Ingrese su profesi&oacute;n" value="<?php echo $rowQueryDatosEmp['Profesion']?>" disabled>
+                          <input class="form-control" type="text" placeholder="Ingrese su profesi&oacute;n" value="<?php echo $Profesion;?>" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Domicilio</label>
                         <div class=" col-lg-8">
-                          <textarea class="form-control" rows="4" placeholder="Ingrese el lugar de su domicilio" disabled><?php echo $rowQueryDatosEmp['Domicilio']?></textarea>
+                          <textarea class="form-control" rows="4" placeholder="Ingrese el lugar de su domicilio" disabled><?php echo $Domicilio;?></textarea>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">N&uacute;mero de Tel&eacute;fono</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="number" min="1" placeholder="Ingrese el numero" value="<?php echo $rowQueryDatosEmp['Telefono']?>" disabled>
+                          <input class="form-control" type="number" min="1" placeholder="Ingrese el numero" value="<?php echo $Telefono;?>" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Fecha de Ingreso</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" id="demoDate2" type="text" placeholder="Seleccione la fecha" value="<?php echo $rowQueryDatosEmp['Fecha_Ingreso']?>" disabled>
+                          <input class="form-control" id="demoDate2" type="text" placeholder="Seleccione la fecha" value="<?php echo $Fecha_Ingreso;?>" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group col-lg-11">
                         <label class="control-label col-md-4">Correo Electr&oacute;nico</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" id="inputEmail" type="text" placeholder="Ingrese el correo" value="<?php echo $rowQueryDatosEmp['Correo']?>" disabled>
+                          <input class="form-control" id="inputEmail" type="text" placeholder="Ingrese el correo" value="<?php echo $Correo;?>" disabled>
                         </div>
                       </div>
                       <div class="clearfix"></div>
@@ -178,13 +208,13 @@
                               <div class="form-group col-lg-11">
                                 <label class="control-label col-md-4">Nombre Completo</label>
                                 <div class=" col-lg-8">
-                                  <input class="form-control" type="text" placeholder="Ingrese el nombre" value="<?php echo $rowQueryDatosEmp['Nombre_Emergencia']?>" disabled>
+                                  <input class="form-control" type="text" placeholder="Ingrese el nombre" value="<?php echo $Nombre_Emergencia;?>" disabled>
                                 </div>
                               </div>
                               <div class="form-group col-lg-11">
                                 <label class="control-label col-md-4">N&uacute;mero de Tel&eacute;fono</label>
                                 <div class=" col-lg-8">
-                                  <input class="form-control" type="number" min="1" placeholder="Ingrese el numero" value="<?php echo $rowQueryDatosEmp['Numero_Emergencia']?>" disabled>
+                                  <input class="form-control" type="number" min="1" placeholder="Ingrese el numero" value="<?php echo $Numero_Emergencia;?>" disabled>
                                 </div>
                               </div>
                           </div>

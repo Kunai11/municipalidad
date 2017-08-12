@@ -8,6 +8,9 @@
             $_SESSION['username'] = 'RootUser';
             $_SESSION['rank'] = 'Full Administrator';
             $_SESSION['type'] = 'Administrador';
+            $_SESSION['codigoUsuario'] = 'N/A';
+            $_SESSION['status'] = 'N/A';
+            $_SESSION['Id_Empleado'] = 'N/A';
             echo '<p class="semibold-text mb-0" style="color:green;text-align:center;">Acceso concedido</p>';
             ?>
             <script language="javascript"> 
