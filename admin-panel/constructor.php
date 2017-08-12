@@ -99,8 +99,8 @@
                 <li class="treeview"><a href="#"><i class="fa fa-wpforms"></i><span>Planillas predefinidas</span><i class="fa fa-angle-right"></i></a>
                 <ul class="treeview-menu">
                   <li><a href="planillas_crear.php"><i class="fa fa-plus-square"></i> Crear nueva</a></li>
-                  <li><a href="planillas_modificar.php?codigo_planilla=null"><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
-                  <li><a href="planillas_eliminar.php?codigo_planilla=null"><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
+                  <li><a href="planillas_modificar.php?codigo_planilla_buscar=null"><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
+                  <li><a href="planillas_eliminar.php?codigo_planilla_buscar=null"><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
                   <li><a href="planillas_listado_completo.php"><i class="fa fa-wpforms"></i> Ver Listado Completo</a></li>
                 </ul>
               </ul>
