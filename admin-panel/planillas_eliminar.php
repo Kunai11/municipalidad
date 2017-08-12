@@ -75,8 +75,8 @@
           </div>
         </div>
         <?php 
-          $codigo_planilla=$_GET['codigo_planilla'];
-          if ($codigo_planilla==null) {
+          $codigo_planilla_buscar=$_GET['codigo_planilla_buscar'];
+          if ($codigo_planilla_buscar==null) {
             $codigo = '';
             $desc = '';
             $tipo = '';
@@ -85,8 +85,8 @@
             $deducEsp = '';
             $sueldoNeto = '';
           } 
-          if ($codigo_planilla!=null) {
-            $queryObjeto = mysqli_query($db, "SELECT * FROM planillas WHERE Cod_Planilla = '".$codigo_planilla."'") or die(mysqli_error());
+          if ($codigo_planilla_buscar!=null) {
+            $queryObjeto = mysqli_query($db, "SELECT * FROM planillas WHERE Cod_Planilla = '".$codigo_planilla_buscar."'") or die(mysqli_error());
             if ($rowObjeto=mysqli_fetch_array($queryObjeto)) {
               $codigo = $rowObjeto['Cod_Planilla'];
               $desc = $rowObjeto['Descripcion'];
@@ -119,7 +119,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Codigo de planilla</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="codigo_planilla" id="codigo_planilla" placeholder="Ingresar codigo de planilla" value="<?php echo $codigo; ?>" required>
+                      <input class="form-control" type="text" name="codigo_planilla_buscar" id="codigo_planilla_buscar" placeholder="Ingresar codigo de planilla" value="<?php echo $codigo; ?>" required>
                     </div>
                   </div>
                 </form>
@@ -144,6 +144,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Descripci&oacute;n</label>
                     <div class="col-md-8">
+                      <input type="hidden" id="codigo_planilla" value="<?php echo $codigo;?>">
                       <input class="form-control" type="text" name="descripcion_planilla" id="descripcion_planilla" placeholder="Descripcion" value="<?php echo $desc;?>" disabled="disabled" required>
                     </div>
                   </div>
@@ -200,7 +201,7 @@
               </div>
 
               <div class="card-footer" align="center">
-                <button class="btn btn-primary icon-btn" type="button" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Eliminar</button>
+                <button class="btn btn-primary icon-btn" type="button" id="eliminar" name="eliminar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Eliminar</button>
                 &nbsp;&nbsp;&nbsp;
                 <button class="btn btn-default icon-btn" type="button" onclick="limpiarForm()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
@@ -215,7 +216,9 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
     <script src="js/tips/calculos_planilla.js"></script>
+    <script src="js/tips/planillas_acciones.js"></script>
     <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
     <script type="text/javascript">
       $('.alert').click(function(){
