@@ -224,7 +224,7 @@
                     </div>
                     <div class="form-group" >
                       <div class="col-md-12">
-                        <button class="btn btn-primary pull-right" form="formEmp" type="submit" ><i class="fa fa-fw fa-lg fa-print"></i> Imprimir</button>
+                        <button class="btn btn-primary pull-right" form="formEmp" type="submit" ><i class="fa fa-fw fa-lg fa-file-text-o"></i> Hoja de Vida</button>
                       </div>
                     </div>
                   </form>
