@@ -90,7 +90,7 @@
                       <th>Profesi&oacute;n</th>
                       <th>Tel&eacute;fono</th>
                       <th>Correo</th>
-                      <th class="no-impr">Ver Detalles</th>
+                      <th class="no-impr">Hoja de Vida</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -99,7 +99,7 @@
                       while ($rowEmpleado=mysqli_fetch_array($queryFullEmpleados)) {
                         echo '
                           <tr>
-                            <form method="POST" action="detalles_empleado.php">
+                            <form method="GET" action="empleados_hoja_de_vida.php">
                               <td>'.$rowEmpleado['Id_Empleado'].'</td>
                               <td>'.$rowEmpleado['Nombres'].'</td>
                               <td>'.$rowEmpleado['Apellido1'].'</td>
@@ -108,7 +108,7 @@
                               <td>'.$rowEmpleado['Telefono'].'</td>
                               <td>'.$rowEmpleado['Correo'].'</td>
                               <input class="no-impr" type="hidden" name="Id_Empleado" Id="Id_Empleado" value="'.$rowEmpleado['Id_Empleado'].'">
-                              <td align="center"><button class="btn btn-info icon-btn icon-btn-flat no-impr" type="submit" id="enviar" name="enviar"> <i class="fa fa-search"></i></button></td>
+                              <td align="center"><button class="btn btn-info icon-btn icon-btn-flat no-impr" type="submit" id="enviar" name="enviar" align="center"><i class="fa fa-file-text-o"></i></button></td>
                             </form>
                           </tr>
                         ';
