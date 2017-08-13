@@ -156,6 +156,29 @@
 
     <!-- Definir script la alerta de Cerrar Sesion -->
     <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      $('.alert').click(function(){
+      	swal({
+      		title: "Esta seguro?",
+      		text: "Esta opcion cerrara la sesion actual",
+      		type: "warning",
+      		showCancelButton: true,
+      		confirmButtonText: "Si, salir",
+      		cancelButtonText: "No, mantener conectado",
+      		closeOnConfirm: true,
+      		closeOnCancel: true
+      	}, function(isConfirm) {
+      		if (isConfirm) {
+            $(location).attr('href', 'logout.php');
+            //$('#alert').html.attr('href', 'logout.php');
+      			//swal("Deleted!", "Your imaginary file has been deleted.", "success");
+      		} else {
+            //return false;
+      			//swal("Cancelled", "Your imaginary file is safe :)", "error");
+      		}
+      	});
+      });
+    </script>
   </body>
 </html>
 <?php
