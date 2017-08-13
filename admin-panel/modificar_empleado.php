@@ -1,7 +1,7 @@
 <?php
   include('constructor.php');
   include('../cn/bdconexion.php');
-  #session_start();
+  session_start();
   if (isset($_SESSION['username'])&&($_SESSION['rank'])) {  
 ?>
 <!DOCTYPE html>
@@ -65,14 +65,14 @@
       <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-plus-square"></i> Agregar Nuevo</h1>
-            <p>Agregar un nuevo empleado al registro</p>
+            <h1><i class="fa fa-pencil-square"></i> Modificar Existente</h1>
+            <p>Modificar datos de empleado existente </p>
           </div>
           <div>
             <ul class="breadcrumb">
               <li><i class="fa fa-institution fa-lg"></i></li>
               <li>Empleados</li>
-              <li><a href="#"> Agregar Nuevo</a></li>
+              <li><a href="#">Modificar empleado</a></li>
             </ul>
           </div>
         </div>
@@ -80,28 +80,48 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-title">
-                <h3 class="card-title" align="center">Formulario de registro</h3>
+                <h3 class="card-title" align="center">Buscar empleado</h3>
               </div>
               <div class="card-body">
-                <form class="form-horizontal" id="guardar_empleado">
+                <form class="form-horizontal">
                   <div class="form-group">
                     <label class="control-label col-md-3">Numero de Identidad</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="identidad" id="identidad" placeholder="Ingresar numero de identidad">
+                      <input class="form-control" type="text" name="identidad" id="identidad" placeholder="Ingresar numero de identidad" required>
                     </div>
                   </div>
+                 </form>
+              </div>
 
+
+              <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" type="button" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Buscar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default icon-btn" type="button"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-title">
+                <h3 class="card-title" align="center">Modificar datos de empleado</h3>
+              </div>
+              <div class="card-body">
+                <form class="form-horizontal">
                   <div class="form-group">
                     <label class="control-label col-md-3">Nombre</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingresar nombre">
+                      <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingresar nombre" required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Primer apellido</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="p_apellido" id="p_apellido" placeholder="Ingresar primer apellido">
+                      <input class="form-control" type="text" name="p_apellido" id="p_apellido" placeholder="Ingresar primer apellido" required>
                     </div>
                   </div>
 
@@ -122,7 +142,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Fecha de nacimiento</label>
                     <div class="col-md-8">
-                      <input class="form-control demoDate" type="text" name="f_nacimiento" id="f_nacimiento" placeholder="Seleccionar fecha" required>
+                      <input class="form-control demoDate" type="text" name="f_nacimiento" id="f_nacimiento" placeholder="Seleccionar fecha">
                     </div>
                   </div>
 
@@ -150,7 +170,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Fecha de ingreso</label>
                     <div class="col-md-8">
-                      <input class="form-control demoDate" type="text" name="f_ingreso" id="f_ingreso" placeholder="Seleccionar fecha" required>
+                      <input class="form-control demoDate" type="text" name="f_ingreso" id="f_ingreso" placeholder="Seleccionar fecha">
                     </div>
                   </div>
 
@@ -175,34 +195,37 @@
                     </div>
                   </div>
 
-                <div class="form-group">
+                  <div class="form-group">
                     <label class="control-label col-md-3">Estado</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="estado" id="estado" placeholder="">
+                      <input class="form-control" type="text" name="estado" id="estado" placeholder="Ingresar estado del empleado">
                     </div>
                   </div>
 
                 </form>
               </div>
-             <div class="card-footer" align="center">
-                <button class="btn btn-primary icon-btn" type="submit" form="guardar_empleado" id="agregar" name="agregar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
+              <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
                 &nbsp;&nbsp;&nbsp;
-                <button class="btn btn-default icon-btn" type="button" onclick="limpiarTodo()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+                <button class="btn btn-default icon-btn" type="button"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
+                 </form>
+              </div>
+
+
             </div>
           </div>
         </div>
       </div>
     </div>
+
+
     <!-- Javascripts-->
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
-     <script src="js/tips/empleados_acciones.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
-      <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
-
     <script type="text/javascript">
       $('#sl').click(function(){
         $('#tl').loadingBtn();
@@ -215,7 +238,7 @@
       });
       
       $('.demoDate').datepicker({
-        format: "yyyy/mm/dd",
+        format: "dd/mm/yyyy",
         autoclose: true,
         todayHighlight: true
       });
