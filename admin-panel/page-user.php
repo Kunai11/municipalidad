@@ -119,12 +119,13 @@
                       $Numero_Emergencia = $rowQueryDatosEmp['Numero_Emergencia'];
                     }
                   ?>
-                  <form class="form-horizontal" style="align-items:center;">
+                  <form class="form-horizontal" style="align-items:center;" id="formEmp" method="GET" action="empleados_hoja_de_vida.php">
                     <div class="form-group m-10">
                       <div class="form-group col-lg-11">
                         <label class="control-label col-lg-4">Numero de Identidad</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Numero de Identidad" value="<?php echo $Id_Empleado;?>" disabled />
+                          <input type="hidden" name="Id_Empleado" id="Id_Empleado" value="<?php echo $Id_Empleado;?>">
+                          <input class="form-control" type="text"  placeholder="Numero de Identidad" value="<?php echo $Id_Empleado;?>" disabled />
                         </div>
                       </div>
                       <div class="clearfix"></div>
@@ -221,11 +222,11 @@
                         </div>
                       </div>
                     </div>
-                    <!--<div class="form-group" align="center">
+                    <div class="form-group" >
                       <div class="col-md-12">
-                        <button class="btn btn-primary" type="button" onclick="javascript:window.print();" align="center"><i class="fa fa-fw fa-lg fa-print"></i> Imprimir</button>
+                        <button class="btn btn-primary pull-right" form="formEmp" type="submit" ><i class="fa fa-fw fa-lg fa-print"></i> Imprimir</button>
                       </div>
-                    </div>-->
+                    </div>
                   </form>
                 </div>
                 </div>
