@@ -77,14 +77,65 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <!-- Contenido de la pagina -->
             <div class="card">
-              <h3 class="card-title" align="center"></h3>
-              <div class="card-body">Datos Aquí</div>
+              <div class="card-title">
+                <h3 class="card-title" align="center">Eliminar Asignaci&oacute;n</h3>
+              </div>
+              <div class="card-body">
+                <form class="form-horizontal" id="crear_planilla" >
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Departamento</label>
+                    <div class="col-md-8">
+                      <select class="form-control" id="Cod_Dep">
+                        <?php 
+                          $queryListaDep=mysqli_query($db, "SELECT * FROM departamentos") or die(mysqli_error());
+                          while ($rowDep=mysqli_fetch_array($queryListaDep)) {
+                            echo '<option value="'.$rowDep['Cod_Dep'].'">'.$rowDep['Nom_Dep'].'</option>';  
+                          }
+                        ?>
+                        </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Cargo</label>
+                    <div class="col-md-8">
+                      <select class="form-control" id="Cod_Cargo">
+                        <?php 
+                          $queryListaCargo=mysqli_query($db, "SELECT * FROM cargos") or die(mysqli_error());
+                          while ($rowCargo=mysqli_fetch_array($queryListaCargo)) {
+                            echo '<option value="'.$rowCargo['Cod_Cargo'].'">'.$rowCargo['Nom_Cargo'].'</option>';  
+                          }
+                        ?>
+                        </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Empleado</label>
+                    <div class="col-md-8">
+                      <select class="form-control" id="Id_Empleado">
+                        <?php 
+                          $queryListaEmpleado=mysqli_query($db, "SELECT * FROM empleados") or die(mysqli_error());
+                          while ($rowEmpleado=mysqli_fetch_array($queryListaEmpleado)) {
+                            echo '<option value="'.$rowEmpleado['Id_Empleado'].'">'.$rowEmpleado['Nombres'].' '.$rowEmpleado['Apellido1'].' </option>';  
+                          }
+                        ?>
+                        </select>
+                    </div>
+                  </div>
+                 </form>
+              </div>
+
+              <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" ty="submit" id="eliminar" name="eliminar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Eliminar</button>
+                &nbsp;&nbsp;&nbsp;
+                <!--<button class="btn btn-default icon-btn" type="button" onclick="limpiarTodo()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>-->
+              </div>
             </div>
-            <!-- Fin del contenido de la pagina -->
           </div>
         </div>
+        <!-- Final del contenido de la pagina -->
       </div>
     </div>
     <!-- Javascripts-->
@@ -92,6 +143,41 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- Definir script para la notificacion superior en pantalla -->
+    <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
+
+    <!-- Definir script para calculos -->
+    <script src="js/tips/calculos_planilla.js"></script>
+
+    <!-- Definir script para la accion a ejecutar segun ID del boton -->
+    <script src="js/tips/asig_acciones.js"></script>
+
+    <!-- Definir script la alerta de Cerrar Sesion -->
+    <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      $('.alert').click(function(){
+      	swal({
+      		title: "Esta seguro?",
+      		text: "Esta opcion cerrara la sesion actual",
+      		type: "warning",
+      		showCancelButton: true,
+      		confirmButtonText: "Si, salir",
+      		cancelButtonText: "No, mantener conectado",
+      		closeOnConfirm: true,
+      		closeOnCancel: true
+      	}, function(isConfirm) {
+      		if (isConfirm) {
+            $(location).attr('href', 'logout.php');
+            //$('#alert').html.attr('href', 'logout.php');
+      			//swal("Deleted!", "Your imaginary file has been deleted.", "success");
+      		} else {
+            //return false;
+      			//swal("Cancelled", "Your imaginary file is safe :)", "error");
+      		}
+      	});
+      });
+    </script>
   </body>
 </html>
 <?php
