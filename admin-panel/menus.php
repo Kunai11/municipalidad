@@ -1,6 +1,6 @@
 <?php
   session_start();
-    if (isset($_SESSION['username'])&&($_SESSION['rank'])) { 
+    if (isset($_SESSION['username'])&&($_SESSION['rank'])) {
       function menuAdministrador(){
 ?>
         <aside class="main-sidebar hidden-print">
@@ -30,7 +30,7 @@
                     <!--<li><a href="empleado_eliminar.php"><i class="fa fa-minus-square"></i> Eliminar existente</a></li>-->
                   </ul>
                 </li>
-                  
+
                 <li class="treeview"><a href="#"><i class="fa fa-suitcase"></i><span>Departamentos</span><i class="fa fa-angle-right"></i></a>
                   <ul class="treeview-menu">
                     <li><a href="dep_agregar.php"><i class="fa fa-plus-square"></i> Agregar nuevo</a></li>
@@ -51,6 +51,7 @@
                     <li><a href="asig_crear.php"><i class="fa fa-plus-square"></i> Crear Nueva</a></li>
                     <li><a href="asig_modificar.php"><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
                     <li><a href="asig_eliminar.php"><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
+                    <li><a href="listado_asignaciones.php"><i class="fa fa-file-text-o"></i> Ver Listado Completo</a></li>
                   </ul>
                 </li>
               </ul>
@@ -188,7 +189,7 @@
                     <!--<li><a href="empleado_eliminar.php"><i class="fa fa-minus-square"></i> Eliminar existente</a></li>-->
                   <!--</ul>
                 </li>
-                  
+
                 <li class="treeview"><a href="#"><i class="fa fa-suitcase"></i><span>Departamentos</span><i class="fa fa-angle-right"></i></a>
                   <ul class="treeview-menu">
                     <li><a href="dep_agregar.php"><i class="fa fa-plus-square"></i> Agregar nuevo</a></li>
