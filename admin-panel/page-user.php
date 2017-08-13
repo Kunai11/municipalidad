@@ -64,7 +64,7 @@
         <div class="row user">
           <div class="col-md-12">
             <div class="profile">
-              <div class="info"><img class="user-img" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg">
+              <div class="info"><img class="user-img" src="images/user.png">
                 <h4><?php echo $_SESSION['username']; ?></h4>
                 <p><?php echo $_SESSION['rank']; ?></p>
               </div>
