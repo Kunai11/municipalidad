@@ -178,7 +178,10 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Estado</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="estado" id="estado" placeholder="Ingresar estado del empleado">
+                      <select class="form-control" name="estado" id="estado">
+                        <option value="01">Activo</option>
+                        <option value="02">Inactivo</option>
+                      </select>
                     </div>
                   </div>
 
