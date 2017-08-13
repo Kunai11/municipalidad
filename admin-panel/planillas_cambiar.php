@@ -1,5 +1,5 @@
 <?php
-    #session_start();
+    session_start();
     if (isset($_SESSION['username'])&&($_SESSION['rank'])) {
         // Incluir el codigo de la conexion
         include('../cn/bdconexion.php');
@@ -59,7 +59,7 @@
                     $queryGuardar = mysqli_query($db, "UPDATE planillas SET Descripcion='$desc', Tipo='$tipo', Sueldo_Base='$sueldoBase', Ded_IHSS='$deducIHSS', Ded_Especiales='$deducEsp', Salario_Neto='$sueldoNeto' WHERE Cod_Planilla='$codigo'") or die(mysqli_error());
 
                     //Imprimir algo, para que el metodo .ajax(); de jQuery Funcione y sepa que YA se MODIFICO
-                    echo 'Guardado'
+                    echo 'Guardado';
                 }
                 //Si la variable anterior contiene datos [si encontro registro con el mismo tipo ingresado]
                 if ($rowExisteTipo['Existe']!=0) {

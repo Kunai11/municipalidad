@@ -285,11 +285,20 @@ $(document).ready(function () {
 
 		// Obtener los valores de los objetos a traves de su id 
 		var codigo_planilla=$('#codigo_planilla').val();
+		var codigo_planilla_buscar=$('#codigo_planilla_buscar').val();
 		
 		// Validaciones de objetos vacios
-		
+		if (codigo_planilla_buscar=='') {
+			$("#codigo_planilla_buscar").attr('required',true);
+			document.getElementById("codigo_planilla_buscar").style.border="2px solid #a94442";
+			document.getElementById("codigo_planilla_buscar").focus();
+			return false;
+		} else {
+			$("#codigo_planilla_buscar").attr('required',false);
+			document.getElementById("codigo_planilla_buscar").style.border="2px solid #3c763d";
+		}		
 		// Fin de las Validaciones
-		
+		//alert("codigo_planilla = " + codigo_planilla + " codigo_planilla_buscar = " + codigo_planilla_buscar);
 		// Variable con todos los valores necesarios para la consulta
 		var data = 'codigo_planilla=' + codigo_planilla;
 		//alert(data);
@@ -327,7 +336,7 @@ $(document).ready(function () {
 						
 						// Si el servidor mando informacion
 						if (data) {
-
+							alert(data);
 							// Mostrar una nueva alerta de que se realizo con exito
 							swal("Eliminado!", "El registro se ha eliminado correctamente", "success");
 
