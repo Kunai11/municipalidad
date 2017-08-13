@@ -2,7 +2,7 @@
   include('constructor.php');
   include('../cn/bdconexion.php');
   #session_start();
-  if (isset($_SESSION['username'])&&($_SESSION['rank'])) {      
+  if (isset($_SESSION['username'])&&($_SESSION['rank'])) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,48 +68,43 @@
       <div class="content-wrapper">
         <div class="page-title">
           <div>
-            <h1><i class="fa fa-wpforms"></i> Listado de Empleados</h1>
+            <h1><i class="fa fa-wpforms"></i> Listado de Asignaciones</h1>
             <ul class="breadcrumb side">
-              <li><i class="fa fa-clipboard fa-lg"></i></li>
-              <li class="active"><a href="#">Listado de Empleados</a></li>
+              <li><i class="fa fa-institution fa-lg"></i></li>
+              <li>Opciones Administrativas</li>
+              <li>Asignaciones</li>
+              <li class="active"><a href="#"> Ver Listado Completo</a></li>
             </ul>
           </div>
-          <div><!--<a class="btn btn-primary btn-flat" href="#"><i class="fa fa-lg fa-plus"></i></a>--><a class="btn btn-info btn-flat no-impr" href="listado_empleados.php"><i class="fa fa-lg fa-refresh"></i></a><a class="btn btn-warning btn-flat" href="javascript:window.print();"><i class="fa fa-lg fa-print"></i></a></div>
+          <div><!--<a class="btn btn-primary btn-flat" href="#"><i class="fa fa-lg fa-plus"></i></a>--><a class="btn btn-info btn-flat no-impr" href="asig_listado_completo.php"><i class="fa fa-lg fa-refresh"></i></a><a class="btn btn-warning btn-flat" href="javascript:window.print();"><i class="fa fa-lg fa-print"></i></a></div>
         </div>
-        <div class="row" id="data-table">
+        <div class="row">
           <div class="col-md-12">
             <div class="card">
               <div class="card-body">
                 <table class="table table-hover table-bordered" id="sampleTable">
                   <thead>
                     <tr>
-                      <th>Id</th>
-                      <th>Nombres</th>
-                      <th>Apellido Paterno</th>
-                      <th>Apellido Materno</th>
-                      <th>Profesi&oacute;n</th>
-                      <th>Tel&eacute;fono</th>
-                      <th>Correo</th>
-                      <th class="no-impr">Hoja de Vida</th>
+                      <th>Departamento</th>
+                      <th>Cargo</th>
+                      <th>Empleado</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php
-                      $queryFullEmpleados=mysqli_query($db, "SELECT * FROM empleados") or die(mysqli_error());
-                      while ($rowEmpleado=mysqli_fetch_array($queryFullEmpleados)) {
+                      $queryFullAsignaciones=mysqli_query($db, "SELECT * FROM asignaciones") or die(mysqli_error());
+                      while ($rowAsig=mysqli_fetch_array($queryFullAsignaciones)) {
+                        $queryDep=mysqli_query($db, "SELECT Nom_Dep FROM departamentos WHERE Cod_Dep='".$rowAsig['Cod_Dep']."'") or die(mysqli_error());
+                        $rowDep=mysqli_fetch_array($queryDep);
+                        $queryCargo=mysqli_query($db, "SELECT Nom_Cargo FROM cargos WHERE Cod_Cargo='".$rowAsig['Cod_Cargo']."'") or die(mysqli_error());
+                        $rowCargo=mysqli_fetch_array($queryCargo);
+                        $queryEmpleado=mysqli_query($db, "SELECT Nombres, Apellido1 FROM empleados WHERE Id_Empleado='".$rowAsig['Id_Empleado']."'") or die(mysqli_error());
+                        $rowEmpleado=mysqli_fetch_array($queryEmpleado);
                         echo '
                           <tr>
-                            <form method="GET" action="empleados_hoja_de_vida.php">
-                              <td>'.$rowEmpleado['Id_Empleado'].'</td>
-                              <td>'.$rowEmpleado['Nombres'].'</td>
-                              <td>'.$rowEmpleado['Apellido1'].'</td>
-                              <td>'.$rowEmpleado['Apellido2'].'</td>
-                              <td>'.$rowEmpleado['Profesion'].'</td>
-                              <td>'.$rowEmpleado['Telefono'].'</td>
-                              <td>'.$rowEmpleado['Correo'].'</td>
-                              <input class="no-impr" type="hidden" name="Id_Empleado" Id="Id_Empleado" value="'.$rowEmpleado['Id_Empleado'].'">
-                              <td align="center"><button class="btn btn-info icon-btn icon-btn-flat no-impr" type="submit" id="enviar" name="enviar" align="center"><i class="fa fa-file-text-o"></i></button></td>
-                            </form>
+                            <td>'.$rowDep['Nom_Dep'].'</td>
+                            <td>'.$rowCargo['Nom_Cargo'].'</td>
+                            <td>'.$rowEmpleado['Nombres'].' '.$rowEmpleado['Apellido1'].'</td>
                           </tr>
                         ';
                       }
@@ -127,6 +122,11 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script language="javascript">
+      function refresh() {
+        window.setTimeout('location.href="planillas_listado_completo.php"', 1);
+      }
+    </script>
     <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
     <script type="text/javascript">$('#sampleTable').DataTable();</script>

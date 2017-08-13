@@ -69,7 +69,7 @@
           <div>
             <ul class="breadcrumb">
               <li><i class="fa fa-gears fa-lg"></i></li>
-              <li>Planillas Predefinidas</li>
+              <li>Planillas de pago</li>
               <li><a href="#">Eliminar Existente</a></li>
             </ul>
           </div>

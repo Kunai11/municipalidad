@@ -64,7 +64,7 @@
         <div class="row user">
           <div class="col-md-12">
             <div class="profile">
-              <div class="info"><img class="user-img" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg">
+              <div class="info"><img class="user-img" src="images/user.png">
                 <h4><?php echo $_SESSION['username']; ?></h4>
                 <p><?php echo $_SESSION['rank']; ?></p>
               </div>
@@ -119,12 +119,13 @@
                       $Numero_Emergencia = $rowQueryDatosEmp['Numero_Emergencia'];
                     }
                   ?>
-                  <form class="form-horizontal" style="align-items:center;">
+                  <form class="form-horizontal" style="align-items:center;" id="formEmp" method="GET" action="empleados_hoja_de_vida.php">
                     <div class="form-group m-10">
                       <div class="form-group col-lg-11">
                         <label class="control-label col-lg-4">Numero de Identidad</label>
                         <div class=" col-lg-8">
-                          <input class="form-control" type="text" placeholder="Numero de Identidad" value="<?php echo $Id_Empleado;?>" disabled />
+                          <input type="hidden" name="Id_Empleado" id="Id_Empleado" value="<?php echo $Id_Empleado;?>">
+                          <input class="form-control" type="text"  placeholder="Numero de Identidad" value="<?php echo $Id_Empleado;?>" disabled />
                         </div>
                       </div>
                       <div class="clearfix"></div>
@@ -221,11 +222,11 @@
                         </div>
                       </div>
                     </div>
-                    <!--<div class="form-group" align="center">
+                    <div class="form-group" >
                       <div class="col-md-12">
-                        <button class="btn btn-primary" type="button" onclick="javascript:window.print();" align="center"><i class="fa fa-fw fa-lg fa-print"></i> Imprimir</button>
+                        <button class="btn btn-primary pull-right" form="formEmp" type="submit" ><i class="fa fa-fw fa-lg fa-file-text-o"></i> Hoja de Vida</button>
                       </div>
-                    </div>-->
+                    </div>
                   </form>
                 </div>
                 </div>
