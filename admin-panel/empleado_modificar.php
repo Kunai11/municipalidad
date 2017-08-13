@@ -83,11 +83,11 @@
                 <h3 class="card-title" align="center">Buscar empleado</h3>
               </div>
               <div class="card-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" id="buscar_empleado">
                   <div class="form-group">
                     <label class="control-label col-md-3">Numero de Identidad</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="identidad" id="identidad" placeholder="Ingresar numero de identidad" required>
+                      <input class="form-control" type="text" name="identidad" id="identidad" placeholder="Ingresar numero de identidad" >
                     </div>
                   </div>
                  </form>
@@ -95,9 +95,9 @@
 
 
               <div class="card-footer" align="center">
-                <button class="btn btn-primary icon-btn" type="button" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Buscar</button>
+                <button class="btn btn-primary icon-btn" type="submit" form="modificar_empleado" form="buscar_empleado" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>buscar</button>
                 &nbsp;&nbsp;&nbsp;
-                <button class="btn btn-default icon-btn" type="button"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+                <button class="btn btn-default icon-btn" type="button" onclick="limpiarTodo()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
             </div>
           </div>
@@ -110,95 +110,95 @@
                 <h3 class="card-title" align="center">Modificar datos de empleado</h3>
               </div>
               <div class="card-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" id="modificar_empleado">
                   <div class="form-group">
                     <label class="control-label col-md-3">Nombre</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ingresar nombre" required>
+                      <input class="form-control" type="text" name="nombre" id="nombre" >
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Primer apellido</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="p_apellido" id="p_apellido" placeholder="Ingresar primer apellido" required>
+                      <input class="form-control" type="text" name="p_apellido" id="p_apellido" disabled="true">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Segundo apellido</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="s_apellido" id="s_apellido" placeholder="Ingresar segundo apellido">
+                      <input class="form-control" type="text" name="s_apellido" id="s_apellido" disabled="true">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Lugar de nacimiento</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="l_nacimiento" id="l_nacimiento" placeholder="Ingresar lugar de nacimiento">
+                      <input class="form-control" type="text" name="l_nacimiento" id="l_nacimiento" disabled="true">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Fecha de nacimiento</label>
                     <div class="col-md-8">
-                      <input class="form-control demoDate" type="text" name="f_nacimiento" id="f_nacimiento" placeholder="Seleccionar fecha">
+                      <input class="form-control demoDate" type="text" name="f_nacimiento" id="f_nacimiento" disabled="true">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Profesi&oacute;n</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="profesion" id="profesion" placeholder="Ingresar profesión">
+                      <input class="form-control" type="text" name="profesion" id="profesion" disabled="true">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Domicilio</label>
                     <div class="col-md-8">
-                      <textarea class="form-control" rows="4" name="domicilio" id="domicilio" placeholder="Ingresar direccion de domicilio"></textarea>
+                      <textarea class="form-control" rows="4" name="domicilio" id="domicilio" disabled="true"></textarea>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Tel&eacute;fono</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="telefono" id="telefono" placeholder="Ingresar numero de telefono">
+                      <input class="form-control" type="text" name="telefono" id="telefono" disabled="true">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Fecha de ingreso</label>
                     <div class="col-md-8">
-                      <input class="form-control demoDate" type="text" name="f_ingreso" id="f_ingreso" placeholder="Seleccionar fecha">
+                      <input class="form-control demoDate" type="text" name="f_ingreso" id="f_ingreso" disabled="true">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Correo</label>
                     <div class="col-md-8">
-                      <input class="form-control col-md-8" type="email" name="correo" id="correo" placeholder="Ingresar direccion de correo electrónico" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+                      <input class="form-control col-md-8" type="email" name="correo" id="correo" disabled="true" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
                     </div>
                   </div>
                   
                   <div class="form-group">
                     <label class="control-label col-md-3">Nombre emergencia</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="nombre_e" id="nombre_e" placeholder="Ingresar nombre de persona a llamar en caso de emergencia">
+                      <input class="form-control" type="text" name="nombre_e" id="nombre_e" disabled="true">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Numero de emergencia</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="numero_e" id="numero_e" placeholder="Numero de persona a llamar en caso de emergencia">
+                      <input class="form-control" type="text" name="numero_e" id="numero_e" disabled="true">
                     </div>
                   </div>
 
                    <div class="form-group">
                     <label class="control-label col-md-3">Estado</label>
                     <div class="col-md-8">
-                      <select class="form-control" name="estado" id="estado">
+                      <select class="form-control" name="estado" id="estado" disabled="true">
                         <option value="01">Activo</option>
                         <option value="02">Inactivo</option>
                       </select>
@@ -228,7 +228,14 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+
+     <script src="js/tips/empleados_acciones.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript">
+            $('#buscar').click(function(){
+        $('#nombre').attr('disabled');
+      });
+    </script>
     <script type="text/javascript">
       $('#sl').click(function(){
         $('#tl').loadingBtn();
