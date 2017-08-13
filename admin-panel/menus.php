@@ -49,7 +49,7 @@
                 <li class="treeview"><a href="#"><i class="fa fa-share"></i><span>Asignaciones</span><i class="fa fa-angle-right"></i></a>
                   <ul class="treeview-menu">
                     <li><a href="asig_crear.php"><i class="fa fa-plus-square"></i> Crear Nueva</a></li>
-                    <li><a href="asig_modificar.php"><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
+                    <!--<li><a href="asig_modificar.php"><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>-->
                     <li><a href="asig_eliminar.php"><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
                     <li><a href="asig_listado_completo.php"><i class="fa fa-file-text-o"></i> Ver Listado Completo</a></li>
                   </ul>
