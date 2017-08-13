@@ -71,7 +71,7 @@
             <h1><i class="fa fa-wpforms"></i> Listado de Planillas</h1>
             <ul class="breadcrumb side">
               <li><i class="fa fa-gears fa-lg"></i></li>
-              <li>Planillas Predefinidas</li>
+              <li>Planillas de pago</li>
               <li class="active"><a href="#"> Ver Listado Completo</a></li>
             </ul>
           </div>

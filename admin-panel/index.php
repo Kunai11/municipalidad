@@ -145,7 +145,7 @@
                 <li>Registrar a los empleados actuales con sus datos correspondientes.</li>
                 <li>Asignar la relacion de los empleados con sus respectivos cargos y departamentos.</li>
                 <li>Crear usuarios para los empleados que sean convenientes. (Opcional)</li>
-                <li>Crear o modificar las planillas de pago predefinidas para cada cargo existente.</li>
+                <li>Crear o modificar las planillas de pago para cada cargo existente.</li>
                 <li>Registrar los nuevos pagos que se han realizado.</li>
                 <li>Revisar el historial de pagos para comprobar que todo va correctamente.</li>
               </ol>
