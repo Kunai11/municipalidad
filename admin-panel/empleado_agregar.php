@@ -157,7 +157,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Correo</label>
                     <div class="col-md-8">
-                      <input class="form-control col-md-8" type="email" name="correo" id="correo" placeholder="Ingresar direccion de correo electrónico" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+                      <input class="form-control col-md-8" type="email" name="correo" id="correo"   placeholder="Ingresar direccion de correo electrónico" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
                     </div>
                   </div>
                   
