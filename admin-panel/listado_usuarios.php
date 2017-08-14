@@ -94,13 +94,15 @@
                     <?php
                       $queryFullUsuarios=mysqli_query($db, "SELECT * FROM usuarios") or die(mysqli_error());
                       while ($rowUsuario=mysqli_fetch_array($queryFullUsuarios)) {
+                        $queryEmp=mysqli_query($db, "SELECT Nombres, Apellido1 FROM empleados WHERE Id_Empleado='".$rowUsuario['Id_Empleado']."'") or die(mysqli_error());
+                        $rowEmp=mysqli_fetch_array($queryEmp);
                         echo '
                           <tr>
                             <td>'.$rowUsuario['Cod_Usuario'].'</td>
                             <td>'.$rowUsuario['Username'].'</td>
                             <td>'.$rowUsuario['Tipo'].'</td>
                             <td>'.$rowUsuario['Estado'].'</td>
-                            <td>'.$rowUsuario['Id_Empleado'].'</td>
+                            <td>'.$rowEmp['Nombres'].' '.$rowEmp['Apellido1'].'</td>
                           </tr>
                         ';
                       }
