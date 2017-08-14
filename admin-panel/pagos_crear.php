@@ -77,8 +77,92 @@
         <div class="row">
           <div class="col-md-12">
             <div class="card">
-              <div class="card-body">Datos Aquí</div>
+              <div class="card-title">
+                <h3 class="card-title" align="center">Seleccionar Empleado</h3>
+              </div>
+              <div class="card-body">
+                <form class="col-md-12" method="GET" action="pagos_crear.php" id="formBuscar">
+                  <br>
+                  <div class="col-md-12" >                    
+                    
+                    <div class="form-group col-md-6">
+                      <label class="control-label">Empleado</label>
+                      <select class="form-control" id="codigo_empleado">
+                        <?php 
+                          $queryListaEmp=mysqli_query($db, "SELECT * FROM empleados") or die(mysqli_error());
+                          while ($rowEmp=mysqli_fetch_array($queryListaEmp)) {
+                            $codEmp = $rowEmp['Id_Empleado'];
+                            $val = $rowEmp['Id_Empleado'] . ' - ' . $rowEmp['Nombres'] . ' ' . $rowEmp['Apellido1'];
+                              echo '<option value="'.$codEmp.'">'.$val.'</option>';  
+                          }
+                        ?>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label class="control-label">Cargo</label>   
+                        <input class="form-control col-md-6" type="text" name="tip_cargo" id="tip_cargo" placeholder="Cargo del Empleado" value="" disabled>
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer" align="center">
+                <br><br><br><br>
+                <!--<button class="btn btn-primary icon-btn" type="submit" form="formBuscar" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Buscar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default icon-btn" type="button" onclick="limpiarBusqueda()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>-->
+              </div>
             </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <!-- Contenido de la pagina -->
+            <div class="card">
+              <div class="card-title">
+                <h3 class="card-title" align="center">Detalles del Pago</h3>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Departamento</th>
+                        <th>Cargo</th>
+                        <th>Empleado</th>
+                        <th>Sueldo Base</th>
+                        <th>Deduccion IHSS</th>
+                        <th>Deduccion Especial</th>
+                        <th>Sueldo Neto</th>
+                        <th>Fecha</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <input type="hidden" class="form-control" id="cod_dep" >
+                        <td><input type="text" class="form-control" id="departamento" placeholder="Departamento" value="" required readonly></td>
+                        <input type="hidden" class="form-control" id="cod_cargo" >
+                        <td><input type="text" class="form-control" id="cargo" placeholder="Cargo" value="" required readonly></td>
+                        <input type="hidden" class="form-control" id="id_empleado" >
+                        <td><input type="text" class="form-control" id="empleado" placeholder="Empleado" value="" required readonly></td>
+                        <td><input type="number" min="0" onchange="calculo()" onkeyup="calculo()" class="form-control" id="sueldo_base" placeholder="Sueldo Base" value="" readonly></td>
+                        <td><input type="number" min="0" onchange="calculo()" onkeyup="calculo()" class="form-control" id="ded_IHSS" placeholder="Porcentaje" value="" readonly></td>
+                        <td><input type="number" min="0" onchange="calculo()" onkeyup="calculo()" class="form-control" id="ded_Esp" placeholder="Porcentaje" value="" readonly></td>
+                        <td><input type="number" min="0" onchange="calculo()" onkeyup="calculo()" class="form-control" id="sueldo_neto" placeholder="Sueldo Neto" value="" required readonly></td>
+                        <td><input type="text" class="form-control" id="fecha" placeholder="Fecha" value="<?php echo date("Y-m-d");?>"readonly></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" type="button" id="guardar" name="guardar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Registrar Pago</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default icon-btn" type="button" id="limpiarTodo"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+              </div>
+            </div>
+            <!-- Fin del contenido de la pagina -->
           </div>
         </div>
       </div>
@@ -88,6 +172,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/tips/pagos_calculos.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
     <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
     <script type="text/javascript">
       $('.alert').click(function(){
