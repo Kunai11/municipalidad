@@ -91,14 +91,14 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Nombre de usuario</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="nombre_usuario" id="codigo_usuario" placeholder="Ingresar nombre de usuario" required>
+                      <input class="form-control" type="text" name="nombre_usuario" id="nombre_usuario" placeholder="Ingresar nombre de usuario" required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Contrase&ntilde;a</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="password" name="pass_usuario" id="codigo_usuario" placeholder="Crear contraseña" required>
+                      <input class="form-control" type="password" name="pass" id="pass" placeholder="Crear contraseña" required>
                     </div>
                   </div>
 
@@ -106,7 +106,10 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Tipo</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="tipo_usuario" id="codigo_usuario" placeholder="Ingresar tipo de ususario" required>
+                      <select class="form-control" id="tipo">
+                        <option value="Estandar">Est&aacute;ndar</option>
+                        <option value="Administrador">Administrador</option>
+                        </select>
                     </div>
                   </div>
 
@@ -114,25 +117,34 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Estado</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="estado_usuario" id="codigo_usuario" placeholder="Estado en el que se encuetra el usuarioo" required>
+                      <select class="form-control" id="estado">
+                        <option value="Activo">Activo</option>
+                        <option value="Inactivo">Inactivo</option>
+                        </select>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label class="control-label col-md-3">Numero de iedntidad</label>
+                    <label class="control-label col-md-3">Empleado</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="estado_usuario" id="codigo_usuario" placeholder="Ingresar numero de identidad" required>
+                      <select class="form-control" id="Id_Empleado">
+                        <?php 
+                          $queryListaEmp=mysqli_query($db, "SELECT * FROM empleados") or die(mysqli_error());
+                          while ($rowEmp=mysqli_fetch_array($queryListaEmp)) {
+                            echo '<option value="'.$rowEmp['Id_Empleado'].'">'.$rowEmp['Nombres'].' '.$rowEmp['Apellido1'].'</option>';  
+                          }
+                        ?>
+                      </select>
                     </div>
                   </div>
 
                  </form>
               </div>
 
-
               <div class="card-footer" align="center">
-                <button class="btn btn-primary icon-btn" type="button" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
+                <button class="btn btn-primary icon-btn" type="button" id="guardar" name="guardar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
                 &nbsp;&nbsp;&nbsp;
-                <button class="btn btn-default icon-btn" type="button"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+                <button class="btn btn-default icon-btn" type="button" onclick="limpiarTodo()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
             </div>
           </div>
@@ -142,6 +154,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/tips/usuarios_acciones.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
     <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
     <script type="text/javascript">
       $('.alert').click(function(){
