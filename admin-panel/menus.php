@@ -73,9 +73,9 @@
 
               <li class="treeview"><a href="#"><i class="fa fa-user-circle"></i><span>Gesti&oacute;n de Usuarios</span><i class="fa fa-angle-right"></i></a>
                 <ul class="treeview-menu">
-                  <li><a href="usuarios_crear.php"><i class="fa fa-user-plus"></i> Crear Usuario</a></li>
-                  <li><a href="usuarios_modificar.php"><i class="fa fa-pencil-square-o"></i> Modificar Usuario</a></li>
-                  <li><a href="usuarios_eliminar.php"><i class="fa fa-user-times"></i> Eliminar Usuario</a></li>
+                  <li><a href="usuarios_crear.php?codigo_usuario_buscar=null"><i class="fa fa-user-plus"></i> Crear Usuario</a></li>
+                  <li><a href="usuarios_modificar.php?codigo_usuario_buscar=null"><i class="fa fa-pencil-square-o"></i> Modificar Usuario</a></li>
+                  <li><a href="usuarios_eliminar.php?codigo_usuario_buscar=null"><i class="fa fa-user-times"></i> Eliminar Usuario</a></li>
                 </ul>
               </li>
 
