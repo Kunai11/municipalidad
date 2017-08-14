@@ -76,6 +76,60 @@
             </ul>
           </div>
         </div>
+         <?php 
+          $identidad_buscar=$_GET['identidad_buscar'];
+          if ($identidad_buscar==null) {
+              $identidad='';
+              $nombre = '';
+              $p_apellido = '';
+              $s_apellido = '';
+              $l_nacimiento = '';
+              $f_nacimiento = '';
+              $profesion = '';
+              $domicilio = '';
+              $telefono = '';
+              $f_ingreso = '';
+              $correo = '';
+              $nombre_e = '';
+              $numero_e = '';
+              $estado = '';
+          } 
+          if ($identidad_buscar!=null) {
+            $queryObjeto = mysqli_query($db, "SELECT * FROM empleados WHERE Id_Empleado = '".$identidad_buscar."'") or die(mysqli_error());
+            if ($rowObjeto=mysqli_fetch_array($queryObjeto)) {
+              $identidad = $rowObjeto['Id_Empleado'];
+              $nombre = $rowObjeto['Nombres'];
+              $p_apellido = $rowObjeto['Apellido1'];
+              $s_apellido = $rowObjeto['Apellido2'];
+              $l_nacimiento = $rowObjeto['Lugar_Nac'];
+              $f_nacimiento = $rowObjeto['Fecha_Nac'];
+               $profesion = $rowObjeto['Profesion'];
+              $domicilio = $rowObjeto['Domicilio'];
+              $telefono = $rowObjeto['Telefono'];
+               $f_ingreso = $rowObjeto['Fecha_Ingreso'];
+               $correo = $rowObjeto['Correo'];
+              $nombre_e = $rowObjeto['Nombre_Emergencia'];
+              $numero_e = $rowObjeto['Numero_Emergencia'];
+              $estado = $rowObjeto['Estado'];
+            } else {
+              $identidad = '';
+              $nombre = '';
+              $p_apellido = '';
+              $s_apellido = '';
+              $l_nacimiento = '';
+              $f_nacimiento = '';
+              $profesion = '';
+              $domicilio = '';
+              $telefono = '';
+              $f_ingreso = '';
+              $correo = '';
+              $nombre_e = '';
+              $numero_e = '';
+              $estado = '';
+
+            }
+          }            
+        ?>
         <div class="row">
           <div class="col-md-12">
             <div class="card">
@@ -83,11 +137,11 @@
                 <h3 class="card-title" align="center">Buscar empleado</h3>
               </div>
               <div class="card-body">
-                <form class="form-horizontal" id="buscar_empleado">
+                <form class="form-horizontal" method="GET" form="empleado_modificar" id="form_buscar">
                   <div class="form-group">
                     <label class="control-label col-md-3">Numero de Identidad</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="identidad" id="identidad" placeholder="Ingresar numero de identidad" >
+                      <input class="form-control" type="text" name="identidad_buscar" id="identidad_buscar" value="<?php echo $identidad;?>" placeholder="Ingresar numero de identidad" >
                     </div>
                   </div>
                  </form>
@@ -95,7 +149,7 @@
 
 
               <div class="card-footer" align="center">
-                <button class="btn btn-primary icon-btn" type="submit" form="modificar_empleado" form="buscar_empleado" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>buscar</button>
+                <button class="btn btn-primary icon-btn" type="submit" form="form_buscar" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>buscar</button>
                 &nbsp;&nbsp;&nbsp;
                 <button class="btn btn-default icon-btn" type="button" onclick="limpiarTodo()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
@@ -114,93 +168,101 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Nombre</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="nombre" id="nombre" >
+                      <input class="form-control" type="text" name="nombre" id="nombre" value="<?php echo $nombre;?>" >
+                      <input type="hidden" id="identidad" value="<?php echo $identidad ?>">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Primer apellido</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="p_apellido" id="p_apellido" disabled="true">
+                      <input class="form-control" type="text" name="p_apellido" id="p_apellido" value="<?php echo $p_apellido; ?>" >
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Segundo apellido</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="s_apellido" id="s_apellido" disabled="true">
+                      <input class="form-control" type="text" name="s_apellido" id="s_apellido" value="<?php echo $s_apellido; ?>">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Lugar de nacimiento</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="l_nacimiento" id="l_nacimiento" disabled="true">
+                      <input class="form-control" type="text" name="l_nacimiento" id="l_nacimiento" value="<?php echo $l_nacimiento;?>" >
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Fecha de nacimiento</label>
                     <div class="col-md-8">
-                      <input class="form-control demoDate" type="text" name="f_nacimiento" id="f_nacimiento" disabled="true">
+                      <input class="form-control demoDate" type="text" name="f_nacimiento" id="f_nacimiento" value="<?php echo $f_nacimiento;?>" >
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Profesi&oacute;n</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="profesion" id="profesion" disabled="true">
+                      <input class="form-control" type="text" name="profesion" id="profesion" value="<?php echo $profesion;?>" >
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Domicilio</label>
                     <div class="col-md-8">
-                      <textarea class="form-control" rows="4" name="domicilio" id="domicilio" disabled="true"></textarea>
+                      <textarea class="form-control" rows="4" name="domicilio" id="domicilio" value="<?php echo $domicilio;?>"></textarea>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Tel&eacute;fono</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="telefono" id="telefono" disabled="true">
+                      <input class="form-control" type="text" name="telefono" id="telefono" value="<?php echo $telefono;?>" >
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Fecha de ingreso</label>
                     <div class="col-md-8">
-                      <input class="form-control demoDate" type="text" name="f_ingreso" id="f_ingreso" disabled="true">
+                      <input class="form-control demoDate" type="text" name="f_ingreso" id="f_ingreso"  value="<?php echo $f_ingreso;?>">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Correo</label>
                     <div class="col-md-8">
-                      <input class="form-control col-md-8" type="email" name="correo" id="correo" disabled="true" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+                      <input class="form-control col-md-8" type="email" name="correo" id="correo"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"  value="<?php echo $correo;?>">
                     </div>
                   </div>
                   
                   <div class="form-group">
                     <label class="control-label col-md-3">Nombre emergencia</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="nombre_e" id="nombre_e" disabled="true">
+                      <input class="form-control" type="text" name="nombre_e" id="nombre_e" value="<?php echo $nombre_e;?>" >
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Numero de emergencia</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="numero_e" id="numero_e" disabled="true">
+                      <input class="form-control" type="text" name="numero_e" id="numero_e" value="<?php echo $numero_e;?>" >
                     </div>
                   </div>
 
                    <div class="form-group">
                     <label class="control-label col-md-3">Estado</label>
                     <div class="col-md-8">
-                      <select class="form-control" name="estado" id="estado" disabled="true">
-                        <option value="01">Activo</option>
-                        <option value="02">Inactivo</option>
+                      <select class="form-control" name="estado" id="estado">
+                        <?php
+                        if ($estado=='Activo') {
+                          echo '<option value="Activo" selected>Activo</option>';
+                          echo '<option value="Inactivo">Inactivo</option>';
+                        }else{
+                          echo '<option value="Activo" >Activo</option>';
+                          echo '<option value="Inactivo" selected>Inactivo</option>';
+                        }
+                        ?>
                       </select>
                     </div>
                   </div>
@@ -208,9 +270,9 @@
                 </form>
               </div>
               <div class="card-footer" align="center">
-                <button class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
+                <button class="btn btn-primary icon-btn" type="button" id="modificar" name="modificar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
                 &nbsp;&nbsp;&nbsp;
-                <button class="btn btn-default icon-btn" type="button"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+                <button class="btn btn-default icon-btn" type="button" onclick="limpiarTodo()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
                  </form>
               </div>
@@ -228,32 +290,17 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
-
+    <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
      <script src="js/tips/empleados_acciones.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
-    <script type="text/javascript">
-            $('#buscar').click(function(){
-        $('#nombre').attr('disabled');
-      });
     </script>
-    <script type="text/javascript">
-      $('#sl').click(function(){
-        $('#tl').loadingBtn();
-        $('#tb').loadingBtn({ text : "Signing In"});
-      });
-      
-      $('#el').click(function(){
-        $('#tl').loadingBtnComplete();
-        $('#tb').loadingBtnComplete({ html : "Sign In"});
-      });
-      
+    <script type="text/javascript">      
       $('.demoDate').datepicker({
         format: "dd/mm/yyyy",
         autoclose: true,
         todayHighlight: true
       });
       
-      $('.demoSelect').select2();
     </script>
     <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
     <script type="text/javascript">
