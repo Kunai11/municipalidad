@@ -77,21 +77,85 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <!-- Contenido de la pagina -->
             <div class="card">
-              <h3 class="card-title" align="center">Formulario de registro</h3>
-              <div class="card-body">Datos Aquí</div>
+              <div class="card-title">
+                <h3 class="card-title" align="center">Formulario de registro</h3>
+              </div>
+              <div class="card-body">
+                <form class="form-horizontal" id="guardar_cargo">
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Codigo de cargo</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="codigo_cargo" id="codigo_cargo" placeholder="Ingresar codigo de cargo">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Nombre de cargo</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="nombre_cargo" id="nombre_cargo" placeholder="Ingresar nombre de cargo">
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+             <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" type="submit" form="guardar_cargo" id="agregar" name="agregar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default icon-btn" type="button" onclick="limpiarTodo()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+              </div>
             </div>
-            <!-- Fin del contenido de la pagina -->
           </div>
         </div>
       </div>
     </div>
     <!-- Javascripts-->
-    <script src="js/jquery-2.1.4.min.js"></script>
+      <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+     <script src="js/tips/cargo_acciones.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
+      <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
+
+    <script type="text/javascript">
+      $('#sl').click(function(){
+        $('#tl').loadingBtn();
+        $('#tb').loadingBtn({ text : "Signing In"});
+      });
+      
+      $('#el').click(function(){
+        $('#tl').loadingBtnComplete();
+        $('#tb').loadingBtnComplete({ html : "Sign In"});
+      });
+      
+      $('.demoDate').datepicker({
+        format: "yyyy/mm/dd",
+        autoclose: true,
+        todayHighlight: true
+      });
+    </script>
+    <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      $('.alert').click(function(){
+        swal({
+          title: "Esta seguro?",
+          text: "Esta opcion cerrara la sesion actual",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Si, salir",
+          cancelButtonText: "No, mantener conectado",
+          closeOnConfirm: true,
+          closeOnCancel: true
+        }, function(isConfirm) {
+          if (isConfirm) {
+            $(location).attr('href', 'logout.php');
+          } else {
+            // Exit function
+          }
+        });
+      });
+    </script>
   </body>
 </html>
 <?php
