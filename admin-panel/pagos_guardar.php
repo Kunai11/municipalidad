@@ -16,7 +16,6 @@
 		$ded_Esp = $_POST['ded_Esp'];
 		$sueldo_neto = $_POST['sueldo_neto'];
 		$fecha = $_POST['fecha'];
-        $modificado = 'No';
 
         $fechaArray = explode('-', $fecha);
         $fechaMesAnio = $fechaArray[0] . '-' . $fechaArray[1];
@@ -29,7 +28,7 @@
         if ($rowExiste['Existe']==0) {
 
             // Guardar en variable el resultado del query de INSERCION
-            $queryGuardar = mysqli_query($db, "INSERT INTO historial (Id_Pago, Cod_Dep, Cod_Cargo, Id_Empleado, Sueldo_Base, Ded_IHSS, Ded_Especiales, Salario_Neto, Fecha, Modificado) VALUES ('$id_pago', '$cod_dep', '$cod_cargo', '$id_empleado', '$sueldo_base', '$ded_IHSS', '$ded_Esp', '$sueldo_neto', '$fecha', '$modificado') ") or die(mysqli_error());
+            $queryGuardar = mysqli_query($db, "INSERT INTO historial (Id_Pago, Cod_Dep, Cod_Cargo, Id_Empleado, Sueldo_Base, Ded_IHSS, Ded_Especiales, Salario_Neto, Fecha) VALUES ('$id_pago', '$cod_dep', '$cod_cargo', '$id_empleado', '$sueldo_base', '$ded_IHSS', '$ded_Esp', '$sueldo_neto', '$fecha') ") or die(mysqli_error());
 
             //Imprimir algo, para que el metodo .ajax(); de jQuery Funcione y sepa que YA se INSERTO
             echo 'Guardado';
