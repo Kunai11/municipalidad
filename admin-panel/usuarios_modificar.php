@@ -212,7 +212,7 @@
                 </form>
               </div>
               <div class="card-footer" align="center">
-                <button class="btn btn-primary icon-btn" type="button" id="modificar" name="modificar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
+                <button class="btn btn-primary icon-btn" type="button" id="modificar" name="modificar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Modificar</button>
                 &nbsp;&nbsp;&nbsp;
                 <button class="btn btn-default icon-btn" type="button" id="limpiarForm"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
