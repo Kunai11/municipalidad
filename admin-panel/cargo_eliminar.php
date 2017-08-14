@@ -75,23 +75,124 @@
             </ul>
           </div>
         </div>
-        <div class="row">
+
+        <?php 
+          $codigo_buscar=$_GET['codigo_buscar'];
+          if ($codigo_buscar==null) {
+              $codigo_cargo='';
+              $nombre_cargo = '';
+              
+          } 
+          if ($codigo_buscar!=null) {
+            $queryObjeto = mysqli_query($db, "SELECT * FROM cargos WHERE Cod_Cargo = '".$codigo_buscar."'") or die(mysqli_error());
+            if ($rowObjeto=mysqli_fetch_array($queryObjeto)) {
+              $codigo_cargo = $rowObjeto['Cod_Cargo'];
+              $nombre_cargo = $rowObjeto['Nom_Cargo'];
+           
+            } else {
+              $codigo_cargo = '';
+              $nombre_cargo = '';
+             
+
+            }
+          } 
+          ?>
+           <div class="row">
           <div class="col-md-12">
-            <!-- Contenido de la pagina -->
             <div class="card">
-              <h3 class="card-title" align="center"></h3>
-              <div class="card-body">Datos Aquí</div>
+              <div class="card-title">
+                <h3 class="card-title" align="center">Buscar cargo</h3>
+              </div>
+              <div class="card-body">
+                <form class="form-horizontal" method="GET" form="cargo_modificar" id="form_buscar">
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Codigo de cargo</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="codigo_buscar" id="codigo_buscar" placeholder="Ingresar codigo de cargo" value="<?php echo $codigo_cargo;?>">
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" type="submit" form="form_buscar" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Buscar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default icon-btn" type="button" onclick="limpiarBuscar()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+              </div>
             </div>
-            <!-- Fin del contenido de la pagina -->
+          </div>
+        </div>
+
+            <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-title">
+                <h3 class="card-title" align="center">Eliminar cargo</h3>
+              </div>
+              <div class="card-body">
+                <form class="form-horizontal" id="modificar_departamento">
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Nombre de cargo</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="nombre_cargo" id="nombre_cargo" placeholder="Ingresar codigo de cargo"  value="<?php echo $nombre_cargo;?>">
+
+                      <input type="hidden" id="codigo_cargo" value="<?php echo $codigo_cargo ?>">
+                    </div>
+                  </div>
+
+
+                </form>
+              </div>
+             <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" type="button" id="eliminar" name="eliminar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Eliminar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default icon-btn" type="button" onclick="limpiarTodo()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+
+
     <!-- Javascripts-->
-    <script src="js/jquery-2.1.4.min.js"></script>
+   <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
+     <script src="js/tips/cargo_acciones.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
+    </script>
+    <script type="text/javascript">      
+      $('.demoDate').datepicker({
+        format: "dd/mm/yyyy",
+        autoclose: true,
+        todayHighlight: true
+      });
+      
+    </script>
+    <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      $('.alert').click(function(){
+        swal({
+          title: "Esta seguro?",
+          text: "Esta opcion cerrara la sesion actual",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Si, salir",
+          cancelButtonText: "No, mantener conectado",
+          closeOnConfirm: true,
+          closeOnCancel: true
+        }, function(isConfirm) {
+          if (isConfirm) {
+            $(location).attr('href', 'logout.php');
+          } else {
+            // Exit function
+          }
+        });
+      });
+    </script>
   </body>
 </html>
 <?php

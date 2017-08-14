@@ -280,3 +280,26 @@ $(document).ready(function () {
 
 	});
 });
+
+$('#limpiarTodo').click(function (){
+ 	
+		$("#codigo_cargo").val("").value;
+		$("#nombre_cargo").val("").value;
+           
+	});
+
+	function limpiarTodo(){
+		  $("#codigo_cargo").val("").value;
+		$("#nombre_cargo").val("").value;
+	}
+
+
+ $('#limpiarBuscar').click(function (){
+ 	 $("#codigo_buscar").val("").value;
+	
+	});
+
+	function limpiarBuscar(){
+		 $("#codigo_buscar").val("").value;
+		
+	}

@@ -43,7 +43,7 @@
                   <ul class="treeview-menu">
                     <li><a href="cargo_agregar.php"><i class="fa fa-plus-square"></i> Crear Nuevo</a></li>
                     <li><a href="cargo_modificar.php?codigo_buscar=null.php"><i class="fa fa-pencil-square-o"></i> Modificar existente</a></li>
-                    <li><a href="cargo_eliminar.php"><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
+                    <li><a href="cargo_eliminar.php?codigo_buscar=null.php"><i class="fa fa-minus-square"></i> Eliminar existente</a></li>
                   </ul>
                 </li>
                 <li class="treeview"><a href="#"><i class="fa fa-share"></i><span>Asignaciones</span><i class="fa fa-angle-right"></i></a>

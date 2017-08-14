@@ -15,6 +15,9 @@ $(document).ready(function () {
 		var numero_e=$('#numero_e').val();
 		var estado=$('#estado').val();
 
+		
+	
+
 		if (identidad=='') {
 			$("#identidad").attr('required',true);
 			document.getElementById("identidad").style.border="2px solid #a94442";
@@ -129,7 +132,7 @@ $(document).ready(function () {
 			document.getElementById("numero_e").style.border="2px solid #3c763d";
 		}
 
-		if (estado=='') {
+		if (estado==null) {
 			$("#estado").attr('required',true);
 			document.getElementById("estado").style.border="2px solid #a94442";
 			document.getElementById("estado").focus();
@@ -172,7 +175,20 @@ $(document).ready(function () {
 					},{
 						type: "success"
 					});
-					limpiarTodo();
+					$("#identidad").val("").value;
+					$("#nombre").val("").value;
+	                $("#p_apellido").val("").value;
+	                $("#s_apellido").val("").value;
+		            $("#l_nacimiento").val("").value;
+		            $("#f_nacimiento").val("").value;
+	                $("#profesion").val("").value;
+	                $("#domicilio").val("").value;
+		            $("#telefono").val("").value;
+		            $("#f_ingreso").val("").value;
+		            $("#correo").val("").value;
+		            $("#nombre_e").val("").value;
+	                $("#numero_e").val("").value;
+	                $("#estado").val("").value;
 				}
 				if (!data) {
 					$.notify({
@@ -389,7 +405,20 @@ $('#modificar').click(function () {
 					},{
 						type: "success"
 					});
-					limpiarTodo();
+					$("#identidad_buscar").val("").value;
+					$("#nombre").val("").value;
+	                $("#p_apellido").val("").value;
+	                $("#s_apellido").val("").value;
+		            $("#l_nacimiento").val("").value;
+		            $("#f_nacimiento").val("").value;
+	                $("#profesion").val("").value;
+	                $("#domicilio").val("").value;
+		            $("#telefono").val("").value;
+		            $("#f_ingreso").val("").value;
+		            $("#correo").val("").value;
+		            $("#nombre_e").val("").value;
+	                $("#numero_e").val("").value;
+	                $("#estado").val("").value;
 				}
 				if (!data) {
 					$.notify({
@@ -424,6 +453,54 @@ $('#modificar').click(function () {
 	});	
 
 
-});
+	});
 
 
+
+
+
+ $('#limpiarTodo').click(function (){
+ 	
+		 $("#identidad").val("").value;
+			$("#nombre").val("").value;
+            $("#p_apellido").val("").value;
+            $("#s_apellido").val("").value;
+            $("#l_nacimiento").val("").value;
+            $("#f_nacimiento").val("").value;
+            $("#profesion").val("").value;
+            $("#domicilio").val("").value;
+            $("#telefono").val("").value;
+            $("#f_ingreso").val("").value;
+            $("#correo").val("").value;
+            $("#nombre_e").val("").value;
+            $("#numero_e").val("").value;
+            $("#estado").val("").value;
+	});
+
+	function limpiarTodo(){
+		    $("#identidad").val("").value;
+			$("#nombre").val("").value;
+            $("#p_apellido").val("").value;
+            $("#s_apellido").val("").value;
+            $("#l_nacimiento").val("").value;
+            $("#f_nacimiento").val("").value;
+            $("#profesion").val("").value;
+            $("#domicilio").val("").value;
+            $("#telefono").val("").value;
+            $("#f_ingreso").val("").value;
+            $("#correo").val("").value;
+            $("#nombre_e").val("").value;
+            $("#numero_e").val("").value;
+            $("#estado").val("").value;
+	}
+
+
+ $('#limpiarBuscar').click(function (){
+ 	 $("#identidad_buscar").val("").value;
+	
+	});
+
+	function limpiarBuscar(){
+		 $("#identidad_buscar").val("").value;
+		
+	}
