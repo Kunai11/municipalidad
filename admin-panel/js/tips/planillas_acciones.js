@@ -336,7 +336,7 @@ $(document).ready(function () {
 						
 						// Si el servidor mando informacion
 						if (data) {
-							alert(data);
+							//alert(data);
 							// Mostrar una nueva alerta de que se realizo con exito
 							swal("Eliminado!", "El registro se ha eliminado correctamente", "success");
 

@@ -73,20 +73,134 @@
             </ul>
           </div>
         </div>
+        <?php 
+          $codigo_usuario_buscar=$_GET['codigo_usuario_buscar'];
+          if ($codigo_usuario_buscar==null) {
+            $codigo = '';
+            $username = '';
+            $pass = '';
+            $tipo = '';
+            $estado = '';
+            $idempleado = '';
+          } 
+          if ($codigo_usuario_buscar!=null) {
+            $queryObjeto = mysqli_query($db, "SELECT * FROM usuarios WHERE Cod_Usuario = '".$codigo_usuario_buscar."'") or die(mysqli_error());
+            if ($rowObjeto=mysqli_fetch_array($queryObjeto)) {
+              $codigo = $rowObjeto['Cod_Usuario'];
+              $username = $rowObjeto['Username'];
+              $pass = $rowObjeto['Pass'];
+              $tipo = $rowObjeto['Tipo'];
+              $estado = $rowObjeto['Estado'];
+              $idempleado = $rowObjeto['Id_Empleado'];
+            } else {
+              $codigo = '';
+              $username = '';
+              $pass = '';
+              $tipo = '';
+              $estado = '';
+              $idempleado = '';
+            }
+          }            
+        ?>
         <div class="row">
           <div class="col-md-12">
             <div class="card">
-              <div class="card-body">Datos Aquí</div>
+              <div class="card-title">
+                <h3 class="card-title" align="center">Buscar Usuario</h3>
+              </div>
+              <div class="card-body">
+                <form class="form-horizontal" id="buscar" method="GET" action="usuarios_eliminar.php">
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Codigo de usuario</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="codigo_usuario_buscar" id="codigo_usuario_buscar" placeholder="Ingresar codigo de usuario" value="<?php echo $codigo;?>" required>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" type="submit" form="buscar" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Buscar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default icon-btn" type="button" id="limpiarBusqueda"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-title">
+                <h3 class="card-title" align="center">Modificar Usuario</h3>
+              </div>
+              <div class="card-body">
+                <form class="form-horizontal">                  
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Nombre de usuario</label>
+                    <div class="col-md-8">
+                      <input type="hidden" id="codigo_usuario" value="<?php echo $codigo;?>">
+                      <input class="form-control" type="text" name="nombre_usuario" id="nombre_usuario" placeholder="Ingresar nombre de usuario" value="<?php echo $username;?>" disabled>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Contrase&ntilde;a</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="password" name="pass" id="pass" placeholder="Contraseña" value="<?php echo $pass;?>" disabled>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Tipo</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="tipo" id="tipo" placeholder="Tipo" value="<?php echo $tipo;?>" disabled>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Estado</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="estado" id="estado" placeholder="Estado" value="<?php echo $estado;?>" disabled>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Empleado</label>
+                    <div class="col-md-8">
+                        <?php 
+                          $queryListaEmp=mysqli_query($db, "SELECT * FROM empleados WHERE Id_Empleado='$idempleado'") or die(mysqli_error());
+                          
+                          if ($rowEmp=mysqli_fetch_array($queryListaEmp)) {
+                            $empleado = $rowEmp['Nombres'] . ' ' . $rowEmp['Apellido1'] ;
+                            echo '<input class="form-control" type="text" name="codigo_empleado" id="codigo_empleado" placeholder="Empleado" value="'.$empleado.'" disabled>';
+                          }
+                          else {
+                            echo '<input class="form-control" type="text" name="codigo_empleado" id="codigo_empleado" placeholder="Empleado" disabled>';
+                          }
+                        ?>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+              <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" type="button" id="eliminar" name="eliminar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Eliminar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default icon-btn" type="button" id="limpiarForm"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
     <!-- Javascripts-->
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/tips/usuarios_acciones.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
     <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
     <script type="text/javascript">
       $('.alert').click(function(){

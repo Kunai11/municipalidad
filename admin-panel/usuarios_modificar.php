@@ -73,6 +73,35 @@
             </ul>
           </div>
         </div>
+        <?php 
+          $codigo_usuario_buscar=$_GET['codigo_usuario_buscar'];
+          if ($codigo_usuario_buscar==null) {
+            $codigo = '';
+            $username = '';
+            $pass = '';
+            $tipo = '';
+            $estado = '';
+            $idempleado = '';
+          } 
+          if ($codigo_usuario_buscar!=null) {
+            $queryObjeto = mysqli_query($db, "SELECT * FROM usuarios WHERE Cod_Usuario = '".$codigo_usuario_buscar."'") or die(mysqli_error());
+            if ($rowObjeto=mysqli_fetch_array($queryObjeto)) {
+              $codigo = $rowObjeto['Cod_Usuario'];
+              $username = $rowObjeto['Username'];
+              $pass = $rowObjeto['Pass'];
+              $tipo = $rowObjeto['Tipo'];
+              $estado = $rowObjeto['Estado'];
+              $idempleado = $rowObjeto['Id_Empleado'];
+            } else {
+              $codigo = '';
+              $username = '';
+              $pass = '';
+              $tipo = '';
+              $estado = '';
+              $idempleado = '';
+            }
+          }            
+        ?>
         <div class="row">
           <div class="col-md-12">
             <div class="card">
@@ -80,47 +109,44 @@
                 <h3 class="card-title" align="center">Buscar Usuario</h3>
               </div>
               <div class="card-body">
-                <form class="form-horizontal">
+                <form class="form-horizontal" id="buscar" method="GET" action="usuarios_modificar.php">
                   <div class="form-group">
                     <label class="control-label col-md-3">Codigo de usuario</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="codigo_usuario" id="codigo_usuario" placeholder="Ingresar codigo de usuario" required>
+                      <input class="form-control" type="text" name="codigo_usuario_buscar" id="codigo_usuario_buscar" placeholder="Ingresar codigo de usuario" value="<?php echo $codigo;?>" required>
                     </div>
                   </div>
-
-                  
-
-                 </form>
+                </form>
               </div>
 
-
               <div class="card-footer" align="center">
-                <button class="btn btn-primary icon-btn" type="button" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Buscar</button>
+                <button class="btn btn-primary icon-btn" type="submit" form="buscar" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Buscar</button>
                 &nbsp;&nbsp;&nbsp;
-                <button class="btn btn-default icon-btn" type="button"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+                <button class="btn btn-default icon-btn" type="button" id="limpiarBusqueda"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
             </div>
           </div>
         </div>
- <div class="row">
+        <div class="row">
           <div class="col-md-12">
             <div class="card">
               <div class="card-title">
                 <h3 class="card-title" align="center">Modificar Usuario</h3>
               </div>
               <div class="card-body">
-                <form class="form-horizontal">
-                   <div class="form-group">
+                <form class="form-horizontal">                  
+                  <div class="form-group">
                     <label class="control-label col-md-3">Nombre de usuario</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="nombre_usuario" id="codigo_usuario" placeholder=" " required>
+                      <input type="hidden" id="codigo_usuario" value="<?php echo $codigo;?>">
+                      <input class="form-control" type="text" name="nombre_usuario" id="nombre_usuario" placeholder="Ingresar nombre de usuario" value="<?php echo $username;?>" required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3">Contrase&ntilde;a</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="password" name="pass_usuario" id="codigo_usuario" placeholder=" " required>
+                      <input class="form-control" type="password" name="pass" id="pass" placeholder="Contraseña" value="<?php echo $pass;?>" required>
                     </div>
                   </div>
 
@@ -128,7 +154,18 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Tipo</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="tipo_usuario" id="codigo_usuario" placeholder=" " required>
+                      <select class="form-control" id="tipo">
+                        <?php 
+                          if ($tipo=='Administrador') {
+                            echo '<option value="Administrador" selected>Administrador</option>';
+                            echo '<option value="Estandar">Est&aacute;ndar</option>';
+                          } 
+                          if ($tipo=='Estandar') {
+                            echo '<option value="Administrador">Administrador</option>';
+                            echo '<option value="Estandar" selected>Est&aacute;ndar</option>'; 
+                          }
+                        ?>
+                      </select>
                     </div>
                   </div>
 
@@ -136,29 +173,48 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Estado</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="estado_usuario" id="codigo_usuario" placeholder=" " required>
+                      <select class="form-control" id="estado">
+                        <?php 
+                          if ($estado=='Activo') {
+                            echo '<option value="Activo" selected>Activo</option>';
+                            echo '<option value="Inactivo">Inactivo</option>';
+                          } 
+                          if ($estado=='Inactivo') {
+                            echo '<option value="Activo">Activo</option>';
+                            echo '<option value="Inactivo" selected>Inactivo</option>'; 
+                          }
+                        ?>
+                      </select>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label class="control-label col-md-3">Numero de iedntidad</label>
+                    <label class="control-label col-md-3">Empleado</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="estado_usuario" id="codigo_usuario" placeholder=" " required>
+                      <select class="form-control" id="Id_Empleado">
+                        <?php 
+                          $queryListaEmp=mysqli_query($db, "SELECT * FROM empleados") or die(mysqli_error());
+                          while ($rowEmp=mysqli_fetch_array($queryListaEmp)) {
+                            if ($rowEmp['Id_Empleado']==$rowObjeto['Id_Empleado']) {
+                              $val = $rowEmp['Nombres'].' '.$rowEmp['Apellido1'];
+                              echo '<option value="'.$rowEmp['Id_Empleado'].'" selected>'.$val.'</option>';  
+                            } 
+                            if ($rowEmp['Id_Empleado']!=$rowObjeto['Id_Empleado']) {
+                              $val = $rowEmp['Nombres'].' '.$rowEmp['Apellido1'];
+                              echo '<option value="'.$rowEmp['Id_Empleado'].'">'.$val.'</option>';  
+                            }
+                          }
+                        ?>
+                      </select>
                     </div>
                   </div>
 
-
-
-                  
-
-                 </form>
+                </form>
               </div>
-
-
               <div class="card-footer" align="center">
-                <button class="btn btn-primary icon-btn" type="button" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
+                <button class="btn btn-primary icon-btn" type="button" id="modificar" name="modificar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Modificar</button>
                 &nbsp;&nbsp;&nbsp;
-                <button class="btn btn-default icon-btn" type="button"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+                <button class="btn btn-default icon-btn" type="button" id="limpiarForm"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
             </div>
           </div>
@@ -169,6 +225,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/tips/usuarios_acciones.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
     <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
     <script type="text/javascript">
       $('.alert').click(function(){

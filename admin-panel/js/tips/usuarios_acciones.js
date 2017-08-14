@@ -43,7 +43,7 @@ $(document).ready(function () {
 		
 		// Variable con todos los valores necesarios para la consulta
 		var data = 'codigo_usuario=' + codigo_usuario + '&nombre_usuario=' + nombre_usuario + '&pass=' + pass + '&tipo=' + tipo + '&estado=' + estado + '&Id_Empleado=' + Id_Empleado;
-		alert(data);
+		//alert(data);
 		$.ajax({
 			//Direccion destino
 			url: "usuarios_guardar.php",
@@ -116,83 +116,52 @@ $(document).ready(function () {
 	$('#modificar').click(function () {
 
 		// Obtener los valores de los objetos a traves de su id 
-		var codigo_planilla=$('#codigo_planilla').val();
-		var descripcion_planilla=$('#descripcion_planilla').val();
-		var tipo_planilla=$('#tipo_planilla').val();
-		var sueldo_base=$('#sueldo_base').val();
-		var deduc_IHSS=$('#deduc_IHSS').val();
-		var deduc_Esp=$('#deduc_Esp').val();
-		var sueldo_neto=$('#sueldo_neto').val();
+		var codigo_usuario=$('#codigo_usuario').val();
+		var nombre_usuario=$('#nombre_usuario').val();
+		var pass=$('#pass').val();
+		var tipo=$('#tipo').val();
+		var estado=$('#estado').val();
+		var Id_Empleado=$('#Id_Empleado').val();
 		
 		// Validaciones de objetos vacios
-		// if (codigo_planilla=='') {
-		// 	$("#codigo_planilla").attr('required',true);
-		// 	document.getElementById("codigo_planilla").style.border="2px solid #a94442";
-		// 	document.getElementById("codigo_planilla").focus();
-		// 	return false;
-		// } else {
-		// 	$("#codigo_planilla").attr('required',false);
-		// 	document.getElementById("codigo_planilla").style.border="2px solid #3c763d";
-		// }
-		//------------------------
-		if (descripcion_planilla=='') {
-			$("#descripcion_planilla").attr('required',true);
-			document.getElementById("descripcion_planilla").style.border="2px solid #a94442";
-			document.getElementById("descripcion_planilla").focus();
+		if (codigo_usuario=='') {
+			$("#codigo_usuario").attr('required',true);
+			document.getElementById("codigo_usuario").style.border="2px solid #a94442";
+			document.getElementById("codigo_usuario").focus();
 			return false;
 		} else {
-			$("#descripcion_planilla").attr('required',false);
-			document.getElementById("descripcion_planilla").style.border="2px solid #3c763d";
+			$("#codigo_usuario").attr('required',false);
+			document.getElementById("codigo_usuario").style.border="2px solid #3c763d";
 		}
 		//------------------------
-		if (tipo_planilla==null) {
-			$("#tipo_planilla").attr('required',true);
-			document.getElementById("tipo_planilla").style.border="2px solid #a94442";
-			document.getElementById("tipo_planilla").focus();
+		if (nombre_usuario=='') {
+			$("#nombre_usuario").attr('required',true);
+			document.getElementById("nombre_usuario").style.border="2px solid #a94442";
+			document.getElementById("nombre_usuario").focus();
 			return false;
 		} else {
-			$("#tipo_planilla").attr('required',false);
-			document.getElementById("tipo_planilla").style.border="2px solid #3c763d";
+			$("#nombre_usuario").attr('required',false);
+			document.getElementById("nombre_usuario").style.border="2px solid #3c763d";
 		}
 		//------------------------
-		if (sueldo_base=='') {
-			$("#sueldo_base").attr('required',true);
-			document.getElementById("sueldo_base").style.border="2px solid #a94442";
-			document.getElementById("sueldo_base").focus();
+		if (pass=='') {
+			$("#pass").attr('required',true);
+			document.getElementById("pass").style.border="2px solid #a94442";
+			document.getElementById("pass").focus();
 			return false;
 		} else {
-			$("#sueldo_base").attr('required',false);
-			document.getElementById("sueldo_base").style.border="2px solid #3c763d";
-		}
-		//------------------------
-		if (deduc_IHSS=='') {
-			$("#deduc_IHSS").attr('required',true);
-			document.getElementById("deduc_IHSS").style.border="2px solid #a94442";
-			document.getElementById("deduc_IHSS").focus();
-			return false;
-		} else {
-			$("#deduc_IHSS").attr('required',false);
-			document.getElementById("deduc_IHSS").style.border="2px solid #3c763d";
-		}
-		//------------------------
-		if (deduc_Esp=='') {
-			$("#deduc_Esp").attr('required',true);
-			document.getElementById("deduc_Esp").style.border="2px solid #a94442";
-			document.getElementById("deduc_Esp").focus();
-			return false;
-		} else {
-			$("#deduc_Esp").attr('required',false);
-			document.getElementById("deduc_Esp").style.border="2px solid #3c763d";
+			$("#pass").attr('required',false);
+			document.getElementById("pass").style.border="2px solid #3c763d";
 		}
 		// Fin de las Validaciones
 		
 		// Variable con todos los valores necesarios para la consulta
-		var data = 'codigo_planilla=' + codigo_planilla + '&descripcion_planilla=' + descripcion_planilla + '&tipo_planilla=' + tipo_planilla + '&sueldo_base=' + sueldo_base + '&deduc_IHSS=' + deduc_IHSS + '&deduc_Esp=' + deduc_Esp + '&sueldo_neto=' + sueldo_neto;
+		var data = 'codigo_usuario=' + codigo_usuario + '&nombre_usuario=' + nombre_usuario + '&pass=' + pass + '&tipo=' + tipo + '&estado=' + estado + '&Id_Empleado=' + Id_Empleado;
 		//alert(data);
 		$.ajax({
 			
 			//Direccion destino
-			url: "planillas_cambiar.php",
+			url: "usuarios_cambiar.php",
 
 			// Variable con los datos necesarios
 			data: data,
@@ -210,7 +179,7 @@ $(document).ready(function () {
 				if (data) {
 					$.notify({
 						title: "Correcto : ",
-						message: "La planilla se ha modificado existosamente!",
+						message: "El usuario se ha modificado existosamente!",
 						icon: 'fa fa-check' 
 					},{
 						type: "success"
@@ -220,7 +189,7 @@ $(document).ready(function () {
 				if (!data) {
 					$.notify({
 						title: "Error : ",
-						message: "CODIGO ingresado no existe o TIPO seleccionado ya existe!",
+						message: "El codigo ingresado no existe o empleado seleccionado ya ha sido asignado",
 						icon: 'fa fa-times' 
 					},{
 						type: "danger"
@@ -253,23 +222,23 @@ $(document).ready(function () {
 	$('#eliminar').click(function () {
 
 		// Obtener los valores de los objetos a traves de su id 
-		var codigo_planilla=$('#codigo_planilla').val();
-		var codigo_planilla_buscar=$('#codigo_planilla_buscar').val();
+		var codigo_usuario=$('#codigo_usuario').val();
+		var codigo_usuario_buscar=$('#codigo_usuario_buscar').val();
 		
 		// Validaciones de objetos vacios
-		if (codigo_planilla_buscar=='') {
-			$("#codigo_planilla_buscar").attr('required',true);
-			document.getElementById("codigo_planilla_buscar").style.border="2px solid #a94442";
-			document.getElementById("codigo_planilla_buscar").focus();
+		if (codigo_usuario_buscar=='') {
+			$("#codigo_usuario_buscar").attr('required',true);
+			document.getElementById("codigo_usuario_buscar").style.border="2px solid #a94442";
+			document.getElementById("codigo_usuario_buscar").focus();
 			return false;
 		} else {
-			$("#codigo_planilla_buscar").attr('required',false);
-			document.getElementById("codigo_planilla_buscar").style.border="2px solid #3c763d";
+			$("#codigo_usuario_buscar").attr('required',false);
+			document.getElementById("codigo_usuario_buscar").style.border="2px solid #3c763d";
 		}		
 		// Fin de las Validaciones
-		//alert("codigo_planilla = " + codigo_planilla + " codigo_planilla_buscar = " + codigo_planilla_buscar);
+
 		// Variable con todos los valores necesarios para la consulta
-		var data = 'codigo_planilla=' + codigo_planilla;
+		var data = 'codigo_usuario=' + codigo_usuario;
 		//alert(data);
 
 		// Ejecutar funcion del metodo de una alerta (metodo pre-cargado) para saber si esta seguro de eliminar
@@ -288,7 +257,7 @@ $(document).ready(function () {
 				$.ajax({
 					
 					//Direccion destino
-					url: "planillas_borrar.php",
+					url: "usuarios_borrar.php",
 
 					// Variable con los datos necesarios
 					data: data,
@@ -305,7 +274,7 @@ $(document).ready(function () {
 						
 						// Si el servidor mando informacion
 						if (data) {
-							alert(data);
+							//alert(data);
 							// Mostrar una nueva alerta de que se realizo con exito
 							swal("Eliminado!", "El registro se ha eliminado correctamente", "success");
 
@@ -316,13 +285,14 @@ $(document).ready(function () {
 						// Si el servidor no envio datos
 						if (!data) {
 							//Mostrar una notificacion de que hubo un error
-							$.notify({
-								title: "Error : ",
-								message: "No existe el CODIGO ingresado!",
-								icon: 'fa fa-times' 
-							},{
-								type: "danger"
-							});
+							swal("Error", "No existe el usuario con el codigo ingresado!", "error");
+							// $.notify({
+							// 	title: "Error : ",
+							// 	message: "No existe el CODIGO ingresado!",
+							// 	icon: 'fa fa-times' 
+							// },{
+							// 	type: "danger"
+							// });
 						}
 						
 					},
@@ -353,26 +323,36 @@ $(document).ready(function () {
 
 	});
 
+	$('#limpiarBusqueda').click(function () {
+		$("#codigo_usuario_buscar").val("").value;
+	});
+
+	$('#limpiarForm').click(function (){
+		$("#codigo_usuario").val("").value;
+		$("#nombre_usuario").val("").value;
+		$("#pass").val("").value;
+		// $("#tipo").val("").value;
+		// $("#estado").val("").value;
+		// $("#Id_Empleado").val("").value;
+	});
+
+	$('#limpiarTodo').click(function (){
+		$("#codigo_usuario_buscar").val("").value;
+		$("#codigo_usuario").val("").value;
+		$("#nombre_usuario").val("").value;
+		$("#pass").val("").value;
+		// $("#tipo").val("").value;
+		// $("#estado").val("").value;
+		// $("#Id_Empleado").val("").value;
+	});
+
+	function limpiarTodo(){
+		$("#codigo_usuario_buscar").val("").value;
+		$("#codigo_usuario").val("").value;
+		$("#nombre_usuario").val("").value;
+		$("#pass").val("").value;
+		$("#tipo").val("").value;
+		$("#estado").val("").value;
+		$("#codigo_empleado").val("").value;
+	}
 });
-
-function limpiarBusqueda() {
-	$("#codigo_usuario").val("").value;
-}
-
-function limpiarForm(){
-	// $("#codigo_usuario").val("").value;
-    $("#nombre_usuario").val("").value;
-    $("#pass").val("").value;
-	// $("#tipo").val("").value;
-	// $("#estado").val("").value;
-    // $("#Id_Empleado").val("").value;
-}
-
-function limpiarTodo() {
-	$("#codigo_usuario").val("").value;
-    $("#nombre_usuario").val("").value;
-    $("#pass").val("").value;
-	// $("#tipo").val("").value;
-	// $("#estado").val("").value;
-    // $("#Id_Empleado").val("").value;
-}
