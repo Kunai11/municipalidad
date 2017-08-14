@@ -13,6 +13,8 @@
         if ($rowExiste['Existe']==0) {
             $queryGuardar = mysqli_query($db, "INSERT INTO departamentos (Cod_Dep, Nom_Dep) VALUES ('$codigo_depto', '$nombre') ") or die(mysqli_error());
             echo 'Guardado';
+   
+
         } 
         if ($rowExiste['Existe']==1) {
             #echo 'Ya existe';
@@ -21,4 +23,6 @@
     } else {
         header('location: page_denegado.php');
     }
+
+
 ?>
