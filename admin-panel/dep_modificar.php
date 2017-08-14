@@ -75,14 +75,81 @@
             </ul>
           </div>
         </div>
+
+        <?php 
+          $codigo_buscar=$_GET['codigo_buscar'];
+          if ($codigo_buscar==null) {
+              $codigo_depto='';
+              $nombre_depto = '';
+              
+          } 
+          if ($codigo_buscar!=null) {
+            $queryObjeto = mysqli_query($db, "SELECT * FROM departamentos WHERE Cod_Dep = '".$codigo_buscar."'") or die(mysqli_error());
+            if ($rowObjeto=mysqli_fetch_array($queryObjeto)) {
+              $codigo_depto = $rowObjeto['Cod_Dep'];
+              $nombre_depto = $rowObjeto['Nom_Dep'];
+           
+            } else {
+              $codigo_depto = '';
+              $nombre_depto = '';
+             
+
+            }
+          }            
+        ?>
+         <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-title">
+                <h3 class="card-title" align="center">Buscar departamento</h3>
+              </div>
+              <div class="card-body">
+                <form class="form-horizontal" method="GET" form="departamento_modificar" id="form_buscar">
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Codigo de departamento</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="codigo_buscar" id="codigo_buscar" placeholder="Ingresar codigo de departamento" value="<?php echo $codigo_depto;?>">
+                    </div>
+                  </div>
+
+
+                </form>
+              </div>
+             <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" type="submit" form="form_buscar" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Buscar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default icon-btn" type="button" onclick="limpiarTodo()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-md-12">
-            <!-- Contenido de la pagina -->
             <div class="card">
-              <h3 class="card-title" align="center"></h3>
-              <div class="card-body">Datos Aquí</div>
+              <div class="card-title">
+                <h3 class="card-title" align="center">Formulario de modificar registro</h3>
+              </div>
+              <div class="card-body">
+                <form class="form-horizontal" id="modificar_departamento">
+                  <div class="form-group">
+                    <label class="control-label col-md-3">Nombre de departamento</label>
+                    <div class="col-md-8">
+                      <input class="form-control" type="text" name="nombre_depto" id="nombre_depto" placeholder="Ingresar codigo de departamento"  value="<?php echo $nombre_depto;?>">
+
+                      <input type="hidden" id="codigo_depto" value="<?php echo $codigo_depto ?>">
+                    </div>
+                  </div>
+
+
+                </form>
+              </div>
+             <div class="card-footer" align="center">
+                <button class="btn btn-primary icon-btn" type="button" id="modificar" name="modificar"><i class="fa fa-fw fa-lg fa-check-circle"></i>Guardar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-default icon-btn" type="button" onclick="limpiarTodo()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+              </div>
             </div>
-            <!-- Fin del contenido de la pagina -->
           </div>
         </div>
       </div>
@@ -92,6 +159,39 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap-notify.min.js"></script>
+     <script src="js/tips/departameto_acciones.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
+    </script>
+    <script type="text/javascript">      
+      $('.demoDate').datepicker({
+        format: "dd/mm/yyyy",
+        autoclose: true,
+        todayHighlight: true
+      });
+      
+    </script>
+    <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      $('.alert').click(function(){
+        swal({
+          title: "Esta seguro?",
+          text: "Esta opcion cerrara la sesion actual",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Si, salir",
+          cancelButtonText: "No, mantener conectado",
+          closeOnConfirm: true,
+          closeOnCancel: true
+        }, function(isConfirm) {
+          if (isConfirm) {
+            $(location).attr('href', 'logout.php');
+          } else {
+            // Exit function
+          }
+        });
+      });
+    </script>
   </body>
 </html>
 <?php
