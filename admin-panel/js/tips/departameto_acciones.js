@@ -230,7 +230,8 @@ $(document).ready(function () {
 							swal("Eliminado!", "El registro se ha eliminado correctamente", "success");
 
 							//Limpiar todos los campos
-							limpiarTodo();
+							$("#codigo_depto").val("").value;
+		                    $("#nombre_depto").val("").value;
 						}
 
 						// Si el servidor no envio datos
@@ -273,3 +274,26 @@ $(document).ready(function () {
 
 	});
 });
+
+$('#limpiarTodo').click(function (){
+ 	
+		$("#codigo_depto").val("").value;
+		$("#nombre_depto").val("").value;
+           
+	});
+
+	function limpiarTodo(){
+		  $("#codigo_depto").val("").value;
+		$("#nombre_depto").val("").value;
+	}
+
+
+ $('#limpiarBuscar').click(function (){
+ 	 $("#codigo_buscar").val("").value;
+	
+	});
+
+	function limpiarBuscar(){
+		 $("#codigo_buscar").val("").value;
+		
+	}
