@@ -141,7 +141,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-3">Numero de Identidad</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="identidad_buscar" id="identidad_buscar" value="<?php echo $identidad;?>" placeholder="Ingresar numero de identidad" >
+                      <input class="form-control" type="text" id="identidad_buscar"  name="identidad_buscar" value="<?php echo $identidad;?>" placeholder="Ingresar numero de identidad" >
                     </div>
                   </div>
                  </form>
@@ -151,7 +151,7 @@
               <div class="card-footer" align="center">
                 <button class="btn btn-primary icon-btn" type="submit" form="form_buscar" id="buscar" name="buscar"><i class="fa fa-fw fa-lg fa-check-circle"></i>buscar</button>
                 &nbsp;&nbsp;&nbsp;
-                <button class="btn btn-default icon-btn" type="button" onclick="limpiarTodo()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
+                <button class="btn btn-default icon-btn" type="button" onclick="limpiarBuscar()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Limpiar</button>
               </div>
             </div>
           </div>

@@ -178,7 +178,11 @@
                 <div class="form-group">
                     <label class="control-label col-md-3">Estado</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" name="estado" id="estado" placeholder="">
+                      <select class="form-control" name="estado" id="estado" required>
+                     <option value="" disabled selected>Elige una opción</option>
+                     <option value="Activo">Activo</option>
+                     <option value="Inactivo">Inactivo</option>
+                      </select>
                     </div>
                   </div>
 
@@ -220,7 +224,7 @@
         todayHighlight: true
       });
       
-      $('.demoSelect').select2();
+    
     </script>
     <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
     <script type="text/javascript">
