@@ -64,20 +64,56 @@
         <div class="page-title">
           <div>
             <h1><i class="fa fa-history"></i> Historial de Pagos</h1>
-            <p>Ver el historial de los pagos efectuados a empleados</p>
-          </div>
-          <div>
-            <ul class="breadcrumb">
+            <ul class="breadcrumb side">
               <li><i class="fa fa-money fa-lg"></i></li>
               <li>Registro</li>
-              <li><a href="#">Historial</a></li>
+              <li class="active"><a href="#">Historial</a></li>
             </ul>
           </div>
+          <div><!--<a class="btn btn-primary btn-flat" href="#"><i class="fa fa-lg fa-plus"></i></a>--><a class="btn btn-info btn-flat no-impr" href="pagos_historial.php"><i class="fa fa-lg fa-refresh"></i></a><a class="btn btn-warning btn-flat" href="javascript:window.print();"><i class="fa fa-lg fa-print"></i></a></div>
         </div>
-        <div class="row">
+        <div class="row" id="data-table">
           <div class="col-md-12">
             <div class="card">
-              <div class="card-body">Datos Aquí</div>
+              <div class="card-body">
+                <table class="table table-hover table-bordered" id="sampleTable">
+                  <thead>
+                    <tr>
+                      <th>Departamento</th>
+                      <th>Cargo</th>
+                      <th>Empleado</th>
+                      <th>Sueldo Base</th>
+                      <th>Deducci&oacute;n por IHSS</th>
+                      <th>Deducciones Especiales</th>
+                      <th>Sueldo Neto</th>
+                      <th>Fecha de Pago</th>
+                      <th>Pago Extra</th>
+                      <th>Descripci&oacute;n</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php
+                      $queryHistorial=mysqli_query($db, "SELECT departamentos.Nom_Dep, cargos.Nom_Cargo, empleados.Nombres, empleados.Apellido1, historial.* FROM departamentos INNER JOIN(cargos INNER JOIN(empleados INNER JOIN historial ON empleados.Id_Empleado=historial.Id_Empleado) ON cargos.Cod_Cargo=historial.Cod_Cargo) ON departamentos.Cod_Dep=historial.Cod_Dep;") or die(mysqli_error());
+                      while ($rowHistorial=mysqli_fetch_array($queryHistorial)) {
+                        echo '
+                          <tr>
+                            <td>'.$rowHistorial['Nom_Dep'].'</td>
+                            <td>'.$rowHistorial['Nom_Cargo'].'</td>
+                            <td>'.$rowHistorial['Nombres'].' '.$rowHistorial['Apellido1'].'</td>
+                            <td>'.$rowHistorial['Sueldo_Base'].'</td>
+                            <td>'.$rowHistorial['Ded_IHSS'].'</td>
+                            <td>'.$rowHistorial['Ded_Especiales'].'</td>
+                            <td>'.$rowHistorial['Salario_Neto'].'</td>
+                            <td>'.$rowHistorial['Fecha'].'</td>
+                            <td>'.$rowHistorial['Pago_Extra'].'</td>
+                            <td>'.$rowHistorial['Descripcion_Pago_Extra'].'</td>
+                          </tr>
+                        ';
+                      }
+                    ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -88,6 +124,9 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/pace.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$('#sampleTable').DataTable();</script>
     <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
     <script type="text/javascript">
       $('.alert').click(function(){

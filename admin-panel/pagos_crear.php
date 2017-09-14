@@ -131,8 +131,8 @@
                         <th>Cargo</th>
                         <th>Empleado</th>
                         <th>Sueldo Base</th>
-                        <th>Deduccion IHSS</th>
-                        <th>Deduccion Especial</th>
+                        <th id="dedIHSSPorc">Deduccion IHSS</th>
+                        <th id="dedEspPorc">Deduccion Especial</th>
                         <th>Sueldo Neto</th>
                         <th>Fecha</th>
                       </tr>

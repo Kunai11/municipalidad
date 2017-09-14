@@ -19,8 +19,12 @@ jQuery(document).ready(function (){
 				$('#id_empleado').val(data.Id_Empleado).value;
 				$('#empleado').val(data.Nom_Empleado).value;
 				$('#sueldo_base').val(data.Sueldo_Base).value;
-				$('#ded_IHSS').val(data.Ded_IHSS).value;
-				$('#ded_Esp').val(data.Ded_Especiales).value;
+				$('#dedIHSSPorc').html('Deduccion IHSS (' + data.Ded_IHSS + ')');
+				$('#dedEspPorc').html('Deduccion Especial (' + data.Ded_Especiales + ')');
+				var sueldo_base = data.Sueldo_Base;
+				var ded_IHSS = data.Ded_IHSS;
+				var ded_Esp = data.Ded_Especiales;
+				calculo(sueldo_base, ded_IHSS, ded_Esp);
 				$('#sueldo_neto').val(data.Sueldo_Neto).value;
 			}
 		 });
@@ -55,6 +59,18 @@ jQuery(document).ready(function (){
 		$('#sueldo_neto').val("").value;
 	}
 
+	function calculo(sueldo_base, ded_IHSS, ded_Esp) {
+		var sueldoBaseFloat = parseFloat(sueldo_base);
+		var dedIHSSFloat = parseFloat(ded_IHSS);
+		var dedEspFloat = parseFloat(ded_Esp);
+
+		var dedIHSSFloat = sueldoBaseFloat*(dedIHSSFloat/100);
+		var dedEspFloat = sueldoBaseFloat*(dedEspFloat/100);
+
+		$("#ded_IHSS").val(dedIHSSFloat.toFixed(2)).value;
+		$("#ded_Esp").val(dedEspFloat.toFixed(2)).value;
+	}
+
 	$('#guardar').click(function () {
 		var id_pago = $('#id_pago').val();
 		var cod_dep = $('#cod_dep').val();
@@ -79,6 +95,33 @@ jQuery(document).ready(function (){
 		// 	$("#id_pago").attr('required',false);
 		// 	document.getElementById("id_pago").style.border="2px solid #3c763d";
 		// }
+		//------------------------
+		if (departamento=='') {
+			$("#departamento").attr('required',true);
+			document.getElementById("departamento").style.border="2px solid #a94442";
+			return false;
+		} else {
+			$("#departamento").attr('required',false);
+			document.getElementById("departamento").style.border="2px solid #3c763d";
+		}
+		//------------------------
+		if (cargo=='') {
+			$("#cargo").attr('required',true);
+			document.getElementById("cargo").style.border="2px solid #a94442";
+			return false;
+		} else {
+			$("#cargo").attr('required',false);
+			document.getElementById("cargo").style.border="2px solid #3c763d";
+		}
+		//------------------------
+		if (empleado=='') {
+			$("#empleado").attr('required',true);
+			document.getElementById("empleado").style.border="2px solid #a94442";
+			return false;
+		} else {
+			$("#empleado").attr('required',false);
+			document.getElementById("empleado").style.border="2px solid #3c763d";
+		}
 		//------------------------
 		if (sueldo_base=='') {
 			$("#sueldo_base").attr('required',true);
@@ -118,6 +161,16 @@ jQuery(document).ready(function (){
 		} else {
 			$("#sueldo_neto").attr('required',false);
 			document.getElementById("sueldo_neto").style.border="2px solid #3c763d";
+		}
+		//------------------------
+		if (fecha=='') {
+			$("#fecha").attr('required',true);
+			document.getElementById("fecha").style.border="2px solid #a94442";
+			document.getElementById("fecha").focus();
+			return false;
+		} else {
+			$("#fecha").attr('required',false);
+			document.getElementById("fecha").style.border="2px solid #3c763d";
 		}
 		//------------------------
 		// Fin de las Validaciones
@@ -193,34 +246,3 @@ jQuery(document).ready(function (){
 	});
 
 });
-
-function calculo() {
-		var sueldoBase=document.getElementById('sueldo_base').value;
-		var dedIHSS=document.getElementById('ded_IHSS').value;
-		var dedEsp=document.getElementById('ded_Esp').value;
-		//var sueldoNeto=document.getElementById('sueldo_neto').value;
-
-		if (sueldoBase=='') {
-			var sueldoBaseFloat=0;	
-		}
-		if (sueldoBase!='') {
-			var sueldoBaseFloat=parseFloat(sueldoBase);
-		}
-		//------------------//
-		if (dedIHSS=='') {
-			var dedIHSSFloat=0;	
-		}
-		if (dedIHSS!='') {
-			var dedIHSSFloat=parseFloat(dedIHSS);
-		}
-		//------------------//
-		if (dedEsp=='') {
-			var dedEspFloat=0;	
-		}
-		if (dedEsp!='') {
-			var dedEspFloat=parseFloat(dedEsp);
-		}
-		//------------------//
-		var sueldoNetoFloat = sueldoBaseFloat - (sueldoBaseFloat*(dedIHSSFloat/100)) - (sueldoBaseFloat*(dedEspFloat/100));
-		$("#sueldo_neto").val(sueldoNetoFloat.toFixed(2)).value;
-	}
